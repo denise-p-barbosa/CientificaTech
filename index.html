@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CientificaTech | Cientifique-se</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">CientificaTech</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#conteudo">Conteúdo</a></li>
+                    <li><a href="#recomendacoes">Recomendações</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="inicio" class="hero-section">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                
+                <!-- <img src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings_b_roll" alt="Ícone Engenharia" class="hero-icon"> -->
+                
+                <h1>Cientifique-se.<br>O mundo não é plano.</h1>
+                <p class="hero-subtitle">Ciência, engenharia e tecnologia explicadas de forma simples e inteligente.</p>
+                
+                <a href="#conteudo" class="btn btn-primary">Começar a Ler</a>
+            </div>
+        </div>
+    </section>
+    <div class="container main-wrapper">
+        
+      <section class="section-block block-highlight-wrapper">
+            <div class="orange-box">
+                
+                <div class="orange-header">
+                    <h3 class="box-title">Sem Achismo — <span class="highlight-text">Só notícias de verdade</span></h3>
+                    <!-- <p class="box-subtitle">Aqui você encontra explicações claras, ciência de verdade e conteúdo feito para quem quer aprender sem cair em ciladas. Nada de achismo, nada de fake news — só informação confiável, leve e direta. Porque se informar é power, e acreditar em qualquer coisa por aí… aí sim é cringe</p> -->
+                </div>
+
+                <div class="carousel-wrapper">
+                    
+                    <button class="nav-arrow left-arrow" onclick="scrollCarousel(-1)">&#10094;</button>
+
+                    <div class="carousel-container" id="articlesCarousel">
+                        
+                        <p style="color: white; width: 100%; text-align: center;">Carregando notícias do universo...</p>
+
+                    </div>
+
+                    <button class="nav-arrow right-arrow" onclick="scrollCarousel(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // --- FUNÇÃO PARA O CARROSSEL DE PRODUTOS ---
+    function scrollProductCarousel(direction) {
+        const container = document.getElementById('productsCarousel');
+        const scrollAmount = 280; // Largura do card + espaço
+        container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+        </script>
+
+
+        <div class="split-section">
+            <div class="half-block">
+                <h3 class="section-title">Curiosidades da Semana</h3>
+                <ul class="simple-list">
+                    <li>⚛️ <strong>Física:</strong> Por que o céu é azul?</li>
+                    <li>🏗️ <strong>Engenharia:</strong> A ponte que "respira".</li>
+                    <li>🎓 <strong>UFV:</strong> A lenda da lagoa artificial.</li>
+                </ul>
+            </div>
+            <div class="half-block">
+                <h3 class="section-title">Notícias Ciência + UFV</h3>
+                <ul class="news-list">
+                    <li>📢 Novas bolsas de Iniciação Científica.</li>
+                    <li>🚀 SpaceX lança novo foguete.</li>
+                    <li>📆 Semana Acadêmica confirmada.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="#conteudo" class="btn btn-outline">Ler Artigos</a>
+            <a href="#recomendacoes" class="btn btn-outline">Ver Recomendações</a>
+            <a href="#sobre" class="btn btn-outline">Contato</a>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <section id="conteudo" class="container section-block">
+        <h2 class="main-title">Biblioteca de Conteúdo</h2>
+        <p class="subtitle">Navegue pelas áreas do conhecimento.</p>
+
+        <div class="library-grid">
+            <div class="lib-category">
+                <h4>⚛️ Engenharia Física</h4>
+                <ul>
+                    <li><a href="#">Mecânica Clássica</a></li>
+                    <li><a href="#">Eletromagnetismo</a></li>
+                    <li><a href="#">Física Moderna</a></li>
+                </ul>
+            </div>
+            <div class="lib-category">
+                <h4>🤖 Tecnologia</h4>
+                <ul>
+                    <li><a href="#">Inteligência Artificial</a></li>
+                    <li><a href="#">Novos Dispositivos</a></li>
+                </ul>
+            </div>
+            <div class="lib-category">
+                <h4>🎓 UFV – Vida Acadêmica</h4>
+                <ul>
+                    <li><a href="#">Relatos de Alunos</a></li>
+                    <li><a href="#">Dicas de Sobrevivência</a></li>
+                </ul>
+            </div>
+            <div class="lib-category highlight-cat">
+                <h4>🛡️ Desmistificando</h4>
+                <ul>
+                    <li><a href="#">Por que o mundo NÃO é plano</a></li>
+                    <li><a href="#">O mito do aquecimento global</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <hr class="divider">
+
+    <section id="recomendacoes" class="container section-block">
+        <h2 class="main-title">Setup & Ferramentas</h2>
+        <p class="subtitle">Os equipamentos essenciais para sobreviver à Engenharia Física.</p>
+
+        <div class="carousel-wrapper">
+            
+            <button class="nav-arrow left-arrow" onclick="scrollProductCarousel(-1)">&#10094;</button>
+
+            <div class="carousel-container product-container" id="productsCarousel">
+                
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/61Z6s7tX7AL._AC_SL1500_.jpg');"></div>
+                    <div class="product-info">
+                        <h5>Calculadora Casio FX-991LAX</h5>
+                        <p class="desc">A queridinha da engenharia. Resolve integrais, matrizes e equações.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 289,90</span>
+                            <a href="#" class="btn-buy">Ver na Amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/81Dr0J6+LhL._SL1500_.jpg');"></div>
+                    <div class="product-info">
+                        <h5>Halliday Vol. 1 - Mecânica</h5>
+                        <p class="desc">A bíblia da Física 1. Essencial para passar sem DP.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 189,00</span>
+                            <a href="#" class="btn-buy">Ver na Amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/71nI1-s7DPL._AC_SL1500_.jpg');"></div>
+                    <div class="product-info">
+                        <h5>Multímetro Digital Hikari</h5>
+                        <p class="desc">Para os laboratórios de elétrica e projetos pessoais.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 65,90</span>
+                            <a href="#" class="btn-buy">Ver Oferta</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/61h0H4sAETL._AC_SL1000_.jpg');"></div>
+                    <div class="product-info">
+                        <h5>Kindle 11ª Geração</h5>
+                        <p class="desc">Leve seus PDFs e livros técnicos para qualquer lugar.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 499,00</span>
+                            <a href="#" class="btn-buy">Ver na Amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://m.media-amazon.com/images/I/61r-vL2G+IL._AC_SL1000_.jpg');"></div>
+                    <div class="product-info">
+                        <h5>Caderno Inteligente Grande</h5>
+                        <p class="desc">Reposicione as folhas. Perfeito para organizar matérias.</p>
+                        <div class="price-row">
+                            <span class="price">R$ 89,90</span>
+                            <a href="#" class="btn-buy">Ver Oferta</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="nav-arrow right-arrow" onclick="scrollProductCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="affiliate-highlight">
+            <div class="affiliate-box">
+                <div class="tag">📦 Achado da Semana</div>
+                <h3>Calculadora Científica FX-82MS</h3>
+                <p>Ideal para Engenharia Física. Resistente, clássica e essencial para Cálculos I, II e III.</p>
+                <a href="#" class="btn btn-amazon">Ver preço na Amazon</a>
+            </div>
+        </section>
+
+
+    <hr class="divider">
+
+    <section id="sobre" class="container section-block about-section">
+        <div class="about-content">
+            <h2>Sobre o CientificaTech</h2>
+            <p><strong>Quem sou eu?</strong> Olá! Sou estudante de Engenharia Física e apaixonado por ciência.</p>
+            <div class="transparency-box">
+                <small>⚠️ <strong>Transparência:</strong> Este site contém links afiliados.</small>
+            </div>
+            <div class="contact-area">
+                <a href="mailto:contato@cientificatech.com" class="btn btn-primary">Entrar em Contato</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 CientificaTech. Todos os direitos reservados.</p>
+        <p>Desenvolvido com ciência.</p>
+    </footer>
+     
+    <script>
+    // --- BANCO DE IMAGENS (Fallback - Só usado em último caso) ---
+    const scientificImages = [
+        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', 
+        'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80', 
+        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80'
+    ];
+
+    // --- FONTES RSS ---
+    const rssSources = [
+        'https://canaltech.com.br/rss/espaco/',
+        'https://www.inovacaotecnologica.com.br/boletins/rss.xml',
+        'https://gizmodo.uol.com.br/category/ciencia/feed/'
+    ];
+
+    // --- FUNÇÃO PRINCIPAL DE CARREGAMENTO ---
+    async function loadContent() {
+        const container = document.getElementById('articlesCarousel');
+        container.innerHTML = '<p style="color: white; text-align: center; width: 100%;">Sintonizando frequências científicas...</p>';
+
+        for (let i = 0; i < rssSources.length; i++) {
+            try {
+                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssSources[i])}`;
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Falha na conexão');
+                const data = await response.json();
+                if (data.status !== 'ok') throw new Error('Erro no feed');
+
+                renderArticles(data.items.slice(0, 6));
+                return; // Sucesso, para o loop.
+
+            } catch (error) {
+                console.warn(`Fonte ${i} falhou, tentando próxima.`);
+            }
+        }
+        // Se tudo falhar:
+        container.innerHTML = '<p style="color: white; text-align: center;">Sinal perdido. Tente recarregar.</p>';
+    }
+
+    // --- A NOVA FUNÇÃO "CAÇA-IMAGENS" ---
+    function findBestImage(item) {
+        // TENTATIVA 1: O padrão do thumbnail (funciona no Canaltech/Gizmodo)
+        if (item.thumbnail && item.thumbnail.startsWith('http')) {
+            return item.thumbnail;
+        }
+        
+        // TENTATIVA 2: "Enclosure" (às vezes usado para imagem de capa)
+        if (item.enclosure && item.enclosure.link && item.enclosure.link.startsWith('http')) {
+            return item.enclosure.link;
+        }
+
+        // TENTATIVA 3 (A mais agressiva): Tentar achar uma tag <img> dentro do HTML da descrição
+        // Isso é necessário para o "Inovação Tecnológica"
+        const imgMatch = item.description.match(/<img.*?src=["'](.*?)["']/);
+        if (imgMatch && imgMatch[1] && imgMatch[1].startsWith('http')) {
+             // Retorna o link encontrado dentro do src=""
+            return imgMatch[1];
+        }
+
+        // Se não achou nada em lugar nenhum, retorna null
+        return null;
+    }
+
+
+    // --- RENDERIZADOR ---
+    function renderArticles(items) {
+        const container = document.getElementById('articlesCarousel');
+        container.innerHTML = ''; 
+
+        items.forEach((item, index) => {
+            // 1. Tenta achar a imagem real da notícia
+            let bgImage = findBestImage(item);
+
+            // 2. Se não achou NADA (bgImage é null), aí sim usa o fallback
+            if (!bgImage) {
+                bgImage = scientificImages[index % scientificImages.length];
+            }
+
+            const cleanSummary = truncateText(item.description.replace(/<[^>]*>?/gm, ''), 90);
+
+            const cardHTML = `
+                <article class="card carousel-card">
+                    <div class="card-img" style="background-image: url('${bgImage}');"></div>
+                    <div class="card-body">
+                        <h4>${truncateText(item.title, 50)}</h4>
+                        <p>${cleanSummary}</p>
+                        <a href="${item.link}" target="_blank" class="read-more">Ler Matéria &rarr;</a>
+                    </div>
+                </article>
+            `;
+            container.innerHTML += cardHTML;
+        });
+    }
+
+    // Funções auxiliares (cortar texto e rolar)
+    function truncateText(text, length) {
+        if (!text) return "";
+        if (text.length <= length) return text;
+        return text.substring(0, length) + '...';
+    }
+    
+    function scrollCarousel(direction) {
+        document.getElementById('articlesCarousel').scrollBy({ left: direction * 320, behavior: 'smooth' });
+    }
+
+    // INICIAR
+    loadContent();
+</script>
+
+
+</body>
+</html>

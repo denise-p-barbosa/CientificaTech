@@ -1,0 +1,539 @@
+/* ========================================= */
+/* 1. VARIÁVEIS E RESET GERAL        */
+/* ========================================= */
+:root {
+    --primary-color: #002D62; /* Azul Escuro */
+    --accent-color: #0077B6;  /* Azul Claro */
+    --highlight: #FFD700;     /* Amarelo Destaque */
+    --bg-light: #F4F7F6;      /* Fundo do site */
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* ========================================= */
+/* 2. MENU / HEADER            */
+/* ========================================= */
+.header {
+    background-color: #05090C;
+    color: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: rgba(255,255,255,0.8); font-weight: 500; }
+.nav-links a:hover { color: var(--white); text-decoration: underline; }
+
+
+/* ========================================= */
+/* 3. BANNER PRINCIPAL (HERO)         */
+/* (Estilo Split Fade / Gamer)        */
+/* ========================================= */
+
+.hero-section {
+    /* Imagem do Universo */
+    background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1309/outside_orbit-Universe_HD_Wallpaper_1366x768.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    color: var(--white);
+    min-height: 70vh; /* Altura do Banner */
+    
+    display: flex;
+    align-items: center;
+    /* O alinhamento principal já é à esquerda, mas o container interno centralizava */
+    justify-content: flex-start; 
+    
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* O Degradê Lateral (Fosco na esquerda -> Transparente na direita) */
+.hero-overlay {
+    background: linear-gradient(88deg, 
+        rgba(5, 15, 35, 0.95) 0%, 
+        rgba(5, 15, 35, 0.8) 45%, 
+        rgba(5, 15, 35, 0.1) 80%, 
+        rgba(5, 15, 35, 0) 100%
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    
+    /* Garante que o conteúdo interno também se alinhe à esquerda */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px; /* Largura máxima do bloco de texto */
+    text-align: left; /* Alinha o texto dentro do bloco à esquerda */
+    
+    /* --- AJUSTE DE POSIÇÃO (Mover para a Esquerda) --- */
+    /* Sobrescreve a margem automática do .container para alinhar à esquerda */
+    margin-left: 0 !important; 
+    margin-right: auto;
+    /* Adiciona um espaçamento da borda esquerda da tela */
+    padding-left: 5%; 
+}
+
+/* Ícone */
+.hero-icon {
+    width: 70px;
+    height: auto;
+    display: block;
+    /* Remove a margem automática para alinhar com o texto */
+    margin: 0 0 25px 0; 
+    filter: brightness(0) invert(0.9); /* Deixa branco/prata */
+}
+
+/* --- NOVO ESTILO DO TÍTULO (Igual "Gêneros Populares") --- */
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif; /* Garante a fonte */
+    font-size: 3.2rem;    /* Tamanho grande */
+    font-weight: 900;     /* O mais negrito possível */
+    color: #ffffff;       /* Cor branca pura */
+    line-height: 1.1;     /* Linhas mais próximas */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Tudo em maiúsculo */
+    letter-spacing: -1px; /* Letras levemente mais juntas */
+    
+    /* --- EFEITO GLITCH / CROMÁTICO --- */
+    /* Sombra vermelha para a esquerda/cima, ciano para a direita/baixo */
+    /* text-shadow: -2px -1px 0 #ff0000, 2px 1px 0 #00ffff; */
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 35px;
+    font-weight: 400;
+    max-width: 90%;
+    /* Uma sombra suave para melhorar a leitura do subtítulo também */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+/* ========================================= */
+
+/* ========================================= */
+/* 4. LAYOUT GERAL (GRIDS E TEXTOS)   */
+/* ========================================= */
+.section-block { margin-bottom: 60px; }
+.section-title { margin-bottom: 20px; border-left: 5px solid var(--accent-color); padding-left: 10px; color: var(--primary-color); }
+.main-title { text-align: center; font-size: 2rem; color: var(--primary-color); }
+.subtitle { text-align: center; color: var(--text-light); margin-bottom: 40px; }
+
+/* Grids */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+
+
+/* ========================================= */
+/* 5. CARDS DE ARTIGOS          */
+/* ========================================= */
+.card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+.card:hover { transform: translateY(-5px); }
+.card-img { 
+    height: 150px; 
+    width: 100%;
+    background-size: cover;        /* Cobre todo o espaço */
+    background-position: center;   /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    background-color: #002D62;     /* Fundo azul caso a imagem demore */
+}
+.card-body { padding: 20px; }
+.card-body h4 { margin-bottom: 10px; color: var(--primary-color); }
+.read-more { color: var(--accent-color); font-weight: bold; font-size: 0.9rem; }
+
+
+/* ========================================= */
+/* 6. DESTAQUES E LISTAS (NEWS)       */
+/* ========================================= */
+.affiliate-highlight { margin: 40px 0; text-align: center; }
+.affiliate-box {
+    background: #fff;
+    border: 2px solid var(--highlight);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+.tag { background: var(--highlight); display: inline-block; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 20px; margin-bottom: 10px; }
+.btn-amazon { background: #FF9900; color: white; padding: 10px 20px; border-radius: 5px; margin-top: 15px; display: inline-block; }
+
+.split-section { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.half-block { flex: 1; min-width: 300px; }
+.simple-list li, .news-list li {
+    background: var(--white);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 3px solid var(--accent-color);
+}
+
+
+/* ========================================= */
+/* 7. BOTÕES SECUNDÁRIOS          */
+/* ========================================= */
+.quick-links { text-align: center; margin-top: 40px; }
+.btn-outline { border: 2px solid var(--primary-color); color: var(--primary-color); margin: 0 10px; background: transparent; }
+.btn-outline:hover { background: var(--primary-color); color: var(--white); }
+
+
+/* ========================================= */
+/* 8. ESTILOS DE OUTRAS PÁGINAS      */
+/* ========================================= */
+/* Biblioteca */
+.library-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+.lib-category h4 { margin-bottom: 15px; color: var(--primary-color); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+.highlight-cat { background: #e8f4f8; padding: 15px; border-radius: 8px; }
+
+/* Setup & Produtos */
+.product-card { background: var(--white); padding: 15px; text-align: center; border: 1px solid #eee; border-radius: 8px; }
+.product-card .price { display: block; color: var(--accent-color); font-size: 0.9rem; margin-bottom: 10px; }
+.product-card a { color: var(--primary-color); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+
+.setup-section { background: var(--primary-color); color: var(--white); padding: 30px; border-radius: 10px; margin-top: 40px; }
+.setup-item { background: rgba(255,255,255,0.1); padding: 10px; text-align: center; border-radius: 5px; }
+
+/* Sobre & Footer */
+.divider { border: 0; height: 1px; background: #ddd; margin: 50px 0; }
+.transparency-box { background: #fff3cd; padding: 10px; border-radius: 5px; margin: 20px 0; text-align: center; color: #856404; }
+
+footer {
+    background: var(--primary-color);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+
+/* ========================================= */
+/* 9. RESPONSIVIDADE             */
+/* ========================================= */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; }
+    .nav-links { margin-top: 15px; gap: 10px; font-size: 0.9rem; }
+    
+    /* Ajuste do Banner no Celular */
+    .hero-section { justify-content: center; }
+    .hero-overlay { background: linear-gradient(0deg, rgba(5,15,35,1) 0%, rgba(5,15,35,0.6) 100%); }
+    .hero-content { text-align: center; padding: 20px; }
+    .hero-content h1 { font-size: 1.8rem; }
+    .hero-icon { margin: 0 auto 20px auto; }
+    
+    .split-section { flex-direction: column; gap: 20px; }
+    .btn-outline { display: block; margin: 10px auto; width: 80%; }
+}
+
+/* Este código faz 3 coisas:
+1.  **Esconde a barra cinza** (`scrollbar-width: none`).
+2.  **Cria as setas** redondas e elegantes nas laterais.
+3.  **Posiciona** tudo corretamente.
+
+```css */
+
+
+.block-highlight-wrapper {
+    margin-top: 60px;
+    padding: 0 20px;
+}
+
+/* ========================================= */
+/* BLOCO COM IMAGEM DE FUNDO + DEGRADÊ       */
+/* ========================================= */
+
+.orange-box {
+    /* --- FUNDO ALTERADO --- */
+    background: 
+        /* Degradê "to top" (De baixo para cima):
+           0% (Lá embaixo): Cor sólida escura (Mistura de Marrom/Preto) para dar base.
+           40% (Meio-baixo): Laranja transparente suavizando.
+           100% (Topo): Totalmente transparente (para ver a imagem).
+        */
+        linear-gradient(to top, 
+            rgb(13 14 14 / 95%) 0%,     /* Base Escura (Quase preto) */
+            rgb(201 84 26 / 50%) 40%,   /* Laranja no meio do caminho */
+            rgba(0,0,0,0) 100%          /* Transparente no topo */
+        ),
+        
+        /* Sua imagem de fundo */
+        url('https://cdn.pixabay.com/photo/2016/12/29/18/44/background-1939128_1280.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Configurações visuais */
+    color: white; 
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    border: 1px solid rgba(255, 200, 150, 0.1); 
+}
+.orange-header {
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- TÍTULO GERAL (Parte "Sem Achismo") --- */
+.box-title {
+    font-size: 2.2rem;
+    color: #ffffff !important; /* Branco puro */
+    margin-bottom: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    /* Sombra leve para destacar do fundo escuro */
+    text-shadow: 0 4px 8px rgba(0,0,0,0.6); 
+}
+
+/* --- DESTAQUE ESPECÍFICO (Parte "Só notícias de verdade") --- */
+.highlight-text {
+    background-color: #FFF8E1; /* Fundo Creme/Laranja */
+    color: var(--primary-color); /* Texto Azul Escuro */
+    
+    padding: 5px 15px;      /* Espaço interno */
+    border-radius: 8px;     /* Cantos arredondados */
+    display: inline-block;  /* Garante que o fundo envolva o texto corretamente */
+    text-shadow: none;      /* Sem sombra dentro da caixa */
+    margin-left: 10px;      /* Um espacinho do traço "—" */
+    transform: skew(-5deg); /* (Opcional) Dá uma leve inclinada estilosa "tech" */
+}
+
+/* --- SUBTÍTULO (Bem visível) --- */
+.box-subtitle {
+    font-size: 1.2rem;
+    color: #ffffff !important; /* Branco total */
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0,0,0,1); /* Sombra preta forte para leitura */
+}
+
+
+/* --- WRAPPER PARA POSICIONAR AS SETAS --- */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* --- O CARROSSEL --- */
+.carousel-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 15px 5px 25px 5px; /* Um pouco mais de espaço para a sombra dos cards */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE */
+}
+
+/* Esconder barra no Chrome/Safari/Edge */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cards (Mantivemos fundo branco para contraste) */
+.carousel-card {
+    min-width: 300px;
+    max-width: 300px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    text-align: left;
+    border: none; /* Remove borda cinza */
+    background: #fff;
+    color: var(--text-dark); /* Volta a cor do texto interno para escuro */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra mais forte nos cards */
+}
+
+/* --- SETAS AGORA SÃO BRANCAS PARA DESTAQUE --- */
+.nav-arrow {
+    background-color: #ffffff; /* Fundo branco */
+    color: var(--primary-color); /* Ícone azul */
+    border: none;
+    width: 45px; /* Um pouco maiores */
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para "flutuar" */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-arrow:hover {
+    background-color: var(--accent-color); /* Azul claro ao passar o mouse */
+    color: white; /* Ícone branco ao passar o mouse */
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: -25px;
+}
+
+.right-arrow {
+    right: -25px;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .nav-arrow {
+        display: none;
+    }
+    .carousel-container {
+        padding-bottom: 15px;
+    }
+    .orange-box {
+        padding: 30px 15px;
+        border-radius: 15px;
+    }
+}
+
+/* ========================================= */
+/* ESTILO DA VITRINE DE PRODUTOS             */
+/* ========================================= */
+
+/* Container específico dos produtos (para não afetar as notícias) */
+.product-container {
+    padding: 20px 5px;
+    align-items: stretch; /* Faz todos os cards terem a mesma altura */
+}
+
+/* O Cartão do Produto */
+.product-card {
+    min-width: 260px;
+    max-width: 260px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    
+    display: flex;
+    flex-direction: column; /* Organiza Imagem em cima, Texto embaixo */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+/* Imagem do Produto */
+.product-img {
+    height: 200px; /* Altura fixa para a foto */
+    width: 100%;
+    background-size: contain; /* 'contain' mostra o produto inteiro sem cortar */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff; /* Fundo branco para destacar o produto */
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Informações (Texto) */
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa o resto do espaço */
+    text-align: left;
+}
+
+.product-info h5 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.product-info .desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    flex-grow: 1; /* Empurra o preço para o final do card */
+}
+
+/* Linha de Preço e Botão */
+.price-row {
+    margin-top: auto; /* Garante que fique no rodapé do card */
+}
+
+.price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Botão de Compra */
+.btn-buy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--accent-color); /* Azul Tecnológico */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: var(--primary-color); /* Azul Escuro ao passar mouse */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
