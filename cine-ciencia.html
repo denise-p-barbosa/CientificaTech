@@ -6,13 +6,33 @@
     <title>Cine Ciência | CientificaTech</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Correção forçada para o avatar não ficar gigante */
+        .user-avatar-small {
+            width: 50px !important;
+            height: 50px !important;
+            min-width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #555;
+        }
+
+        /* Animação suave ao trocar o texto */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body class="cine-body">
 
     <header class="header">
         <div class="container nav-container">
-            <div class="logo">CineTech</div>
-            <nav>
+            <div class="logo">CientificaTech</div> <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Voltar ao Início</a></li>
                 </ul>
@@ -25,7 +45,7 @@
             <div class="cine-hero-content">
                 <span class="tag-hero">TOP 1 DA SEMANA</span>
                 <h1>Oppenheimer</h1>
-                <p class="hero-desc">A história do físico J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica.</p>
+                <p class="hero-desc">A história do físico J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica. Um estudo sobre ética, ciência e consequências.</p>
                 <div class="hero-buttons">
                     <button class="btn-play"><i class="fas fa-play"></i> Assistir Trailer</button>
                     <button class="btn-info"><i class="fas fa-info-circle"></i> Mais Detalhes</button>
@@ -35,44 +55,186 @@
     </section>
 
     <section class="cine-shelf">
-        <h3 class="shelf-title">Principais escolhas de <span class="highlight-blue">Sci-Fi & Física</span></h3>
+        <h3 class="shelf-title">O que assistir <span class="highlight-blue">| Principais escolhas</span></h3>
         <div class="shelf-wrapper">
-            <button class="shelf-arrow left" onclick="scrollShelf('scifi', -1)">&#10094;</button>
-            <div class="movie-row" id="scifi-row">
-                <p style="color:#666; padding:20px;">Carregando filmes...</p>
+            <button class="shelf-arrow left" onclick="scrollShelf('main', -1)">&#10094;</button>
+            <div class="movie-row" id="main-row">
+                <p style="color:#666; padding:20px;">Carregando catálogo...</p>
             </div>
-            <button class="shelf-arrow right" onclick="scrollShelf('scifi', 1)">&#10095;</button>
+            <button class="shelf-arrow right" onclick="scrollShelf('main', 1)">&#10095;</button>
         </div>
     </section>
 
-    <section class="cine-shelf">
-        <h3 class="shelf-title">Documentários sobre <span class="highlight-blue">Espaço & Tecnologia</span></h3>
-        <div class="shelf-wrapper">
-            <button class="shelf-arrow left" onclick="scrollShelf('docs', -1)">&#10094;</button>
-            <div class="movie-row" id="docs-row">
+    <section class="cine-shelf user-recs-section">
+        <h3 class="shelf-title">Top 10 Indicados <span class="highlight-gold">| Leitores do Canal</span></h3>
+        <p class="section-subtitle">O ranking definitivo dos filmes que explodiram a mente da nossa comunidade.</p>
+
+        <div class="user-picks-carousel-wrapper">
+            <button class="pick-arrow left" onclick="scrollPicks(-1)">&#10094;</button>
+
+            <div class="user-picks-track" id="picksTrack">
+                
+                <div class="user-pick-item" onclick="updateReview(0)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/gEU2QniL6C8zt75201rMAk810nC.jpg">
+                        <div class="rank-badge">1</div>
+                    </div>
+                    <span class="pick-name">Interestelar</span>
                 </div>
-            <button class="shelf-arrow right" onclick="scrollShelf('docs', 1)">&#10095;</button>
+
+                <div class="user-pick-item" onclick="updateReview(1)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg">
+                        <div class="rank-badge">2</div>
+                    </div>
+                    <span class="pick-name">A Origem</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(2)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg">
+                        <div class="rank-badge">3</div>
+                    </div>
+                    <span class="pick-name">Matrix</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(3)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/c0DCmfC7Et2K3URnCa4VOsowaix.jpg">
+                        <div class="rank-badge">4</div>
+                    </div>
+                    <span class="pick-name">Oppenheimer</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(4)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/rCzpDGLbOoPwLjy3OAm5NUPOtrC.jpg">
+                        <div class="rank-badge">5</div>
+                    </div>
+                    <span class="pick-name">O Senhor dos Anéis</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(5)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/gAjx94GAe171qC0y6yX05b4sU7q.jpg">
+                        <div class="rank-badge">6</div>
+                    </div>
+                    <span class="pick-name">Blade Runner 2049</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(6)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg">
+                        <div class="rank-badge">7</div>
+                    </div>
+                    <span class="pick-name">Clube da Luta</span>
+                </div>
+
+                 <div class="user-pick-item" onclick="updateReview(7)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/piz09d84w9x1d3XGj4q4Xp4L8x.jpg">
+                        <div class="rank-badge">8</div>
+                    </div>
+                    <span class="pick-name">A Chegada</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(8)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg">
+                        <div class="rank-badge">9</div>
+                    </div>
+                    <span class="pick-name">Duna: Parte 2</span>
+                </div>
+
+                <div class="user-pick-item" onclick="updateReview(9)">
+                    <div class="circle-img-wrapper">
+                        <img src="https://image.tmdb.org/t/p/w300/8vt6qn9Q285z36J0_mvlQ27C0mQ.jpg">
+                        <div class="rank-badge">10</div>
+                    </div>
+                    <span class="pick-name">Homem-Aranha</span>
+                </div>
+
+            </div>
+            
+            <button class="pick-arrow right" onclick="scrollPicks(1)">&#10095;</button>
+        </div>
+
+        <div class="review-box" id="reviewBox">
+            <div class="review-content">
+                <div class="review-header">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="user-avatar-small" alt="Avatar">
+                    <div>
+                        <h4 id="rev-title">Interestelar</h4>
+                        <div class="stars" id="rev-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p id="rev-text">"Mano do céu, eu não consigo explicar o que senti vendo isso no cinema. A trilha do Hans Zimmer na cena da acoplagem é a coisa mais tensa que já vi na vida. Fora a representação do Buraco Negro que é cientificamente precisa. Obrigatório pra quem faz nosso curso."</p>
+                <span class="review-author" id="rev-author">Indicado por: <strong>Marcos (Eng. Física)</strong></span>
+            </div>
         </div>
     </section>
 
     <script>
-        const API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb'; // Chave pública de teste TMDB
+        // --- 1. LÓGICA DAS RECOMENDAÇÕES (BOLINHAS) ---
+        
+        // Dados dos 10 filmes
+        const myReviews = [
+            { t: "Interestelar", a: "Marcos (Eng. Física)", s: "★★★★★", d: "Mano do céu, eu não consigo explicar o que senti vendo isso no cinema. A trilha do Hans Zimmer na cena da acoplagem é a coisa mais tensa que já vi na vida. Fora a representação do Buraco Negro que é cientificamente precisa. Obrigatório pra quem faz nosso curso." },
+            { t: "A Origem", a: "Beatriz (Arquitetura)", s: "★★★★★", d: "O conceito de desenhar sonhos é surreal. Nolan é gênio. Eu fiquei desenhando labirintos no caderno a semana toda depois de ver. A ideia de que uma ideia é o vírus mais resistente... isso mudou meu jeito de pensar." },
+            { t: "Matrix", a: "Ana (Sistemas)", s: "★★★★★", d: "Basicamente o motivo de eu ter escolhido computação. Não é só tiro e câmera lenta, é filosofia pura. O mito da caverna de Platão versão cyberpunk. 'Não existe colher'. Assisti em 1999 e assisto todo ano." },
+            { t: "Oppenheimer", a: "Prof. Ricardo (Física)", s: "★★★★★", d: "Um estudo de personagem denso e necessário. Mostra o peso da consciência de criar algo que pode destruir o mundo. Cillian Murphy entregou tudo. A cena do teste Trinity é cinema puro." },
+            { t: "O Senhor dos Anéis", a: "Lucas (RPG UFV)", s: "★★★★★", d: "A trilogia perfeita. Não tem CGI moderno que supere o carinho que colocaram aqui. As armaduras, os cenários da Nova Zelândia, a jornada do Frodo. É sobre amizade acima de tudo." },
+            { t: "Blade Runner 2049", a: "Sofia (Design)", s: "★★★★★", d: "Visualmente é o filme mais lindo da década. Cada frame dá um quadro na parede. A paleta de cores laranja e azul neon é absurda. É lento, contemplativo, fala sobre o que nos torna humanos." },
+            { t: "Clube da Luta", a: "Pedro (Computação)", s: "★★★★☆", d: "A primeira regra é não falar sobre o clube. Mas sério, esse filme bugou minha mente na primeira vez. A crítica ao consumismo bateu forte. O final é o maior plot twist da história." },
+            { t: "A Chegada", a: "Clara (Letras)", s: "★★★★★", d: "Não é filme de alienígena dando tiro. É sobre linguagem e comunicação. A hipótese de Sapir-Whorf aplicada no cinema. Lindo, triste e esperançoso ao mesmo tempo." },
+            { t: "Duna: Parte 2", a: "João (Agronomia)", s: "★★★★★", d: "Fui no cinema sem expectativa e saí tremendo. A escala disso é gigantesca. O som das naves, os vermes de areia... é uma experiência sensorial. Melhor sci-fi recente fácil." },
+            { t: "Homem-Aranha", a: "Felipe (Artes)", s: "★★★★★", d: "Uma obra de arte em movimento. Eles misturam estilos de animação diferentes na mesma tela e funciona! A trilha sonora é impecável. A história do Miles Morales é muito identificável." }
+        ];
+
+        // Função de clique na bolinha
+        function updateReview(index) {
+            const data = myReviews[index];
+            if (!data) return;
+
+            // Elementos
+            const box = document.getElementById('reviewBox');
+            const titleEl = document.getElementById('rev-title');
+            const starEl = document.getElementById('rev-stars');
+            const textEl = document.getElementById('rev-text');
+            const authEl = document.getElementById('rev-author');
+
+            // Animação de troca
+            box.classList.remove('fade-in'); // Remove animação anterior
+            void box.offsetWidth; // Força o navegador a reiniciar o CSS (Reflow)
+            
+            // Troca o texto
+            titleEl.innerText = data.t;
+            starEl.innerText = data.s;
+            textEl.innerText = `"${data.d}"`;
+            authEl.innerHTML = `Indicado por: <strong>${data.a}</strong>`;
+            
+            box.classList.add('fade-in'); // Adiciona animação nova
+        }
+
+        // Função de scroll das bolinhas
+        function scrollPicks(direction) {
+            const track = document.getElementById('picksTrack');
+            track.scrollBy({ left: direction * 300, behavior: 'smooth' });
+        }
+
+
+        // --- 2. LÓGICA DA API TMDB (PRINCIPAL) ---
+        const API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb'; 
         const BASE_URL = 'https://api.themoviedb.org/3';
         const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+        const requestUrl = `/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&vote_count.gte=2000&language=pt-BR`;
 
-        // Gêneros: 878 = Sci-Fi, 99 = Documentário
-        const requests = {
-            scifi: `/discover/movie?api_key=${API_KEY}&with_genres=878&sort_by=vote_average.desc&vote_count.gte=1000&language=pt-BR`,
-            docs: `/discover/movie?api_key=${API_KEY}&with_genres=99&sort_by=popularity.desc&language=pt-BR`
-        };
-
-        async function fetchMovies(category, elementId) {
-            const container = document.getElementById(elementId);
+        async function fetchMovies() {
+            const container = document.getElementById('main-row');
             try {
-                const res = await fetch(`${BASE_URL}${requests[category]}`);
+                const res = await fetch(`${BASE_URL}${requestUrl}`);
                 const data = await res.json();
-                
-                container.innerHTML = ''; // Limpa carregamento
+                container.innerHTML = ''; 
 
                 data.results.forEach(movie => {
                     const poster = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : 'https://via.placeholder.com/300x450';
@@ -89,37 +251,23 @@
                                     <i class="fas fa-star star-icon"></i>
                                     <span class="rating-num">${rating}</span>
                                 </div>
-                                <h4>${truncateText(movie.title, 25)}</h4>
+                                <h4>${movie.title.length > 20 ? movie.title.substring(0, 20) + '...' : movie.title}</h4>
                                 <div class="card-buttons">
-                                    <a href="#" class="btn-card-trailer"><i class="fas fa-play"></i> Trailer</a>
-                                    <button class="btn-card-info"><i class="fas fa-info-circle"></i></button>
+                                    <a href="#" class="btn-card-trailer">Trailer</a>
+                                    <button class="btn-card-info">i</button>
                                 </div>
                             </div>
                         </div>
                     `;
                     container.innerHTML += cardHTML;
                 });
-
-            } catch (error) {
-                console.error("Erro API:", error);
-            }
+            } catch (error) { console.error("Erro API:", error); }
         }
 
-        function truncateText(text, length) {
-            if (text.length <= length) return text;
-            return text.substring(0, length) + '...';
-        }
-
-        // Função de Scroll Lateral
-        function scrollShelf(rowId, direction) {
-            const row = document.getElementById(rowId + '-row');
-            const scrollAmount = 600;
-            row.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        }
-
+        function scrollShelf(id, dir) { document.getElementById(id+'-row').scrollBy({left: dir*600, behavior:'smooth'}); }
+        
         // Iniciar
-        fetchMovies('scifi', 'scifi-row');
-        fetchMovies('docs', 'docs-row');
+        fetchMovies();
     </script>
 </body>
 </html>
