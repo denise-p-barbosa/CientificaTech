@@ -373,14 +373,14 @@ footer {
            40% (Meio-baixo): Laranja transparente suavizando.
            100% (Topo): Totalmente transparente (para ver a imagem).
         */
-        linear-gradient(to top, 
+        /* linear-gradient(to top, 
             rgb(13 14 14 / 95%) 0%,     /* Base Escura (Quase preto) */
             rgb(201 84 26 / 50%) 40%,   /* Laranja no meio do caminho */
             rgba(0,0,0,0) 100%          /* Transparente no topo */
-        ),
-        
+        /* ), */
+         
         /* Sua imagem de fundo */
-        url('https://cdn.pixabay.com/photo/2016/12/29/18/44/background-1939128_1280.jpg');
+        url('https://wallpapers.com/images/hd/dark-space-wallpaper-kzwzjwusv95m556b.jpg');
     
     background-size: cover;
     background-position: center;
@@ -397,46 +397,71 @@ footer {
     
     border: 1px solid rgba(255, 200, 150, 0.1); 
 }
+/* Container do título */
 .orange-header {
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
 }
 
-/* --- TÍTULO GERAL (Parte "Sem Achismo") --- */
+/* O Título Principal */
 .box-title {
-    font-size: 2.2rem;
-    color: #ffffff !important; /* Branco puro */
-    margin-bottom: 25px;
-    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;      /* Tamanho grande */
+    color: #0c0c0c;         /* Branco puro */
+    font-weight: 300;       /* Fonte MAIS FINA (Light) para tirar a "grosseira" */
     text-transform: uppercase;
-    /* Sombra leve para destacar do fundo escuro */
-    text-shadow: 0 4px 8px rgba(0,0,0,0.6); 
+    letter-spacing: 2px;    /* Espaçamento elegante entre letras */
+    margin-bottom: 15px;
+    line-height: 1.2;
+    /* text-shadow: 0 2px 10px rgba(0,0,0,0.5);  */
 }
 
-/* --- DESTAQUE ESPECÍFICO (Parte "Só notícias de verdade") --- */
+/* O Destaque "Só notícias de verdade" */
 .highlight-text {
-    background-color: #FFF8E1; /* Fundo Creme/Laranja */
-    color: var(--primary-color); /* Texto Azul Escuro */
+    /* --- FONTE DE NOTÍCIA (Estilo Jornal) --- */
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 900;       /* Extra Negrito */
+    letter-spacing: -1px;   /* Letras mais juntas para impacto */
     
-    padding: 5px 15px;      /* Espaço interno */
-    border-radius: 8px;     /* Cantos arredondados */
-    display: inline-block;  /* Garante que o fundo envolva o texto corretamente */
-    text-shadow: none;      /* Sem sombra dentro da caixa */
-    margin-left: 10px;      /* Um espacinho do traço "—" */
-    transform: skew(-5deg); /* (Opcional) Dá uma leve inclinada estilosa "tech" */
+    margin-left: 10px;
+    
+    /* --- COR SÓLIDA ESCURA (Sem Gradiente) --- */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: initial;
+    
+    color: #1a1a1a; /* Cinza Quase Preto (Dark) */
+    
+    display: inline-block;
+    transform: none;
 }
 
-/* --- SUBTÍTULO (Bem visível) --- */
+/* Subtítulo (Refinado) */
 .box-subtitle {
-    font-size: 1.2rem;
-    color: #ffffff !important; /* Branco total */
-    font-weight: 500;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9) !important; /* Branco levemente transparente */
+    font-weight: 400;       /* Peso normal */
     line-height: 1.6;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    text-shadow: 0 2px 4px rgba(0,0,0,1); /* Sombra preta forte para leitura */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- AJUSTE MOBILE (Para não quebrar no celular) --- */
+@media (max-width: 768px) {
+    .box-title {
+        font-size: 1.6rem; /* Diminui no celular */
+        display: flex;
+        flex-direction: column; /* Coloca um em cima do outro */
+        gap: 5px;
+    }
+    
+    .highlight-text {
+        margin-left: 0;
+        /* No celular, removemos o traço se houver no HTML, ou apenas alinhamos */
+    }
 }
 
 
@@ -805,6 +830,28 @@ footer {
 /* SEÇÃO PROMOÇÃO GAMER (ESTILO NUBANK)      */
 /* ========================================= */
 
+/* ========================================= */
+/* BOTÃO STEAM (FORMATO DELICADO + COR AZUL) */
+/* ========================================= */
+
+/* Botão Steam (Formato IDÊNTICO ao botão filmes, apenas cor Azul) */
+.btn-steam-blue {
+    background-color: #16A0FF; /* Roxo mais fechado "Empresarial" */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px; /* Bem redondo (Pílula) */
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(37 70 129 / 64%);
+}
+
+.btn-steam-blue:hover {
+    background-color: #1B2839;
+    transform: translateY(-2px);
+}
+
 .promo-gamer-wrapper {
     background-color: #f5f5f7; /* Fundo cinza claro igual do print */
     border-radius: 24px;       /* Bordas bem arredondadas */
@@ -846,23 +893,7 @@ footer {
     line-height: 1.6;
 }
 
-/* Botão Roxo (Estilo Nubank) */
-.btn-nubank-purple {
-    background-color: #820AD1; /* Roxo Nubank */
-    color: white;
-    padding: 15px 35px;
-    border-radius: 30px; /* Redondo estilo pílula */
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: inline-block;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 5px 15px rgba(130, 10, 209, 0.3);
-}
 
-.btn-nubank-purple:hover {
-    background-color: #6D06B0;
-    transform: translateY(-3px);
-}
 
 /* --- LADO DIREITO (CELULAR) --- */
 .promo-visual-right {
@@ -997,7 +1028,7 @@ footer {
 
 /* Botão Roxo (Igual da referência) */
 .btn-movie-purple {
-    background-color: #702581; /* Roxo mais fechado "Empresarial" */
+    background-color: #E2B616; /* Roxo mais fechado "Empresarial" */
     color: white;
     padding: 15px 30px;
     border-radius: 50px; /* Bem redondo (Pílula) */
@@ -1009,7 +1040,7 @@ footer {
 }
 
 .btn-movie-purple:hover {
-    background-color: #5a1c68;
+    background-color: #C11119;
     transform: translateY(-2px);
 }
 
@@ -1120,4 +1151,158 @@ footer {
     .movie-ticket-card {
         right: 15%; /* Ajuste para não sair da tela no mobile */
     }
+}
+
+/* ========================================= */
+/* MOCKUPS: MONITOR GAMER E SMART TV         */
+/* ========================================= */
+
+/* --- 1. MONITOR PC GAMER --- */
+.pc-wrapper {
+    position: relative;
+    z-index: 2;
+    /* Inclinação leve para dar estilo */
+    transform: rotateY(-10deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a base com o monitor */
+}
+
+.pc-wrapper:hover {
+    transform: scale(1.02); /* Aproxima ao passar o mouse */
+}
+
+/* A Moldura da Tela */
+.pc-monitor {
+    width: 380px;      /* Bem largo */
+    height: 220px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 8px;      /* Borda do monitor */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* A Tela em si */
+.pc-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.pc-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* O Pescoço do suporte */
+.pc-stand-neck {
+    width: 40px;
+    height: 30px;
+    background: #222;
+    margin-top: -5px; /* Entra um pouco no monitor */
+    z-index: -1;
+}
+
+/* A Base do suporte */
+.pc-stand-base {
+    width: 120px;
+    height: 15px;
+    background: #111;
+    border-radius: 20px 20px 0 0; /* Arredondado em cima */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Ajuste do Cartão Flutuante para o PC */
+.pc-decor {
+    top: -10px;
+    right: 0;
+    transform: rotate(15deg);
+}
+
+
+/* --- 2. SMART TV 4K --- */
+.tv-wrapper {
+    position: relative;
+    z-index: 2;
+    transform: rotate(-3deg); /* Leve inclinação */
+    transition: transform 0.5s ease;
+}
+
+.tv-wrapper:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* Moldura da TV (Bordas mais finas que o monitor) */
+.tv-frame {
+    width: 360px;
+    height: 210px;
+    background: #111;
+    border: 3px solid #333; /* Moldura metálica */
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.tv-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.tv-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Pés da TV */
+.tv-feet {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px; /* Distância dos pés das bordas */
+    margin-top: -2px;
+}
+
+.tv-foot {
+    width: 10px;
+    height: 25px;
+    background: #222;
+}
+
+.tv-foot.left { transform: skewX(20deg); }  /* Pé tortinho pra esquerda */
+.tv-foot.right { transform: skewX(-20deg); } /* Pé tortinho pra direita */
+
+/* Ajuste do Ingresso para ficar atrás da TV */
+.tv-ticket-pos {
+    top: -20px;
+    right: -20px;
+    transform: rotate(10deg);
+}
+
+/* --- RESPONSIVIDADE (Ajuste para Celular) --- */
+@media (max-width: 768px) {
+    .pc-monitor, .tv-frame {
+        width: 280px; /* Reduz tamanho no celular */
+        height: 160px;
+    }
+    .pc-stand-base { width: 80px; }
+    .tv-feet { padding: 0 20px; }
+    
+    .pc-decor, .tv-ticket-pos {
+        top: -30px;
+        right: 0;
+    }
+}
+
+/* Classe para o texto riscado (Rejeitado) */
+.rejected {
+    text-decoration: line-through;        /* Cria o risco no meio */
+    text-decoration-color: #f02703;       /* Cor do risco: Vermelho (para indicar erro/proibido) */
+    text-decoration-thickness: 3px;       /* Espessura do risco para ficar bem visível */
+    opacity: 0.6;                         /* Deixa o texto meio "apagado" */
+    font-style: italic;                   /* Opcional: itálico reforça que é algo "passado" */
 }
