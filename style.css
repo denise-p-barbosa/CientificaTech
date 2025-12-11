@@ -1497,3 +1497,234 @@ footer {
         padding: 0 20px;
     }
 }
+
+/* ========================================= */
+/* PÁGINA CINE CIÊNCIA (ESTILO PRIME VIDEO)  */
+/* ========================================= */
+
+.cine-body {
+    background-color: #0F171E; /* O Azul/Preto clássico do Prime */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- HERO BANNER (Destaque Topo) --- */
+.cine-hero {
+    height: 70vh;
+    background: url('https://image.tmdb.org/t/p/original/8rpDcsfLJypbO6vREc05475qEv4.jpg') center/cover no-repeat;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.hero-gradient {
+    width: 100%;
+    height: 100%;
+    /* Degradê para o texto ficar legível e fundir com o site */
+    background: linear-gradient(to right, #0F171E 0%, rgba(15,23,30,0.6) 50%, rgba(15,23,30,0) 100%),
+                linear-gradient(to top, #0F171E 0%, transparent 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.cine-hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.tag-hero {
+    color: #00A8E1; /* Azul Prime */
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.cine-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.hero-buttons { display: flex; gap: 15px; }
+.btn-play {
+    background-color: #0F79AF; /* Azul Botão */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.btn-info {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+/* --- PRATELEIRAS (CARROSSEL) --- */
+.cine-shelf {
+    padding: 20px 5%;
+    position: relative;
+}
+
+.shelf-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+.highlight-blue { color: #00A8E1; }
+
+.shelf-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.movie-row {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.movie-row::-webkit-scrollbar { display: none; }
+
+/* SETAS LATERAIS DO CARROSSEL */
+.shelf-arrow {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    height: 100px;
+    width: 40px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 2rem;
+    opacity: 0; /* Escondido até passar o mouse */
+    transition: opacity 0.3s;
+}
+.shelf-wrapper:hover .shelf-arrow { opacity: 1; }
+.shelf-arrow.left { left: 0; }
+.shelf-arrow.right { right: 0; }
+
+/* --- CARD DO FILME (Igual ao Print) --- */
+.prime-card {
+    min-width: 220px;
+    max-width: 220px;
+    background-color: #1A1D29; /* Fundo do card */
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.prime-card:hover {
+    transform: scale(1.05);
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* PÔSTER */
+.poster-area {
+    position: relative;
+    height: 330px;
+    width: 100%;
+}
+.poster-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botão "+" no topo esquerdo */
+.add-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(30,30,30,0.8);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INFO ABAIXO */
+.movie-info {
+    padding: 15px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.star-icon { color: #FFA41C; font-size: 0.8rem; } /* Estrela Amarela Amazon */
+.rating-num { color: #8197a4; font-size: 0.9rem; font-weight: bold; }
+
+.prime-card h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botões do Card */
+.card-buttons {
+    display: flex;
+    gap: 10px;
+}
+.btn-card-trailer {
+    flex: 1;
+    background: #425265;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+.btn-card-trailer:hover { background: #5a6b7c; }
+
+.btn-card-info {
+    background: transparent;
+    border: 2px solid #425265;
+    color: #ccc;
+    width: 35px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cine-hero h1 { font-size: 2.5rem; }
+    .prime-card { min-width: 160px; max-width: 160px; }
+    .poster-area { height: 240px; }
+}

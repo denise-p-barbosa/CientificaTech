@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Ciência | CientificaTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="cine-body">
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">CineTech</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Voltar ao Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cine-hero">
+        <div class="hero-gradient">
+            <div class="cine-hero-content">
+                <span class="tag-hero">TOP 1 DA SEMANA</span>
+                <h1>Oppenheimer</h1>
+                <p class="hero-desc">A história do físico J. Robert Oppenheimer e seu papel no desenvolvimento da bomba atômica.</p>
+                <div class="hero-buttons">
+                    <button class="btn-play"><i class="fas fa-play"></i> Assistir Trailer</button>
+                    <button class="btn-info"><i class="fas fa-info-circle"></i> Mais Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cine-shelf">
+        <h3 class="shelf-title">Principais escolhas de <span class="highlight-blue">Sci-Fi & Física</span></h3>
+        <div class="shelf-wrapper">
+            <button class="shelf-arrow left" onclick="scrollShelf('scifi', -1)">&#10094;</button>
+            <div class="movie-row" id="scifi-row">
+                <p style="color:#666; padding:20px;">Carregando filmes...</p>
+            </div>
+            <button class="shelf-arrow right" onclick="scrollShelf('scifi', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="cine-shelf">
+        <h3 class="shelf-title">Documentários sobre <span class="highlight-blue">Espaço & Tecnologia</span></h3>
+        <div class="shelf-wrapper">
+            <button class="shelf-arrow left" onclick="scrollShelf('docs', -1)">&#10094;</button>
+            <div class="movie-row" id="docs-row">
+                </div>
+            <button class="shelf-arrow right" onclick="scrollShelf('docs', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        const API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb'; // Chave pública de teste TMDB
+        const BASE_URL = 'https://api.themoviedb.org/3';
+        const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+
+        // Gêneros: 878 = Sci-Fi, 99 = Documentário
+        const requests = {
+            scifi: `/discover/movie?api_key=${API_KEY}&with_genres=878&sort_by=vote_average.desc&vote_count.gte=1000&language=pt-BR`,
+            docs: `/discover/movie?api_key=${API_KEY}&with_genres=99&sort_by=popularity.desc&language=pt-BR`
+        };
+
+        async function fetchMovies(category, elementId) {
+            const container = document.getElementById(elementId);
+            try {
+                const res = await fetch(`${BASE_URL}${requests[category]}`);
+                const data = await res.json();
+                
+                container.innerHTML = ''; // Limpa carregamento
+
+                data.results.forEach(movie => {
+                    const poster = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : 'https://via.placeholder.com/300x450';
+                    const rating = movie.vote_average.toFixed(1);
+
+                    const cardHTML = `
+                        <div class="prime-card">
+                            <div class="poster-area">
+                                <img src="${poster}" alt="${movie.title}">
+                                <button class="add-btn"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <div class="movie-info">
+                                <div class="rating-row">
+                                    <i class="fas fa-star star-icon"></i>
+                                    <span class="rating-num">${rating}</span>
+                                </div>
+                                <h4>${truncateText(movie.title, 25)}</h4>
+                                <div class="card-buttons">
+                                    <a href="#" class="btn-card-trailer"><i class="fas fa-play"></i> Trailer</a>
+                                    <button class="btn-card-info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += cardHTML;
+                });
+
+            } catch (error) {
+                console.error("Erro API:", error);
+            }
+        }
+
+        function truncateText(text, length) {
+            if (text.length <= length) return text;
+            return text.substring(0, length) + '...';
+        }
+
+        // Função de Scroll Lateral
+        function scrollShelf(rowId, direction) {
+            const row = document.getElementById(rowId + '-row');
+            const scrollAmount = 600;
+            row.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        // Iniciar
+        fetchMovies('scifi', 'scifi-row');
+        fetchMovies('docs', 'docs-row');
+    </script>
+</body>
+</html>
