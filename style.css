@@ -2123,3 +2123,107 @@ footer {
     .pick-arrow { display: none; } /* Usa o dedo no celular */
     .user-picks-carousel-wrapper { padding: 0; }
 }
+
+/* ========================================= */
+/* TEMAS DAS LOJAS (BORDAS + BOTÕES + PREÇO) */
+/* ========================================= */
+
+/* --- 1. INSTANT GAMING (Laranja) --- */
+.game-deal-card.theme-instant {
+    border: 1px solid rgba(255, 102, 0, 0.4); /* Borda Externa */
+    background: linear-gradient(to bottom, #1a1d26 0%, rgba(255, 85, 0, 0.05) 100%);
+}
+
+/* Fundo do Preço (Laranja transparente) */
+.game-deal-card.theme-instant .pricing-area {
+    background-color: rgba(255, 85, 0, 0.15); 
+    border: 1px solid rgba(255, 85, 0, 0.2);
+}
+
+/* Botão (Degradê Laranja) */
+.game-deal-card.theme-instant .full-width-btn {
+    background: linear-gradient(to bottom, #FF8C00 0%, #cc5200 100%);
+    box-shadow: 0 4px 10px rgba(204, 82, 0, 0.4);
+    border: none;
+}
+.game-deal-card.theme-instant .full-width-btn:hover {
+    background: linear-gradient(to bottom, #ffa333 0%, #e65c00 100%);
+}
+
+/* Badge (Etiqueta) */
+.game-deal-card.theme-instant .platform-badge {
+    background-color: #ff6600;
+    color: white;
+}
+
+
+/* --- 2. NUUVEM (Azul Royal) --- */
+.game-deal-card.theme-nuuvem {
+    border: 1px solid rgba(38, 89, 255, 0.4);
+    background: linear-gradient(to bottom, #1a1d26 0%, rgba(38, 89, 255, 0.05) 100%);
+}
+
+/* Fundo do Preço (Azul transparente) */
+.game-deal-card.theme-nuuvem .pricing-area {
+    background-color: rgba(38, 89, 255, 0.15);
+    border: 1px solid rgba(38, 89, 255, 0.2);
+}
+
+/* Botão (Degradê Azul Royal) */
+.game-deal-card.theme-nuuvem .full-width-btn {
+    background: linear-gradient(to bottom, #4d79ff 0%, #0033cc 100%);
+    box-shadow: 0 4px 10px rgba(0, 51, 204, 0.4);
+    border: none;
+}
+.game-deal-card.theme-nuuvem .full-width-btn:hover {
+    background: linear-gradient(to bottom, #668cff 0%, #1a4cd9 100%);
+}
+
+/* Badge */
+.game-deal-card.theme-nuuvem .platform-badge {
+    background-color: #2659ff;
+    color: white;
+}
+
+
+/* --- 3. EPIC GAMES (Preto/Cinza Minimalista) --- */
+.game-deal-card.theme-epic {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(to bottom, #1a1d26 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+/* Fundo do Preço (Cinza claro) */
+.game-deal-card.theme-epic .pricing-area {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Botão (Preto Fosco Elegante) */
+.game-deal-card.theme-epic .full-width-btn {
+    background: linear-gradient(to bottom, #444 0%, #111 100%);
+    border: 1px solid #555;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.game-deal-card.theme-epic .full-width-btn:hover {
+    background: linear-gradient(to bottom, #666 0%, #222 100%);
+}
+
+/* Badge */
+.game-deal-card.theme-epic .platform-badge {
+    background-color: #111;
+    border: 1px solid #555;
+    color: white;
+}
+
+
+/* --- 4. STEAM (Padrão - Azul Ciano) --- */
+/* Se não colocar tema nenhum, ele usa o padrão, mas se quiser forçar: */
+.game-deal-card.theme-steam {
+    border: 1px solid rgba(102, 192, 244, 0.3);
+}
+
+.game-deal-card.theme-steam .pricing-area {
+    background-color: rgba(102, 192, 244, 0.1);
+    border: 1px solid rgba(102, 192, 244, 0.2);
+}
+/* O botão da Steam já é o padrão (.btn-steam-blue), não precisamos sobrescrever */
