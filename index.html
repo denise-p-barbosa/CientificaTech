@@ -102,41 +102,79 @@
     <hr class="divider">
 
     <section id="conteudo" class="container section-block">
-        <h2 class="main-title">Biblioteca de Conteúdo</h2>
-        <p class="subtitle">Navegue pelas áreas do conhecimento.</p>
+        
+        <div class="nubank-wrapper">
+            
+            <div class="nubank-left">
+                <h2 class="nubank-title">Explore nossa<br>Biblioteca</h2>
+                <p class="nubank-text">
+                    Navegue por trilhas de conhecimento organizadas. 
+                    Da física básica à tecnologia de ponta.
+                </p>
+                
+                <div class="nubank-controls">
+                    <button class="nubank-arrow" onclick="scrollLibrary(-1)">&#10094;</button>
+                    <button class="nubank-arrow" onclick="scrollLibrary(1)">&#10095;</button>
+                </div>
+            </div>
 
-        <div class="library-grid">
-            <div class="lib-category">
-                <h4>⚛️ Engenharia Física</h4>
-                <ul>
-                    <li><a href="#">Mecânica Clássica</a></li>
-                    <li><a href="#">Eletromagnetismo</a></li>
-                    <li><a href="#">Física Moderna</a></li>
-                </ul>
-            </div>
-            <div class="lib-category">
-                <h4>🤖 Tecnologia</h4>
-                <ul>
-                    <li><a href="#">Inteligência Artificial</a></li>
-                    <li><a href="#">Novos Dispositivos</a></li>
-                </ul>
-            </div>
-            <div class="lib-category">
-                <h4>🎓 UFV – Vida Acadêmica</h4>
-                <ul>
-                    <li><a href="#">Relatos de Alunos</a></li>
-                    <li><a href="#">Dicas de Sobrevivência</a></li>
-                </ul>
-            </div>
-            <div class="lib-category highlight-cat">
-                <h4>🛡️ Desmistificando</h4>
-                <ul>
-                    <li><a href="#">Por que o mundo NÃO é plano</a></li>
-                    <li><a href="#">O mito do aquecimento global</a></li>
-                </ul>
+            <div class="nubank-right carousel-container" id="libraryCarousel">
+                
+                <a href="#" class="gamer-card card-physics">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2005/2005021.png" alt="Ícone" class="card-icon">
+                        <h3>Engenharia Física</h3>
+                        <p>Mecânica e Modelagem.</p>
+                        <span class="card-tag">Acessar</span>
+                    </div>
+                </a>
+
+                <a href="#" class="gamer-card card-tech">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4202/4202831.png" alt="Ícone" class="card-icon">
+                        <h3>Tecnologia & IA</h3>
+                        <p>Tendências e Hardware.</p>
+                        <span class="card-tag">Acessar</span>
+                    </div>
+                </a>
+
+                <a href="#" class="gamer-card card-ufv">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281329.png" alt="Ícone" class="card-icon">
+                        <h3>Vida Acadêmica</h3>
+                        <p>Dicas de sobrevivência.</p>
+                        <span class="card-tag">Acessar</span>
+                    </div>
+                </a>
+
+                <a href="#" class="gamer-card card-myth">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9630/9630256.png" alt="Ícone" class="card-icon">
+                        <h3>Desmistificando</h3>
+                        <p>Ciência vs Fake News.</p>
+                        <span class="card-tag">Acessar</span>
+                    </div>
+                </a>
+
+                <a href="#" class="gamer-card card-physics">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933861.png" alt="Ícone" class="card-icon">
+                        <h3>Laboratórios</h3>
+                        <p>Práticas experimentais.</p>
+                        <span class="card-tag">Acessar</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
+
+
     <hr class="divider">
 
     <section id="recomendacoes" class="container section-block">
@@ -352,6 +390,17 @@
 
     // INICIAR
     loadContent();
+</script>
+
+<script>
+    function scrollLibrary(direction) {
+        const container = document.getElementById('libraryCarousel');
+        const scrollAmount = 260; // Tamanho do card + espaço
+        container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
 </script>
 
 

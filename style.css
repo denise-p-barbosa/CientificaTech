@@ -212,9 +212,101 @@ ul { list-style: none; }
 /* 8. ESTILOS DE OUTRAS PÁGINAS      */
 /* ========================================= */
 /* Biblioteca */
-.library-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-.lib-category h4 { margin-bottom: 15px; color: var(--primary-color); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-.highlight-cat { background: #e8f4f8; padding: 15px; border-radius: 8px; }
+ /* ========================================= */
+/* BIBLIOTECA ESTILO GAMER (NOVO)            */
+/* ========================================= */
+
+.library-grid-gamer {
+    display: grid;
+    /* Cria colunas automáticas que se ajustam */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* O CARTÃO BASE */
+.gamer-card {
+    position: relative;
+    height: 220px; /* Altura fixa */
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Efeito Hover: Sobe e aumenta sombra */
+.gamer-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+/* --- CORES DOS CARTÕES --- */
+.card-physics { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.card-tech { background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%); }
+.card-ufv { background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%); }
+.card-myth { background: linear-gradient(135deg, #232526 0%, #414345 100%); }
+
+/* Textura sutil */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* CONTEÚDO */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    transition: transform 0.3s;
+}
+
+.gamer-card:hover .card-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.gamer-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.gamer-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* ETIQUETA "ACESSAR" */
+.card-tag {
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(5px);
+}
 
 /* Setup & Produtos */
 .product-card { background: var(--white); padding: 15px; text-align: center; border: 1px solid #eee; border-radius: 8px; }
@@ -594,5 +686,117 @@ footer {
         /* Reduz um pouquinho a largura do card no celular para ver que tem mais ao lado */
         min-width: 260px; 
         max-width: 260px;
+    }
+}
+
+/* ========================================= */
+/* LAYOUT SPLIT (ESTILO NUBANK)              */
+/* ========================================= */
+
+.nubank-wrapper {
+    display: flex;
+    align-items: center; /* Alinha verticalmente no centro */
+    gap: 40px;           /* Espaço entre o texto e o carrossel */
+    padding: 20px 0;
+}
+
+/* --- LADO ESQUERDO (Texto e Botões) --- */
+.nubank-left {
+    flex: 0 0 300px; /* Largura fixa para o texto (300px) */
+    max-width: 300px;
+    text-align: left;
+}
+
+.nubank-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.nubank-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Container dos Botões (Setinhas) */
+.nubank-controls {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+/* Estilo das Setas (Cinza claro igual Nubank) */
+.nubank-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f2f5; /* Cinza bem clarinho */
+    color: var(--primary-color);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nubank-arrow:hover {
+    background-color: var(--accent-color); /* Fica azul no hover */
+    color: white;
+    transform: scale(1.1);
+}
+
+/* --- LADO DIREITO (Carrossel) --- */
+.nubank-right {
+    flex: 1; /* Ocupa todo o espaço restante */
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Permite rolagem lateral */
+    padding: 20px 5px;
+    scroll-snap-type: x mandatory;
+    
+    /* Esconde barra de rolagem */
+    scrollbar-width: none;
+}
+.nubank-right::-webkit-scrollbar { display: none; }
+
+/* Ajuste nos Cards para funcionarem nesse layout */
+.nubank-right .gamer-card {
+    min-width: 240px; /* Um pouco menor para caber mais */
+    max-width: 240px;
+    height: 280px;    /* Cards mais verticais estilo Nubank */
+    flex: 0 0 auto;   /* Não encolher */
+    scroll-snap-align: start;
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 900px) {
+    .nubank-wrapper {
+        flex-direction: column; /* Empilha: Texto em cima, Cards embaixo */
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nubank-left {
+        flex: auto;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinha texto à esquerda */
+    }
+    
+    .nubank-controls {
+        display: none; /* Esconde setas no celular (usa o dedo) */
+    }
+
+    .nubank-title { font-size: 2rem; }
+    
+    .nubank-right {
+        width: 100%; /* Carrossel ocupa tela toda */
     }
 }
