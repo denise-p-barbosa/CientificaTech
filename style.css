@@ -1306,3 +1306,194 @@ footer {
     opacity: 0.6;                         /* Deixa o texto meio "apagado" */
     font-style: italic;                   /* Opcional: itálico reforça que é algo "passado" */
 }
+
+
+
+
+
+/* ========================================= */
+/* PÁGINA DE OFERTAS GAMES (NOVA)            */
+/* ========================================= */
+
+/* Fundo escuro específico para a página de games */
+.gamer-page-body {
+    background-color: #0b0d12; /* Quase preto */
+    color: #e0e0e0;
+}
+
+/* Título da página */
+.gamer-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #0b0d12 0%, #151922 100%);
+}
+.gamer-hero h1 {
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.gamer-hero p { color: #888; font-size: 1.2rem; }
+
+/* ========================================= */
+/* PÁGINA DE OFERTAS (LAYOUT EM GRADE)       */
+/* ========================================= */
+
+/* Container da Grade (Onde você tinha a dúvida) */
+.game-list-section {
+    padding-bottom: 80px;
+    max-width: 1200px; /* Largura maior para caber 3 cards */
+    margin: 0 auto;    /* Centraliza na tela */
+    
+    /* AQUI MUDA PARA GRID (LADO A LADO) */
+    display: grid;
+    /* Cria colunas automáticas: Se couber, coloca 3, se não, coloca 2 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espaço entre os cards */
+}
+
+/* O CARTÃO DO JOGO (Agora a foto fica em CIMA) */
+.game-deal-card {
+    background-color: #1a1d26;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    /* Mudamos de ROW para COLUMN para a foto ficar em cima */
+    display: flex;
+    flex-direction: column; 
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s, border-color 0.3s;
+    height: 100%; /* Garante que todos tenham mesma altura */
+}
+
+.game-deal-card:hover {
+    transform: translateY(-10px); /* Sobe mais ao passar o mouse */
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* --- PARTE 1: IMAGEM (Agora fica no topo) --- */
+.deal-image {
+    width: 100%;
+    height: 200px; /* Altura fixa da capa */
+    position: relative;
+    overflow: hidden;
+    margin: 0; /* Removemos margens negativas antigas */
+    clip-path: none; /* Removemos o corte diagonal */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.deal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.game-deal-card:hover .deal-image img {
+    transform: scale(1.1);
+}
+
+/* --- PARTE 2: INFORMAÇÕES (Agora fica embaixo) --- */
+.deal-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ocupa todo o espaço restante */
+}
+
+/* Etiqueta da Plataforma */
+.platform-badge {
+    align-self: flex-start; /* Alinha à esquerda */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+.platform-badge.steam { background-color: #171a21; border: 1px solid #2a475e; color: #66c0f4; }
+.platform-badge.epic { background-color: #2a2a2a; border: 1px solid #444; }
+
+/* Título */
+.game-title {
+    font-size: 1.4rem; /* Um pouco menor para caber no card */
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Descrição */
+.game-desc {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    
+    /* Truque para cortar texto se for muito longo (3 linhas max) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Área de Preço e Botão (Rodapé do Card) */
+.pricing-area {
+    margin-top: auto; /* Empurra isso para o final do card */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: rgba(0,0,0,0.3); /* Fundo mais escuro */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.discount-tag {
+    background-color: #4c6b22;
+    color: #a4d007;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.prices {
+    text-align: right;
+}
+
+.old-price {
+    font-size: 0.8rem;
+    color: #777;
+    text-decoration: line-through;
+    display: block;
+}
+
+.new-price {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Botão */
+.full-width-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .game-list-section {
+        grid-template-columns: 1fr; /* No celular volta a ser 1 por linha */
+        padding: 0 20px;
+    }
+}
