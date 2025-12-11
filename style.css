@@ -537,3 +537,62 @@ footer {
     background-color: var(--primary-color); /* Azul Escuro ao passar mouse */
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+/* ========================================= */
+/* AJUSTE MOBILE PARA A SEÇÃO DE NOTÍCIAS    */
+/* (Adicione isso no final do seu CSS)       */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Aumentar espaço lateral e diminuir o interno da caixa */
+    .block-highlight-wrapper {
+        padding: 0 10px; /* Menos margem lateral na tela */
+    }
+
+    .orange-box {
+        padding: 30px 15px; /* Reduz de 50px para 30px o espaço interno */
+        border-radius: 15px; /* Arredondamento menor para combinar */
+    }
+
+    /* 2. Ajustar o Título para caber na tela */
+    .box-title {
+        font-size: 1.4rem; /* Fonte menor (era 2.2rem) */
+        line-height: 1.4;  /* Altura da linha para não encavalar */
+        display: flex;     /* Flexbox para organizar */
+        flex-direction: column; /* Coloca um texto em cima do outro */
+        align-items: center;    /* Centraliza tudo */
+        gap: 10px;         /* Espaço entre "Sem Achismo" e o destaque */
+    }
+
+    /* 3. O Destaque "Só notícias de verdade" */
+    .highlight-text {
+        font-size: 1.2rem; /* Tamanho confortável para ler */
+        margin-left: 0;    /* Remove a margem lateral */
+        margin-top: 5px;   /* Um pouco de espaço em cima */
+        white-space: normal; /* Permite que o texto quebre linha se precisar */
+        display: inline-block;
+        width: auto;       /* Deixa o tamanho automático */
+        transform: skew(-5deg); /* Mantém o estilo inclinado */
+    }
+
+    /* 4. Ajustar subtítulo (se você decidir usar no futuro) */
+    .box-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    /* 5. Ajustar o Carrossel para aproveitar a tela toda */
+    .carousel-container {
+        padding-left: 0;
+        padding-right: 0;
+        /* Garante que o card da esquerda comece alinhado */
+        justify-content: flex-start; 
+    }
+    
+    .carousel-card {
+        /* Reduz um pouquinho a largura do card no celular para ver que tem mais ao lado */
+        min-width: 260px; 
+        max-width: 260px;
+    }
+}
