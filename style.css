@@ -2385,13 +2385,46 @@ footer {
 
 /* Responsividade Mobile */
 @media (max-width: 768px) {
-    .hero-deal-banner { min-height: auto; }
-    .hero-deal-overlay {
-        /* No celular, o degradê vem de baixo pra cima para ler o texto */
-        background: linear-gradient(0deg, #0b0d12 20%, rgba(11, 13, 18, 0.8) 60%, rgba(0,0,0,0) 100%);
-        padding: 40px 20px;
-        align-items: flex-end; /* Texto embaixo */
-        height: 500px;
+    
+    /* 1. Forçamos a altura para a imagem aparecer */
+    .hero-deal-banner {
+        min-height: 600px !important; /* Altura fixa para caber imagem + texto */
+        background-position: center center; /* Centraliza a imagem */
     }
-    .hero-deal-content h1 { font-size: 2.5rem; }
+
+    /* 2. Ajustamos o degradê para vir de baixo para cima (Texto no rodapé) */
+    .hero-deal-overlay {
+        background: linear-gradient(to top, 
+            #0b0d12 0%,            /* Preto sólido embaixo (para o texto) */
+            rgba(11, 13, 18, 0.9) 60%, 
+            rgba(0,0,0,0) 100%     /* Transparente em cima (para ver a imagem) */
+        );
+        align-items: flex-end; /* Joga o texto para baixo */
+        padding: 30px 20px;    /* Margens menores */
+    }
+
+    /* 3. Ajuste de tamanho do texto para não estourar a tela */
+    .hero-deal-content {
+        width: 100%;
+        text-align: center; /* Centraliza o texto no celular */
+    }
+
+    .hero-deal-content h1 {
+        font-size: 2.5rem; /* Um pouco menor que no PC */
+        margin-top: 10px;
+    }
+    
+    .hero-desc {
+        border-left: none;    /* Remove a linha vermelha lateral */
+        border-top: 4px solid #ff4757; /* Coloca a linha em cima */
+        padding-left: 0;
+        padding-top: 15px;
+        font-size: 1rem;
+    }
+    
+    .hero-timer {
+        justify-content: center; /* Centraliza o timer */
+        width: 100%;
+        font-size: 0.9rem;
+    }
 }
