@@ -2428,3 +2428,71 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* ========================================= */
+/* TEMAS DE LOJA (AMAZON & MERCADO LIVRE)    */
+/* ========================================= */
+
+/* --- TEMA AMAZON (Laranja e Azul Escuro) --- */
+.product-card.theme-amazon {
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.product-card.theme-amazon:hover {
+    border-color: #ff9900; /* Borda Laranja no Hover */
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.2);
+}
+
+/* Botão Estilo Amazon (Amarelo Ouro) */
+.product-card.theme-amazon .btn-buy {
+    background: linear-gradient(to bottom, #ffd16a 0%, #f7b42c 100%);
+    color: #111; /* Texto preto para leitura */
+    border: 1px solid #c79208;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card.theme-amazon .btn-buy:hover {
+    background: linear-gradient(to bottom, #f7b42c 0%, #e6a00f 100%);
+    cursor: pointer;
+}
+
+/* Detalhe: Preço Amazon (Vermelho Escuro) */
+.product-card.theme-amazon .price {
+    color: #B12704; 
+}
+
+
+/* --- TEMA MERCADO LIVRE (Amarelo e Azul) --- */
+.product-card.theme-ml {
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.product-card.theme-ml:hover {
+    border-color: #ffe600; /* Borda Amarela no Hover */
+    box-shadow: 0 10px 25px rgba(255, 230, 0, 0.3);
+}
+
+/* Botão Estilo Mercado Livre (Azul Vibrante) */
+.product-card.theme-ml .btn-buy {
+    background-color: #3483fa; /* Azul ML */
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.product-card.theme-ml .btn-buy:hover {
+    background-color: #2968c8; /* Azul mais escuro */
+}
+
+/* Detalhe: Preço ML (Verde ou Cinza Escuro) */
+.product-card.theme-ml .price {
+    color: #333; /* Cinza escuro padrão */
+}
+/* Se quiser destacar o parcelamento em verde igual ML */
+.product-card.theme-ml .desc span {
+    color: #00a650;
+    font-weight: bold;
+}
