@@ -50,31 +50,54 @@
     </section>
 
     <div class="container">
-        <section class="hero-deal-banner" style="background-image: url('https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000014724/72ce0a17215521a167c3da579db4cc48a2f7a52eacc81ad985ba20fd6817fdc2');">
+        
+        <div class="hero-slider-wrapper">
             
-            <div class="hero-deal-overlay">
-                <div class="hero-deal-content">
-                    
-                    <span class="urgent-tag">🔥 OPORTUNIDADE ÚNICA</span>
-                    
-                    <h1>Hogwarts Legacy</h1>
-                    
-                    <p class="hero-desc">
-                        A <strong>Epic Games</strong> acaba de liberar inteiramente grátis este jogo incrível. 
-                        Explore Hogwarts no século XIX e defina o destino do mundo bruxo.
-                    </p>
-                    
-                    <div class="hero-timer">
-                        <i class="far fa-clock"></i> A promoção termina <strong>18/12/2025 às 13:00</strong>
-                    </div>
+            <button class="hero-arrow hero-prev" onclick="moveHeroSlide(-1)">&#10094;</button>
+            <button class="hero-arrow hero-next" onclick="moveHeroSlide(1)">&#10095;</button>
 
-                    <div class="scroll-indicator">
-                        👇 Clique no card abaixo para resgatar
+            <div class="hero-slider-track" id="heroTrack">
+
+                <div class="hero-slide" style="background-image: url('https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000014724/72ce0a17215521a167c3da579db4cc48a2f7a52eacc81ad985ba20fd6817fdc2');">
+                    <div class="hero-deal-overlay">
+                        <div class="hero-deal-content">
+                            <span class="urgent-tag">🔥 OPORTUNIDADE ÚNICA</span>
+                            <h1>Hogwarts Legacy</h1>
+                            <p class="hero-desc">
+                                A <strong>Epic Games</strong> liberou este jogo incrível. Explore Hogwarts no século XIX e defina o destino do mundo bruxo.
+                            </p>
+                            <div class="hero-timer">
+                                <i class="far fa-clock"></i> A promoção termina <strong>18/12/2025 às 13:00</strong>
+                            </div>
+                            <div class="scroll-indicator">👇 Clique no card abaixo para resgatar</div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="hero-slide" style="background-image: url('img/bandainamco.png');">
+                    <div class="hero-deal-overlay">
+                        <div class="hero-deal-content">
+                            <span class="urgent-tag" style="background: #0078d4;">🏆 ATÉ 90% DE DESCONTO</span>
+                            <h1>PROMOÇÃO DA DISTRIBUIDORA</h1>
+                            <p class="hero-desc">
+                                 Bandai Namco.
+                            </p>
+                            <div class="hero-timer">
+                                <i class="fas fa-calendar-alt"></i> CONFIRA OS JOGOS EM DESTAQUES
+                            </div>
+                            <div class="scroll-indicator">👇 VER LISTA</div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            
+            <div class="hero-dots">
+                <span class="dot active" onclick="goToHeroSlide(0)"></span>
+                <span class="dot" onclick="goToHeroSlide(1)"></span>
             </div>
 
-        </section>
+        </div>
     </div>
 
 
@@ -134,6 +157,112 @@
             </div>
         </div>
 
+        <div class="game-deal-card theme-steam"> <div class="deal-image">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/678960/capsule_616x353.jpg?t=1701310785" alt="CODE VEIN">
+            </div>
+
+            <div class="deal-info">
+                <div class="platform-badge">
+                    <i class="fas fa-bolt"></i> Steam
+                </div>
+
+                <h2 class="game-title">CODE VEIN</h2>
+                <p class="game-desc">Diante da morte certa, nos erguemos. Monte sua equipe e embarque numa jornada aos confins do inferno para revelar o seu passado e escapar desse pesadelo vivo em CODE VEIN.</p>
+                
+                <div class="pricing-area">
+                    <span class="discount-tag">-85%</span>
+                    <div class="prices">
+                        <span class="old-price">R$ 149,99</span>
+                        <span class="new-price">R$ 22,49</span>
+                    </div>
+                </div>
+
+                <a href="https://store.steampowered.com/app/678960/CODE_VEIN/" class="btn-steam-blue full-width-btn">Ver Oferta</a>
+            </div>
+        </div>
+
+
+
+        <div class="game-deal-card theme-steam"> <div class="deal-image">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/502500/header.jpg?t=1737108523" alt="ACE COMBAT™ 7: SKIES UNKNOWN">
+            </div>
+
+            <div class="deal-info">
+                <div class="platform-badge">
+                    <i class="fas fa-bolt"></i> Steam
+                </div>
+
+                <h2 class="game-title">ACE COMBAT™ 7: SKIES UNKNOWN</h2>
+                <p class="game-desc">Torne-se um às dos ares e cruze céus foto realistas com movimentação completa em 360 graus; abata aeronaves inimigas e experimente a emoção de combates realistas! O combate aéreo nunca esteve melhor!.</p>
+                
+                <div class="pricing-area">
+                    <span class="discount-tag">-92%</span>
+                    <div class="prices">
+                        <span class="old-price">R$ 229,90</span>
+                        <span class="new-price">R$ 18,39</span>
+                    </div>
+                </div>
+
+                <a href="https://store.steampowered.com/app/502500/ACE_COMBAT_7_SKIES_UNKNOWN/" class="btn-steam-blue full-width-btn">Ver Oferta</a>
+            </div>
+        </div>
+
+
+        <div class="game-deal-card theme-steam"> <div class="deal-image">
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/678950/capsule_616x353.jpg?t=1733508969" alt="DRAGON BALL FighterZ">
+            </div>
+
+            <div class="deal-info">
+                <div class="platform-badge">
+                    <i class="fas fa-bolt"></i> Steam
+                </div>
+
+                <h2 class="game-title">DRAGON BALL FighterZ</h2>
+                <p class="game-desc">DRAGON BALL FighterZ nasceu inspirado no que torna a série DRAGON BALL tão querida e famosa: lutas infinitas e espetaculares entre guerreiros poderosos.</p>
+                
+                <div class="pricing-area">
+                    <span class="discount-tag">-84%</span>
+                    <div class="prices">
+                        <span class="old-price">R$ 232,50</span>
+                        <span class="new-price">R$ 37,20</span>
+                    </div>
+                </div>
+
+                <a href=" https://store.steampowered.com/app/678950/DRAGON_BALL_FighterZ/" class="btn-steam-blue full-width-btn">Ver Oferta</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+         <div class="game-deal-card theme-steam"> <div class="deal-image">
+                <img src="https://image.api.playstation.com/vulcan/img/rnd/202107/2321/OANjmLVqpAY2bQ6LAzwzrn8S.jpg" alt="Tales of Arise">
+            </div>
+
+            <div class="deal-info">
+                <div class="platform-badge">
+                    <i class="fas fa-bolt"></i> Steam
+                </div>
+
+                <h2 class="game-title">Tales of Arise</h2>
+                <p class="game-desc">300 anos de tirania. Uma máscara misteriosa. Dor e memórias perdidas.</p>
+                
+                <div class="pricing-area">
+                    <span class="discount-tag">-75%</span>
+                    <div class="prices">
+                        <span class="old-price">R$ 154,90</span>
+                        <span class="new-price">R$ 38,72</span>
+                    </div>
+                </div>
+
+                <a href="https://store.steampowered.com/app/740130/Tales_of_Arise/" class="btn-steam-blue full-width-btn">Ver Oferta</a>
+            </div>
+        </div>
+
+
         <div class="game-deal-card theme-instant"> <div class="deal-image">
                 <img src="https://gaming-cdn.com/img/products/12124/pcover/1920x620/12124.jpg?v=1726816921" alt="The Plucky Squire">
             </div>
@@ -159,6 +288,49 @@
         </div>
 
     </div>
+
+
+    <script>
+    let currentHeroIndex = 0;
+    const heroTrack = document.getElementById('heroTrack');
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.dot');
+
+    function updateHeroSlider() {
+        const width = heroTrack.clientWidth;
+        heroTrack.style.transform = `translateX(-${currentHeroIndex * width}px)`;
+        
+        // Atualiza bolinhas
+        heroDots.forEach(dot => dot.classList.remove('active'));
+        if(heroDots[currentHeroIndex]) heroDots[currentHeroIndex].classList.add('active');
+    }
+
+    function moveHeroSlide(direction) {
+        currentHeroIndex += direction;
+        
+        // Loop infinito (se passar do último, volta pro primeiro)
+        if (currentHeroIndex >= heroSlides.length) {
+            currentHeroIndex = 0;
+        } else if (currentHeroIndex < 0) {
+            currentHeroIndex = heroSlides.length - 1;
+        }
+        
+        updateHeroSlider();
+    }
+
+    function goToHeroSlide(index) {
+        currentHeroIndex = index;
+        updateHeroSlider();
+    }
+
+    // Ajuste automático se redimensionar a janela
+    window.addEventListener('resize', updateHeroSlider);
+
+    // Opcional: Passar automaticamente a cada 5 segundos
+    setInterval(() => {
+        moveHeroSlide(1);
+    }, 5000);
+</script>
 
     <footer>
         <p>&copy; 2024 CientificaTech. Todos os direitos reservados.</p>

@@ -1436,17 +1436,31 @@ footer {
 }
 
 /* Descrição */
+/* DESCRIÇÃO DO JOGO (COM EXPANSÃO AUTOMÁTICA) */
 .game-desc {
-    color: #aaa;
     font-size: 0.9rem;
+    color: #aaa;
     margin-bottom: 20px;
     line-height: 1.5;
     
-    /* Truque para cortar texto se for muito longo (3 linhas max) */
+    /* Configuração padrão: Corta em 3 linhas para ficar bonito */
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 3; /* Mostra apenas 3 linhas */
     -webkit-box-orient: vertical;
     overflow: hidden;
+    height: 4.5em; /* Altura fixa para 3 linhas */
+    
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* MÁGICA: Quando passar o mouse no CARD, o texto expande */
+.game-deal-card:hover .game-desc {
+    -webkit-line-clamp: unset; /* Remove o limite de linhas */
+    height: auto; /* Deixa a altura livre */
+    color: #fff; /* Deixa o texto branco para ler melhor */
+    background: rgba(0,0,0,0.2); /* Um fundinho escuro para destacar */
+    padding: 5px;
+    border-radius: 4px;
 }
 
 /* Área de Preço e Botão (Rodapé do Card) */
@@ -2278,155 +2292,131 @@ footer {
 
 
 /* ========================================= */
-/* BANNER DESTAQUE (HERO DEAL)               */
+/* BANNER SLIDER (HERO GAMES)                */
 /* ========================================= */
 
-.hero-deal-banner {
+/* O Container Principal (Janela que recorta o conteúdo) */
+.hero-slider-wrapper {
     width: 100%;
-    min-height: 450px; /* Altura do banner */
+    min-height: 450px;
     border-radius: 20px;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
     position: relative;
-    overflow: hidden;
-    margin-bottom: 50px; /* Espaço para separar dos cards */
+    overflow: hidden; /* Esconde os slides que estão "do lado" */
+    margin-bottom: 50px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* O Degradê por cima da imagem (Magia Visual) */
-.hero-deal-overlay {
+/* O Trilho que se move */
+.hero-slider-track {
+    display: flex; /* Coloca os slides um ao lado do outro */
     width: 100%;
     height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animação suave */
+}
+
+/* O Slide Individual */
+.hero-slide {
+    min-width: 100%; /* Cada slide ocupa 100% da largura da janela */
+    min-height: 450px;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Botões de Seta (< >) */
+.hero-arrow {
     position: absolute;
-    top: 0;
-    left: 0;
-    /* Degradê: Preto Sólido na Esquerda -> Transparente na Direita */
-    background: linear-gradient(90deg, #0b0d12 0%, rgba(11, 13, 18, 0.9) 40%, rgba(11, 13, 18, 0) 100%);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.hero-arrow:hover { background-color: rgba(0, 0, 0, 0.8); }
+.hero-prev { left: 20px; }
+.hero-next { right: 20px; }
+
+/* Bolinhas de Navegação */
+.hero-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    align-items: center;
-    padding: 60px;
+    gap: 10px;
+    z-index: 10;
+}
+.dot {
+    width: 12px; height: 12px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot.active { background: white; box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+
+
+/* --- MANTIDO: O DESIGN INTERNO DO BANNER (Overlay e Texto) --- */
+/* (Isso é igual ao que você já tinha, apenas aplicado ao slide) */
+
+.hero-deal-overlay {
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+    background: linear-gradient(90deg, #0b0d12 0%, rgba(11, 13, 18, 0.9) 40%, rgba(11, 13, 18, 0) 100%);
+    display: flex; align-items: center; padding: 60px;
 }
 
-.hero-deal-content {
-    max-width: 600px; /* Limita o texto para não cobrir a imagem toda */
-    z-index: 2;
-    color: white;
-}
+.hero-deal-content { max-width: 600px; z-index: 2; color: white; }
 
-/* Etiqueta "Oportunidade Única" */
 .urgent-tag {
-    background-color: #ff4757;
-    color: white;
-    font-weight: 900;
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    display: inline-block;
-    margin-bottom: 20px;
+    background-color: #ff4757; color: white; font-weight: 900; padding: 8px 15px;
+    border-radius: 4px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
+    display: inline-block; margin-bottom: 20px;
     box-shadow: 0 0 20px rgba(255, 71, 87, 0.6);
     animation: pulseRed 2s infinite;
 }
 
+/* Animação e Fontes */
 @keyframes pulseRed {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+    0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); }
 }
 
-/* Título Gigante */
 .hero-deal-content h1 {
-    font-size: 3.5rem; /* Letra bem grande */
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    /* Efeito de texto brilhante */
-    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 20px;
+    text-transform: uppercase; text-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
-/* Descrição */
 .hero-desc {
-    font-size: 1.2rem;
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    border-left: 4px solid #ff4757; /* Linha vermelha ao lado */
-    padding-left: 20px;
+    font-size: 1.2rem; color: #ccc; line-height: 1.6; margin-bottom: 25px;
+    border-left: 4px solid #ff4757; padding-left: 20px;
 }
-
 .hero-desc strong { color: white; }
 
-/* Timer / Data */
 .hero-timer {
-    background: rgba(255,255,255,0.1);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: #ffd700; /* Dourado */
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    margin-bottom: 30px;
+    background: rgba(255,255,255,0.1); display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 20px; border-radius: 50px; font-size: 1rem; color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.3); margin-bottom: 30px;
 }
+.scroll-indicator { font-weight: bold; color: #66c0f4; text-transform: uppercase; font-size: 0.9rem; }
 
-/* Indicador "Clique Abaixo" */
-.scroll-indicator {
-    font-weight: bold;
-    color: #66c0f4;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-/* Responsividade Mobile */
+/* Responsividade Mobile (Mantendo a correção anterior) */
 @media (max-width: 768px) {
-    
-    /* 1. Forçamos a altura para a imagem aparecer */
-    .hero-deal-banner {
-        min-height: 600px !important; /* Altura fixa para caber imagem + texto */
-        background-position: center center; /* Centraliza a imagem */
-    }
-
-    /* 2. Ajustamos o degradê para vir de baixo para cima (Texto no rodapé) */
+    .hero-slide { min-height: 600px; background-position: center; }
     .hero-deal-overlay {
-        background: linear-gradient(to top, 
-            #0b0d12 0%,            /* Preto sólido embaixo (para o texto) */
-            rgba(11, 13, 18, 0.9) 60%, 
-            rgba(0,0,0,0) 100%     /* Transparente em cima (para ver a imagem) */
-        );
-        align-items: flex-end; /* Joga o texto para baixo */
-        padding: 30px 20px;    /* Margens menores */
+        background: linear-gradient(0deg, #0b0d12 20%, rgba(11, 13, 18, 0.8) 60%, rgba(0,0,0,0) 100%);
+        align-items: flex-end; padding: 40px 20px;
     }
-
-    /* 3. Ajuste de tamanho do texto para não estourar a tela */
-    .hero-deal-content {
-        width: 100%;
-        text-align: center; /* Centraliza o texto no celular */
-    }
-
-    .hero-deal-content h1 {
-        font-size: 2.5rem; /* Um pouco menor que no PC */
-        margin-top: 10px;
-    }
-    
-    .hero-desc {
-        border-left: none;    /* Remove a linha vermelha lateral */
-        border-top: 4px solid #ff4757; /* Coloca a linha em cima */
-        padding-left: 0;
-        padding-top: 15px;
-        font-size: 1rem;
-    }
-    
-    .hero-timer {
-        justify-content: center; /* Centraliza o timer */
-        width: 100%;
-        font-size: 0.9rem;
-    }
+    .hero-deal-content { width: 100%; text-align: center; }
+    .hero-deal-content h1 { font-size: 2.5rem; }
+    .hero-desc { border-left: none; border-top: 4px solid #ff4757; padding-top: 15px; padding-left: 0; }
+    .hero-arrow { display: none; } /* Opcional: esconder setas no mobile e usar só swipe se quiser */
 }
 
 /* ========================================= */
