@@ -102,7 +102,24 @@
 
 
 
+<div class="container">
+        <div class="gamer-alert-banner">
+            
+            <div class="alert-icon-box">
+                <i class="fas fa-bell bell-shake"></i>
+            </div>
+            
+            <div class="alert-text-content">
+                <h3>Ative o sininho!</h3>
+                <p>Não perca ofertas e descontos de jogos nas maiores plataformas todos os dias!</p>
+            </div>
 
+            <button class="btn-alert-action" onclick="ativarNotificacoes()">
+                tivar Agora
+            </button>
+            
+        </div>
+    </div>
 
 
 
@@ -330,6 +347,26 @@
     setInterval(() => {
         moveHeroSlide(1);
     }, 5000);
+</script>
+
+<script>
+    // Função que chama o OneSignal
+    function ativarNotificacoes() {
+        // Garante que o OneSignal foi carregado
+        window.OneSignal = window.OneSignal || [];
+        
+        OneSignal.push(function() {
+            // Comando oficial para mostrar o "Slidedown" (o prompt de permissão)
+            OneSignal.Slidedown.promptPush();
+            
+            // Opcional: Verifica se já está inscrito só para avisar (UX melhor)
+            OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+                if (isEnabled) {
+                    alert("Você já está inscrito e vai receber as ofertas! 🚀");
+                }
+            });
+        });
+    }
 </script>
 
     <footer>

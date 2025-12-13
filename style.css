@@ -143,6 +143,101 @@ ul { list-style: none; }
 /* ========================================= */
 
 /* ========================================= */
+/* BANNER DE ALERTA (SININHO GAMER)          */
+/* ========================================= */
+
+.gamer-alert-banner {
+    /* Degradê Roxo para Azul (Estilo Gamer Moderno) */
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin-bottom: 40px; /* Espaço antes dos jogos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho no fundo */
+.gamer-alert-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+/* Ícone do Sino */
+.alert-icon-box {
+    font-size: 2.5rem;
+    background: rgba(255,255,255,0.2);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0; /* Impede o ícone de esmagar no mobile */
+}
+
+/* Animação do Sino Balançando */
+.bell-shake {
+    animation: bellRing 4s infinite ease-in-out;
+    transform-origin: top center;
+}
+
+@keyframes bellRing {
+    0%, 90% { transform: rotate(0); }
+    91% { transform: rotate(15deg); }
+    93% { transform: rotate(-15deg); }
+    95% { transform: rotate(10deg); }
+    97% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}
+
+/* Texto */
+.alert-text-content { flex: 1; z-index: 2; }
+.alert-text-content h3 { font-size: 1.5rem; margin-bottom: 5px; font-weight: 800; text-transform: uppercase; }
+.alert-text-content p { font-size: 1rem; opacity: 0.9; margin: 0; }
+
+/* Botão de Ação */
+.btn-alert-action {
+    background: white;
+    color: #2575fc;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap; /* Texto não quebra linha */
+    z-index: 2;
+    margin-left: 20px;
+}
+
+.btn-alert-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .gamer-alert-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .alert-icon-box { margin-right: 0; margin-bottom: 15px; }
+    .btn-alert-action { margin-left: 0; margin-top: 20px; width: 100%; }
+}
+
+/* ========================================= */
 /* 4. LAYOUT GERAL (GRIDS E TEXTOS)   */
 /* ========================================= */
 .section-block { margin-bottom: 60px; }
@@ -1335,6 +1430,8 @@ footer {
     letter-spacing: 2px;
 }
 .gamer-hero p { color: #888; font-size: 1.2rem; }
+
+
 
 /* ========================================= */
 /* PÁGINA DE OFERTAS (LAYOUT EM GRADE)       */
@@ -3559,3 +3656,4 @@ a.store-card {
         overflow: visible; /* Permite ver as etiquetas flutuantes */
     }
 }
+
