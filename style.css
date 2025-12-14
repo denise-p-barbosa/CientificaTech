@@ -3299,7 +3299,7 @@ a.store-card {
 .va-cards-grid {
     display: grid;
     /* Cria 2 colunas se couber, senão 1 */
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
     gap: 30px;
     padding-bottom: 80px;
 }
