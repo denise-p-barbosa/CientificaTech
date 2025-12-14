@@ -3350,6 +3350,7 @@ a.store-card {
     margin-bottom: 15px;
     line-height: 1.2;
     font-weight: 700;
+    
 }
 
 .va-card-content p {
@@ -3467,6 +3468,9 @@ a.store-card {
     margin: 15px 0;
     line-height: 1.2;
     color: #111;
+    text-align: left !important; /* Força o alinhamento para a esquerda */
+    word-spacing: normal;        /* Reseta qualquer espaçamento estranho entre palavras */
+    letter-spacing: -0.5px;      /* (Opcional) Deixa as letras um pouquinho mais juntas, fica mais moderno */
 }
 
 .article-subtitle {
