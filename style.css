@@ -3676,3 +3676,146 @@ a.store-card {
     }
 }
 
+/* ========================================= */
+/* BANNER PRIME CHANNELS (IMAGEM TOTAL)      */
+/* ========================================= */
+
+.prime-channels-section {
+    background-color: #0F171E;
+    padding: 60px 0;
+    margin-top: 60px;
+    color: white;
+
+    /* 👇 O TRUQUE MÁGICO DO FULL WIDTH 👇 */
+    width: 100vw;           /* Força a largura ser 100% da Janela (Viewport Width) */
+    position: relative;     /* Necessário para o cálculo funcionar */
+    left: 50%;              /* Empurra para o meio */
+    right: 50%;
+    margin-left: -50vw;     /* Puxa de volta para a esquerda negativa */
+    margin-right: -50vw;    /* Puxa de volta para a direita negativa */
+}
+
+.prime-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Lado Esquerdo: Texto */
+.prime-text-col {
+    flex: 0 0 35%;
+    padding-left: 20px;
+}
+
+.prime-text-col h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.prime-text-col p {
+    font-size: 1.2rem;
+    color: #b8c1cc;
+    margin-bottom: 35px;
+    max-width: 90%;
+}
+
+.btn-prime-cta {
+    display: inline-block;
+    background-color: #00A8E1;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+.btn-prime-cta:hover { background-color: #008cb9; }
+
+/* Lado Direito: Grid de Cards */
+.prime-grid-col {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-content: center;
+}
+
+/* O Cartão Individual (O QUADRADO) */
+.channel-card {
+    aspect-ratio: 1 / 1; /* Mantém o formato quadrado */
+    width: 100%;
+    
+    /* Removemos o degradê de fundo, já que a imagem vai cobrir tudo */
+    background: #0F171E; 
+    border-radius: 12px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 0; /* SEM PADDING */
+    
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    overflow: hidden; /* Corta o que sobrar da imagem */
+    position: relative;
+}
+
+/* As Imagens/Logos */
+.channel-card img {
+    width: 100%;
+    height: 100%;
+    
+    /* MUDANÇA PRINCIPAL: 'cover' faz a imagem preencher tudo */
+    object-fit: cover;
+    
+    /* Removemos o padding da imagem também */
+    padding: 0;
+    
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Efeito Hover */
+.channel-card:hover {
+    border-color: #00A8E1;
+    box-shadow: 0 15px 30px rgba(0, 168, 225, 0.3);
+    transform: translateY(-5px);
+    z-index: 2;
+}
+
+.channel-card:hover img {
+    transform: scale(1.1); /* Zoom leve */
+}
+
+/* Responsividade Mobile e Tablet */
+@media (max-width: 1024px) {
+    .prime-wrapper {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+    }
+
+    .prime-text-col {
+        flex: none;
+        width: 100%;
+        margin-bottom: 40px;
+        padding-left: 0;
+    }
+    
+    .prime-text-col p { margin: 0 auto 30px auto; }
+
+    .prime-grid-col {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
