@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão: Conjuntos Numéricos | CientificaTech</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="revisao.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <script> window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } }; </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header style="background: #000; padding: 15px; text-align: center; color: white;">
+        [SEU MENU AQUI]
+    </header>
+
+    <main class="container-mestre">
+
+        <div class="topico-header">
+            <p class="breadcrumbs">Matemática > Básica > <span class="destaque">Conjuntos</span></p>
+            <h1>Conjuntos Numéricos</h1>
+            <p class="intro">
+                Revisão completa sobre Naturais, Inteiros e Racionais.
+                Abaixo você encontra os slides com os resumos manuscritos e a teoria detalhada.
+            </p>
+        </div>
+
+
+        <section class="revisao-bloco">
+            
+            <div class="coluna-visual">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 3</div>
+                        <div class="zoom-container" onclick="abrirZoom(this)">
+                            <img src="img/passo1.jpg" alt="Resumo: Números Naturais" class="foto-caderno">
+                            <div class="zoom-overlay"><i class="fas fa-search-plus"></i> Ampliar Resumo</div>
+                        </div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <div class="zoom-container" onclick="abrirZoom(this)">
+                            <img src="img/passo2.jpg" alt="Resumo: Números Inteiros" class="foto-caderno">
+                            <div class="zoom-overlay"><i class="fas fa-search-plus"></i> Ampliar Resumo</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 3</div>
+                        <div class="zoom-container" onclick="abrirZoom(this)">
+                            <img src="img/passo3.jpg" alt="Resumo: Racionais e Reais" class="foto-caderno">
+                            <div class="zoom-overlay"><i class="fas fa-search-plus"></i> Ampliar Resumo</div>
+                        </div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, this)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, this)">&#10095;</a>
+
+                </div>
+                <p class="legenda-foto">Use as setas para navegar entre os resumos manuscritos.</p>
+            </div>
+
+
+            <div class="coluna-texto">
+                <h2>Teoria Detalhada</h2>
+
+                <h3>1. Números Naturais (\( \mathbb{N} \))</h3>
+                <p>O conjunto inicia-se no zero e é infinito: $$ \mathbb{N} = \{ 0, 1, 2, 3, \dots \} $$</p>
+                
+                <h3>2. Números Inteiros (\( \mathbb{Z} \))</h3>
+                <p>Inclui os negativos. A propriedade principal é a existência do oposto para a soma: $$ a + (-a) = 0 $$</p>
+
+                <h3>3. Números Racionais (\( \mathbb{Q} \))</h3>
+                <p>Qualquer número que pode ser escrito como fração \( \frac{a}{b} \), com \( b \neq 0 \).</p>
+                
+            </div>
+
+        </section>
+        </main>
+
+    <div id="modalZoom" class="modal-backdrop" onclick="fecharZoom()">
+        <span class="botao-fechar">&times;</span>
+        <img class="modal-imagem" id="imgNoModal">
+        <div id="modalLegenda"></div>
+    </div>
+
+    <script>
+        // Slideshow
+        document.addEventListener("DOMContentLoaded", function() {
+            let slideshows = document.getElementsByClassName("slideshow-container");
+            for (let i = 0; i < slideshows.length; i++) { showSlides(1, slideshows[i]); }
+        });
+
+        function plusSlides(n, btnElement) {
+            let container = btnElement.parentElement;
+            let slideIndex = getSlideIndex(container);
+            showSlides(slideIndex + n, container);
+        }
+
+        function showSlides(n, container) {
+            let i;
+            let slides = container.getElementsByClassName("mySlides");
+            if (n > slides.length) {n = 1}
+            if (n < 1) {n = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("active-slide");
+            }
+            slides[n-1].style.display = "block";
+            slides[n-1].classList.add("active-slide");
+        }
+
+        function getSlideIndex(container) {
+            let slides = container.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].style.display === "block") return i + 1;
+            }
+            return 1;
+        }
+
+        // Zoom
+        function abrirZoom(elemento) {
+            const modal = document.getElementById("modalZoom");
+            const imgModal = document.getElementById("imgNoModal");
+            const legenda = document.getElementById("modalLegenda");
+            const imgOriginal = elemento.querySelector('img');
+            modal.style.display = "flex";
+            imgModal.src = imgOriginal.src;
+            legenda.innerHTML = imgOriginal.alt;
+        }
+        function fecharZoom() {
+            document.getElementById("modalZoom").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

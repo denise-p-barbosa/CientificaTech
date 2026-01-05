@@ -3819,3 +3819,251 @@ a.store-card {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ================================================================== */
+/* TEMPLATE PADRÃO: REVISÃO UNIVERSITÁRIA (uni-rev-)
+/* Usado para: Cadernos de matérias, listas de tópicos.
+/* ================================================================== */
+
+/* Reseta margens e define fonte padrão se necessário */
+.uni-rev-container {
+    font-family: 'Roboto', sans-serif; /* Use a fonte do seu site */
+    color: #333;
+}
+
+/* --- 1. BARRA DE PESQUISA --- */
+.uni-rev-search-section {
+    padding: 30px 5%;
+    background: #f9f9f9; /* Fundo cinza bem claro para destacar a área */
+    display: flex;
+    justify-content: center;
+}
+
+.uni-rev-search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Bordas bem redondas */
+    padding: 5px 5px 5px 20px;
+    width: 100%;
+    max-width: 600px; /* Largura máxima da barra */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.uni-rev-search-box input {
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Ocupa todo o espaço */
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.uni-rev-search-btn {
+    background: #00A8E1; /* Cor do seu site (Azul Ciano) */
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.uni-rev-search-btn:hover { background: #008cb9; }
+
+
+/* --- 2. BANNER HERO (Estilo Ref. 12) --- */
+.uni-rev-banner {
+    background-color: #e8f0ee; /* Cor de fundo estilo Khan (cinza esverdeado claro) */
+    padding: 60px 5%;
+    /* Se quiser que o banner pegue a tela toda, descomente as 4 linhas abaixo: */
+    /* width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; */
+}
+
+.uni-rev-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Lado Esquerdo: Texto */
+.uni-rev-banner-text { flex: 1; }
+
+.uni-rev-banner-text h1 {
+    font-size: 2.5rem;
+    color: #2c3e50; /* Cor escura para título */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.uni-rev-banner-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Botão Azul Sólido do Banner */
+.btn-uni-rev-cta {
+    display: inline-block;
+    background-color: #0056b3; /* Azul mais sério (estilo Khan) */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-uni-rev-cta:hover { background-color: #004494; }
+
+/* Lado Direito: Imagem */
+.uni-rev-banner-img { flex: 1; display: flex; justify-content: center; }
+.uni-rev-banner-img img {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px; /* Limita a altura para não ficar gigante */
+    object-fit: contain;
+}
+
+
+/* --- 3. GRID DE TÓPICOS (Estilo Ref. 13) --- */
+.uni-rev-grid-section {
+    padding: 60px 5%;
+    max-width: 1400px; /* Permite que a grid fique bem larga */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.uni-rev-section-title {
+    font-size: 2rem; color: #333; margin-bottom: 40px;
+}
+
+.uni-rev-cards-grid {
+    display: grid;
+    /* O SEGREDO PARA MUITOS CARDS NA MESMA LINHA:
+       Define que cada card deve ter no MÍNIMO 200px. 
+       O navegador vai colocar quantos couberem na tela. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px; /* Espaço entre os cards */
+    justify-items: center; /* Centraliza os cards se sobrarem poucos na linha */
+}
+
+/* O Card Individual */
+.uni-rev-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ocupa o espaço da coluna do grid */
+    max-width: 280px; /* Impede que o card fique largo demais se tiver poucos */
+}
+
+.uni-rev-card h3 {
+    font-size: 1.3rem; color: #2c3e50; margin-bottom: 20px;
+    height: 50px; /* Altura fixa para títulos de 2 linhas alinharem */
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Caixa da Foto no Card */
+.uni-rev-card-img-box {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Define um formato retangular padrão (tipo foto) */
+    margin-bottom: 20px;
+    border-radius: 12px; /* Bordas arredondadas na foto */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra suave na foto */
+}
+
+.uni-rev-card-img-box img {
+    width: 100%; height: 100%;
+    object-fit: cover; /* Foto preenche todo o espaço sem distorcer */
+    transition: transform 0.3s;
+}
+/* Zoom suave na foto ao passar o mouse no card */
+.uni-rev-card:hover .uni-rev-card-img-box img { transform: scale(1.05); }
+
+/* Botão Estilo "Outline" (Borda Azul, Fundo Branco) - Ref. 13 */
+.btn-uni-rev-outline {
+    display: inline-block;
+    background: white;
+    color: #0056b3; /* Azul do texto */
+    border: 2px solid #0056b3; /* Borda azul */
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%; /* Botão ocupa a largura do card */
+    transition: all 0.2s;
+}
+.btn-uni-rev-outline:hover {
+    background: #0056b3; /* Fica azul ao passar o mouse */
+    color: white;
+}
+
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+@media (max-width: 768px) {
+    .uni-rev-banner-content { flex-direction: column-reverse; text-align: center; }
+    .uni-rev-banner-text p { margin: 0 auto 30px auto; }
+    .uni-rev-grid-section { padding: 40px 5%; }
+    /* No celular, o grid já se ajusta automaticamente para 1 ou 2 colunas */
+}
+
+/* --- ESTILO DOS ACORDEÕES (Módulos de Aula) --- */
+
+.accordion {
+  background-color: #f8f9fa; /* Cinza bem clarinho */
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600; /* Negrito */
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px; /* Cantos levemente arredondados */
+  margin-bottom: 5px; /* Espacinho entre um e outro */
+}
+
+/* Quando passa o mouse ou está ativo */
+.active, .accordion:hover {
+  background-color: #00A8E1; /* Azul CientificaTech */
+  color: white;
+}
+
+/* O Painel de Conteúdo (Escondido por padrão) */
+.panel {
+  padding: 0; /* Padding zero na borda para a animação funcionar bem */
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-left: 3px solid #00A8E1; /* Detalhe visual na esquerda */
+}
+
+/* Classe extra para dar espaço dentro do painel */
+.conteudo-interno {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Símbolos de + e - */
+.accordion:after {
+  content: '\002B'; /* Símbolo de Mais (+) */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.active:after {
+  content: "\2212"; /* Símbolo de Menos (-) */
+}

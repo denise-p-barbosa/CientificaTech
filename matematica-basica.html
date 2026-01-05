@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caderno de Revisão: [NOME DA MATÉRIA] | CientificaTech</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header style="background: black; padding: 15px; text-align: center; color: white;">
+        [SEU MENU DO SITE AQUI]
+    </header>
+
+
+    <main class="uni-rev-container">
+
+        <section class="uni-rev-search-section">
+            <div class="uni-rev-search-box">
+                <input type="text" placeholder="Pesquisar neste caderno de revisão..." id="contentSearchInput">
+                <button class="uni-rev-search-btn">
+                    <i class="fas fa-search"></i> </button>
+            </div>
+        </section>
+
+
+        <section class="uni-rev-banner">
+            <div class="uni-rev-banner-content">
+                <div class="uni-rev-banner-text">
+                    <h1>Conteúdos de Revisão Universitária</h1>
+                    <p>
+                        Materiais diretos ao ponto, alinhados com a ementa das federais, 
+                        para você salvar seu semestre.
+                    </p>
+                    <a href="#" class="btn-uni-rev-cta">Começar a estudar</a>
+                </div>
+                <div class="uni-rev-banner-img">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop" alt="Estudantes na universidade">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="grid-conteudos" class="uni-rev-grid-section">
+            
+            <h2 class="uni-rev-section-title">Conceitos Fundamentais de Matemática Básica</h2>
+
+            <div class="uni-rev-cards-grid">
+
+                <div class="uni-rev-card">
+                    <h3>Conjuntos Numéricos</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="img/Conjuntos Numericos.png" alt="Conjuntos Numéricos">
+                    </div>
+                    <a href="modelo-esqueleto-revisao.html" class="btn-uni-rev-outline">Estude Agora</a>
+                </div>
+
+                <!-- <div class="uni-rev-card">
+                    <h3>Números Inteiros</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://matematicabasica.net/wp-content/uploads/2019/02/numeros-inteiros-1.png" alt="Foto de gráfico de limites">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Limites</a>
+                </div>
+
+                <div class="uni-rev-card">
+                    <h3>Integrais</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://plus.unsplash.com/premium_photo-1664476439451-10e3766548bb?q=80&w=1470&auto=format&fit=crop" alt="Cálculo de área">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Integrais</a>
+                </div>
+
+                <div class="uni-rev-card">
+                    <h3>Geometria Analítica</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1470&auto=format&fit=crop" alt="Vetores e geometria">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira GAAL</a>
+                </div>
+
+                <div class="uni-rev-card">
+                    <h3>Álgebra Linear</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://images.unsplash.com/photo-1629736789943-540105756692?q=80&w=1470&auto=format&fit=crop" alt="Matrizes">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Álgebra</a>
+                </div>
+
+                <div class="uni-rev-card">
+                    <h3>Física Mecânica</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop" alt="Física">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Mecânica</a>
+                </div>
+
+                 <div class="uni-rev-card">
+                    <h3>Eletromagnetismo</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://images.unsplash.com/photo-1548332524-4e978833c810?q=80&w=1374&auto=format&fit=crop" alt="Eletricidade">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Eletro</a>
+                </div>
+
+                 <div class="uni-rev-card">
+                    <h3>Python para Engenharia</h3>
+                    <div class="uni-rev-card-img-box">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop" alt="Código Python">
+                    </div>
+                    <a href="#" class="btn-uni-rev-outline">Confira Python</a>
+                </div>
+            </div> -->
+        </section>
+
+    </main>
+
+    <footer style="background: #111; padding: 30px; text-align: center; color: white; margin-top: 50px;">
+        [SEU RODAPÉ DO SITE AQUI]
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. Pega os elementos da tela
+        const inputBusca = document.getElementById('contentSearchInput');
+        const todosCards = document.querySelectorAll('.uni-rev-card');
+        const botaoBusca = document.querySelector('.uni-rev-search-btn');
+
+        // Função que faz a mágica acontecer
+        function filtrarConteudo() {
+            // Pega o que foi digitado, converte para minúsculo e remove acentos
+            // Ex: "Cálculo" vira "calculo"
+            const termoDigitado = inputBusca.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+            let encontrouAlgo = false;
+
+            todosCards.forEach(card => {
+                // Pega o título dentro do card (h3)
+                const tituloOriginal = card.querySelector('h3').innerText;
+                
+                // Limpa o título também (minúsculo e sem acento) para comparar
+                const tituloLimpo = tituloOriginal.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+                // Verifica se o termo digitado está dentro do título
+                if (tituloLimpo.includes(termoDigitado)) {
+                    card.style.display = "flex"; // Mostra o card
+                    encontrouAlgo = true;
+                } else {
+                    card.style.display = "none"; // Esconde o card
+                }
+            });
+
+            // (Opcional) Aqui você poderia mostrar uma mensagem "Nenhum resultado" se encontrouAlgo for false
+        }
+
+        // 2. Executa a função toda vez que o usuário soltar uma tecla
+        inputBusca.addEventListener('keyup', filtrarConteudo);
+
+        // 3. Executa também se clicar no botão da lupa (para garantir)
+        botaoBusca.addEventListener('click', filtrarConteudo);
+        
+        // 4. Previne que o formulário recarregue a página se houver enter
+        inputBusca.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                filtrarConteudo();
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
