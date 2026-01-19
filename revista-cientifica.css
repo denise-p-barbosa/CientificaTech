@@ -972,3 +972,65 @@ body {
         grid-template-columns: 1fr; /* Tudo empilhado no celular */
     }
 }
+
+/* ========================================= */
+/* RESPONSIVIDADE (CORREÇÕES MOBILE)         */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. CORREÇÃO DO CABEÇALHO (Espaçamento) */
+    .topo-mestre-EGF .container-limite-EGF {
+        flex-direction: column; /* Empilha Logo e Menu */
+        gap: 20px; /* Cria espaço entre o logo e o menu */
+    }
+
+    /* Ajuste fino para o logo não ficar gigante */
+    .marca-visual-EGF {
+        align-items: center; /* Centraliza o logo */
+    }
+    .texto-sup-EGF, .texto-inf-EGF { font-size: 1.5rem; } /* Reduz levemente */
+
+
+    /* 2. CORREÇÃO DO SCROLL HORIZONTAL (Menu Assuntos) */
+    .painel-expansivel-EGF {
+        position: relative; /* Muda de absolute para relative no mobile */
+        top: 0;
+        width: 100%;
+        box-shadow: none; /* Remove sombra para limpar o visual */
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Transforma o Grid de 4 colunas em 1 coluna só */
+    .grade-assuntos-EGF {
+        display: flex; /* Muda de Grid para Flex */
+        flex-direction: column;
+        gap: 0; /* Remove gap pois usaremos bordas */
+    }
+
+    /* Estilo "Acordeão" para os itens */
+    .grupo-link-EGF {
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .grupo-link-EGF:last-child { border-bottom: none; }
+
+    /* Ajuste das Etiquetas no mobile */
+    .etiqueta-base-EGF {
+        margin-bottom: 8px;
+        font-size: 0.8rem;
+    }
+
+    /* Links maiores para dedo (Toque) */
+    .grupo-link-EGF a {
+        font-size: 1rem;
+        padding: 8px 0; /* Aumenta a área de toque */
+        display: block;
+    }
+
+    /* Garante que nada estoure a tela */
+    body, html {
+        overflow-x: hidden; /* Trava de segurança final */
+    }
+}
