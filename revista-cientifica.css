@@ -104,6 +104,56 @@ body {
 }
 
 /* ========================================= */
+/* ETIQUETAS DE CATEGORIA (TAGS)             */
+/* ========================================= */
+
+/* Estilo Base da Etiqueta (Formato) */
+.etiqueta-base-EGF {
+    display: inline-block; 
+    
+    /* MUDANÇA 1: Mais espaço interno (respiro) */
+    /* 6px em cima/baixo, 12px nas laterais */
+    padding: 6px 14px;     
+    
+    color: #ffffff;        
+    
+    /* MUDANÇA 2: Letra maior */
+    font-size: 0.95rem;    /* Aumentado de 0.75rem para 0.95rem */
+    
+    font-weight: 800;      /* Extra Negrito para destacar */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Leve ajuste na borda para ficar harmônico com o tamanho novo */
+    border-radius: 6px;    
+    
+    margin-bottom: 12px;   
+    line-height: 1.2; /* Garante que o emoji não corte */
+}
+
+
+/* --- CORES ESPECÍFICAS (Suas escolhas) --- */
+
+/* #6B7280 (azul) */
+.tag-exatas-EGF {
+    background-color: #1F3C88;
+}
+
+/* #F97316 (Laranja) */
+.tag-engenharia-EGF {
+    background-color: #F97316;
+}
+
+/* #7C3AED (Roxo) */
+.tag-tecnologia-EGF {
+    background-color: #7C3AED;
+}
+
+.tag-academia-EGF {
+    background-color: #15803D;
+}
+
+/* ========================================= */
 /* MEGA MENU (Painel Expansível)             */
 /* ========================================= */
 .painel-expansivel-EGF {
@@ -121,7 +171,7 @@ body {
 /* Grid de 3 colunas para os links */
 .grade-assuntos-EGF {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
@@ -334,7 +384,7 @@ body {
 /* BARRA DE AVISO (TOP BAR)em reforma        */
 /* ========================================= */
 .barra-aviso-EGF {
-    background-color: #111; /* Fundo escuro */
+    background-color: #cf1919; /* Fundo escuro */
     color: #fff; /* Texto branco */
     padding: 12px 0;
     font-size: 0.9rem;
@@ -379,4 +429,185 @@ body {
 /* Animação para sumir suavemente */
 .ocultar-aviso-EGF {
     display: none;
+}
+
+/* ========================================= */
+/* RODAPÉ (FOOTER) - ESTILO DARK             */
+/* ========================================= */
+
+.rodape-mestre-EGF {
+    background-color: #000000; /* Preto absoluto */
+    color: #ffffff; /* Branco puro */
+    padding: 80px 0 40px 0; /* Espaço generoso em cima */
+    margin-top: 60px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Grid de 3 Colunas */
+.grade-rodape-EGF {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 partes iguais */
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Títulos das Colunas (Cinza para hierarquia) */
+.titulo-rodape-EGF {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Links do Rodapé */
+.link-rodape-EGF {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700; /* Negrito como na referência */
+    margin-bottom: 15px;
+    transition: opacity 0.2s;
+}
+
+.link-rodape-EGF:hover {
+    opacity: 0.7; /* Efeito sutil */
+}
+
+/* Estilo especial para "Quer publicar?" */
+.destaque-contato-EGF {
+    line-height: 1.4;
+}
+.subtexto-contato-EGF {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #00A8E1; /* Azul para chamar ação */
+    margin-top: 5px;
+}
+
+/* --- ÍCONES SOCIAIS (Quadrados Brancos) --- */
+.lista-sociais-EGF {
+    display: flex;
+    gap: 15px;
+}
+
+.icone-social-EGF {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff; /* Fundo branco */
+    color: #000000; /* Ícone preto */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.icone-social-EGF:hover {
+    transform: translateY(-3px);
+    background-color: #00A8E1; /* Fica azul no hover */
+    color: #fff;
+}
+
+/* --- LINHA FINAL (Copyright) --- */
+.linha-copyright-EGF {
+    border-top: 1px solid #333; /* Linha cinza escura sutil */
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 768px) {
+    .grade-rodape-EGF {
+        grid-template-columns: 1fr; /* Uma coluna só */
+        gap: 50px;
+    }
+}
+
+/* ========================================= */
+/* PÁGINA SOBRE NÓS (ESTILO EDITORIAL)       */
+/* ========================================= */
+
+/* Container focado em leitura (mais estreito que o site todo) */
+.container-texto-EGF {
+    max-width: 740px; /* Largura ideal para o olho humano não cansar */
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* Título Gigante "Sobre Nós" */
+.titulo-pagina-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+/* Texto de Introdução (O lide) */
+.texto-intro-EGF {
+    font-family: 'Merriweather', 'Georgia', serif; /* Fonte com serifa para elegância */
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 80px; /* Bastante espaço antes de começar os tópicos */
+}
+
+
+/* --- O BLOCO ESTILO PRINT (Missão, Visão, Valores) --- */
+.bloco-conceito-EGF {
+    margin-bottom: 60px; /* Espaço entre um bloco e outro */
+}
+
+/* O Título (ex: Nossa Missão) */
+.subtitulo-conceito-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700; /* Negrito forte */
+    color: #000;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Opcional: deixa em caixa alta como na revista */
+    letter-spacing: 0.5px;
+}
+
+/* A Linha Fina */
+.linha-separadora-EGF {
+    width: 100%;
+    height: 1px;
+    background-color: #000; /* Linha preta sólida */
+    margin-bottom: 25px; /* Espaço entre a linha e o texto */
+}
+
+/* O Texto do Corpo (Serifado igual ao print) */
+.texto-serifado-EGF {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1.15rem; /* Tamanho confortável */
+    line-height: 1.8;   /* Linhas bem espaçadas */
+    color: #222;
+}
+
+/* Lista de Valores */
+.lista-valores-EGF {
+    list-style: none;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222;
+}
+.lista-valores-EGF li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-left: 3px solid #00A8E1; /* Detalhe azul na esquerda */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .titulo-pagina-EGF { font-size: 2.5rem; }
+    .texto-intro-EGF { font-size: 1.1rem; }
 }

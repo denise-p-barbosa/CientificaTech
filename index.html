@@ -26,6 +26,7 @@
     <meta name="google-site-verification" content="-3MJ94MG7GOAWMwQhBQa_mFAWQyHAjT-4pVxDYaDoBk" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="apple-touch-icon" href="favicon.png"> <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,7 +37,7 @@
     }
     </script>
     <title>CientificaTech | Cientifique-se</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="revista-cientifica.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -75,24 +76,31 @@
                 <div class="grade-assuntos-EGF">
                     
                     <div class="grupo-link-EGF">
-                        <h3>Ciências Exatas</h3>
+                        <h3><span class="etiqueta-base-EGF tag-exatas-EGF"> ⚛️ Ciências Exatas</span></h3>
                         <a href="#">Cálculo Diferencial</a>
                         <a href="#">Física Quântica</a>
                         <a href="#">Álgebra Linear</a>
                     </div>
 
                     <div class="grupo-link-EGF">
-                        <h3>Engenharia</h3>
+                        <h3><span class="etiqueta-base-EGF tag-engenharia-EGF">⚙️ Engenharia</span></h3>
                         <a href="#">Mecânica Clássica</a>
                         <a href="#">Eletromagnetismo</a>
                         <a href="#">Python para Eng.</a>
                     </div>
 
                     <div class="grupo-link-EGF">
-                        <h3>Tecnologia</h3>
+                        <h3><span class="etiqueta-base-EGF tag-tecnologia-EGF">💻 Tecnologia</span></h3>
                         <a href="#">Review de Hardware</a>
                         <a href="#">Softwares Acadêmicos</a>
                         <a href="#">Inovação</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF">🎓 Academia</span></h3>
+                        <a href="#">Guia do Calouro</a>
+                        <a href="#">Bolsas e Auxílios</a>
+                        <a href="#">Vida no Campus</a>
                     </div>
 
                 </div>
@@ -192,366 +200,9 @@
     </div>
 
   
+<!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
 
 
-
-
-
-    
-    <div class="container main-wrapper">
-        
-      <!-- <section class="section-block block-highlight-wrapper">
-            <div class="orange-box">
-                
-                <div class="orange-header">
-                    <h3 class="box-title">
-                <span class="rejected">Sem Achismo</span> — <span class="highlight-text">Só notícias de verdade</span></h3>
-            
-                </div>
-
-                <div class="carousel-wrapper">
-                    
-                    <button class="nav-arrow left-arrow" onclick="scrollCarousel(-1)">&#10094;</button>
-
-                    <div class="carousel-container" id="articlesCarousel">
-                        
-                        <p style="color: white; width: 100%; text-align: center;">Carregando notícias do universo...</p>
-
-                    </div>
-
-                    <button class="nav-arrow right-arrow" onclick="scrollCarousel(1)">&#10095;</button>
-                </div>
-            </div>
-        </section> -->
-
-        <script>
-            // --- FUNÇÃO PARA O CARROSSEL DE PRODUTOS ---
-    function scrollProductCarousel(direction) {
-        const container = document.getElementById('productsCarousel');
-        const scrollAmount = 280; // Largura do card + espaço
-        container.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-        </script>
-
-
-        <!-- <section class="container section-block">
-        <div class="promo-gamer-wrapper">
-            
-            <div class="promo-content-left">
-                <h2 class="promo-title">As melhores ofertas do mundo gamer,<br>reunidas em um só lugar.</h2>
-                <p class="promo-text">
-                    Aqui você encontra um monitoramento inteligente das promoções das principais lojas de games: Nuuvem, Epic Games, Steam, Instant Gaming e muito mais.Tudo atualizado para você pagar menos. 
-                    Economize até <strong>90%</strong> nos seus jogos favoritos.
-                </p>
-                <a href="ofertas-games.html" class="btn-steam-blue">Ver Ofertas da Semana</a>
-            </div>
-
-            <div class="promo-visual-right">
-                
-                <div class="pc-wrapper">
-                    <div class="pc-monitor">
-                        <div class="pc-screen">
-                            <img src="img/gamer.png" alt="Jogo no PC">
-                        </div>
-                    </div>
-                    <div class="pc-stand-neck"></div>
-                    <div class="pc-stand-base"></div>
-                </div>
-
-                <div class="floating-card-decor pc-decor">
-                    <span>-50% OFF</span>
-                </div>
-            </div>
-
-        </div>
-       </section> -->
-
-    <!-- <section class="container section-block">
-        <div class="movie-section-wrapper">
-            
-            <div class="movie-content-left">
-                <h2 class="movie-title">O que assistir hoje?<br>A dica certa, na hora certa</h2>
-                <p class="movie-text">
-                    Não sabe o que assistir numa tarde chuvosa de domingo?
-Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acabar assistindo. 
-                    <em>a mesma série ou o mesmo filme de sempre?</em> Então deixa isso com a gente! Aqui você encontra indicações feitas pra quem quer descobrir coisa nova, fugir do tédio e abrir a mente para experimentar outros gêneros.
- 🍿✨.
-                </p>
-                <a href="cine-ciencia.html" class="btn-movie-purple">Ver Lista de Filmes</a>
-            </div>
-
-            <div class="movie-visual-right">
-                
-                <div class="tv-wrapper">
-                    <div class="tv-frame">
-                        <div class="tv-screen">
-                            <img src="img/filmes.png" alt="Cena Interstellar">
-                        </div>
-                    </div>
-                    <div class="tv-feet">
-                        <div class="tv-foot left"></div>
-                        <div class="tv-foot right"></div>
-                    </div>
-                </div>
-
-                <div class="movie-ticket-card tv-ticket-pos">
-                    <div class="ticket-header">CINE UFV</div>
-                    <div class="ticket-body">
-                        <span>IMAX</span>
-                        <span>VIP</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
-
-
-    <hr class="divider">
-
-    <section id="conteudo" class="container section-block">
-        
-        <div class="nubank-wrapper">
-            
-            <div class="nubank-left">
-                <h2 class="nubank-title">Explore nossa<br>Biblioteca</h2>
-                <p class="nubank-text">
-                    Navegue por trilhas de conhecimento organizadas. 
-                    Da física básica à tecnologia de ponta.
-                </p>
-                
-                <div class="nubank-controls">
-                    <button class="nubank-arrow" onclick="scrollLibrary(-1)">&#10094;</button>
-                    <button class="nubank-arrow" onclick="scrollLibrary(1)">&#10095;</button>
-                </div>
-            </div>
-
-            <div class="nubank-right carousel-container" id="libraryCarousel">
-                
-                <!-- <a href="engenharia-fisica.html" class="gamer-card card-physics">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2005/2005021.png" alt="Ícone" class="card-icon">
-                        <h3>Engenharia Física</h3>
-                        <p>Mecânica e Modelagem.</p>
-                        <span class="card-tag">Acessar</span>
-                    </div>
-                </a> -->
-
-                <!-- <a href="#" class="gamer-card card-tech">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4202/4202831.png" alt="Ícone" class="card-icon">
-                        <h3>Tecnologia & IA</h3>
-                        <p>Tendências e Hardware.</p>
-                        <span class="card-tag">Acessar</span>
-                    </div>
-                </a> -->
-
-                <a href="vida-academica.html" class="gamer-card card-ufv">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281329.png" alt="Ícone" class="card-icon">
-                        <h3>Vida Acadêmica</h3>
-                        <p>Dicas de sobrevivência.</p>
-                        <span class="card-tag">Acessar</span>
-                    </div>
-                </a>
-
-                <!-- <a href="#" class="gamer-card card-myth">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <img src="https://cdn-icons-png.flaticon.com/512/9630/9630256.png" alt="Ícone" class="card-icon">
-                        <h3>Desmistificando</h3>
-                        <p>Ciência vs Fake News.</p>
-                        <span class="card-tag">Acessar</span>
-                    </div>
-                </a> -->
-
-                <!-- <a href="#" class="gamer-card card-physics">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933861.png" alt="Ícone" class="card-icon">
-                        <h3>Laboratórios</h3>
-                        <p>Práticas experimentais.</p>
-                        <span class="card-tag">Acessar</span>
-                    </div>
-                </a> -->
-
-            </div>
-        </div>
-    </section>
-
-
-    <hr class="divider">
-
-    <!-- <section class="prime-channels-section">
-        <div class="prime-wrapper">
-            
-            <div class="prime-text-col">
-                <h2>Domine a Matéria.<br>Sobreviva à Engenharia.</h2>
-                <p>
-                    Revisões diretas ao ponto, resumos de quem entende a dor do estudante 
-                    e macetes para não travar nas exatas. Matemática Básica, 
-                    Cálculo, Física e Programação.
-                </p>
-                <a href="vida-academica.html" class="btn-prime-cta">Ver todos os resumos</a>
-            </div>
-
-            <div class="prime-grid-col">
-                
-                <a href="matematica-basica.html" class="channel-card">
-                    <img src="img/Conceitos Fundamentais de Matemática Básica.png" alt="Conceitos Fundamentais de Matemática Básica">
-                    </a>
-
-            </div>
-
-        </div>
-    </section> -->
-
-
-    <hr class="divider">
-
-    <section id="sobre" class="container section-block about-section">
-        <div class="about-content">
-            <h2>Sobre o CientificaTech</h2>
-            <!-- <p><strong>Quem sou eu?</strong> Olá! Sou estudante de Engenharia Física e apaixonado por ciência.</p> -->
-            <div class="transparency-box">
-                <small>⚠️ <strong>Transparência:</strong> Este site contém links afiliados.</small>
-            </div>
-            <div class="contact-area">
-                <a href="mailto:contato@cientificatech.com" class="btn btn-primary">Entrar em Contato</a>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2024 CientificaTech. Todos os direitos reservados.</p>
-        <p>Desenvolvido com ciência.</p>
-    </footer>
-     
-    <script>
-    // --- BANCO DE IMAGENS (Fallback - Só usado em último caso) ---
-    const scientificImages = [
-        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80', 
-        'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80', 
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80'
-    ];
-
-    // --- FONTES RSS ---
-    const rssSources = [
-        'https://canaltech.com.br/rss/espaco/',
-        'https://www.inovacaotecnologica.com.br/boletins/rss.xml',
-        'https://gizmodo.uol.com.br/category/ciencia/feed/'
-    ];
-
-    // --- FUNÇÃO PRINCIPAL DE CARREGAMENTO ---
-    async function loadContent() {
-        const container = document.getElementById('articlesCarousel');
-        container.innerHTML = '<p style="color: white; text-align: center; width: 100%;">Sintonizando frequências científicas...</p>';
-
-        for (let i = 0; i < rssSources.length; i++) {
-            try {
-                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssSources[i])}`;
-                const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error('Falha na conexão');
-                const data = await response.json();
-                if (data.status !== 'ok') throw new Error('Erro no feed');
-
-                renderArticles(data.items.slice(0, 6));
-                return; // Sucesso, para o loop.
-
-            } catch (error) {
-                console.warn(`Fonte ${i} falhou, tentando próxima.`);
-            }
-        }
-        // Se tudo falhar:
-        container.innerHTML = '<p style="color: white; text-align: center;">Sinal perdido. Tente recarregar.</p>';
-    }
-
-    // --- A NOVA FUNÇÃO "CAÇA-IMAGENS" ---
-    function findBestImage(item) {
-        // TENTATIVA 1: O padrão do thumbnail (funciona no Canaltech/Gizmodo)
-        if (item.thumbnail && item.thumbnail.startsWith('http')) {
-            return item.thumbnail;
-        }
-        
-        // TENTATIVA 2: "Enclosure" (às vezes usado para imagem de capa)
-        if (item.enclosure && item.enclosure.link && item.enclosure.link.startsWith('http')) {
-            return item.enclosure.link;
-        }
-
-        // TENTATIVA 3 (A mais agressiva): Tentar achar uma tag <img> dentro do HTML da descrição
-        // Isso é necessário para o "Inovação Tecnológica"
-        const imgMatch = item.description.match(/<img.*?src=["'](.*?)["']/);
-        if (imgMatch && imgMatch[1] && imgMatch[1].startsWith('http')) {
-             // Retorna o link encontrado dentro do src=""
-            return imgMatch[1];
-        }
-
-        // Se não achou nada em lugar nenhum, retorna null
-        return null;
-    }
-
-
-    // --- RENDERIZADOR ---
-    function renderArticles(items) {
-        const container = document.getElementById('articlesCarousel');
-        container.innerHTML = ''; 
-
-        items.forEach((item, index) => {
-            // 1. Tenta achar a imagem real da notícia
-            let bgImage = findBestImage(item);
-
-            // 2. Se não achou NADA (bgImage é null), aí sim usa o fallback
-            if (!bgImage) {
-                bgImage = scientificImages[index % scientificImages.length];
-            }
-
-            const cleanSummary = truncateText(item.description.replace(/<[^>]*>?/gm, ''), 90);
-
-            const cardHTML = `
-                <article class="card carousel-card">
-                    <div class="card-img" style="background-image: url('${bgImage}');"></div>
-                    <div class="card-body">
-                        <h4>${truncateText(item.title, 50)}</h4>
-                        <p>${cleanSummary}</p>
-                        <a href="${item.link}" target="_blank" class="read-more">Ler Matéria &rarr;</a>
-                    </div>
-                </article>
-            `;
-            container.innerHTML += cardHTML;
-        });
-    }
-
-    // Funções auxiliares (cortar texto e rolar)
-    function truncateText(text, length) {
-        if (!text) return "";
-        if (text.length <= length) return text;
-        return text.substring(0, length) + '...';
-    }
-    
-    function scrollCarousel(direction) {
-        document.getElementById('articlesCarousel').scrollBy({ left: direction * 320, behavior: 'smooth' });
-    }
-
-    // INICIAR
-    loadContent();
-</script>
-
-<script>
-    function scrollLibrary(direction) {
-        const container = document.getElementById('libraryCarousel');
-        const scrollAmount = 260; // Tamanho do card + espaço
-        container.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-</script>
 
 
 
@@ -560,6 +211,55 @@ Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acaba
 
 <script src="script-revista-cientifica.js"></script>
 
+<!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
+
+
+<footer class="rodape-mestre-EGF">
+    <div class="container-limite-EGF">
+        
+        <div class="grade-rodape-EGF">
+            
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Institucional</h4>
+                <a href="sobre.html" class="link-rodape-EGF">Sobre Nós</a>
+                <a href="privacidade.html" class="link-rodape-EGF">Privacidade</a>
+                <a href="termos.html" class="link-rodape-EGF">Termos de Uso</a>
+            </div>
+
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Redação</h4>
+                <a href="contato.html" class="link-rodape-EGF destaque-contato-EGF">
+                    Quer publicar na nossa revista?
+                    <span class="subtexto-contato-EGF">Entre em contato &rarr;</span>
+                </a>
+            </div>
+
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Conecte-se</h4>
+                <div class="lista-sociais-EGF">
+                    <a href="#" class="icone-social-EGF" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="linha-copyright-EGF">
+            <p>CientificaTech Brasil © 2026</p>
+        </div>
+
+    </div>
+</footer>
 
 </body>
 </html>
