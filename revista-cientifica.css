@@ -430,6 +430,204 @@ body {
 .ocultar-aviso-EGF {
     display: none;
 }
+/* ========================================= */
+/* PÁGINA DE ARTIGO (POST)            */
+/* ========================================= */
+
+.secao-artigo-EGF {
+    padding-bottom: 80px;
+}
+
+/* --- HEADER DO ARTIGO --- */
+.header-post-EGF {
+    padding-top: 60px;
+    margin-bottom: 50px;
+}
+
+.titulo-post-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8rem; /* Título bem grande */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+    margin: 20px 0;
+    letter-spacing: -1px;
+}
+
+.subtitulo-post-EGF {
+    font-family: 'Merriweather', serif; /* Subtítulo serifado é chique */
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Meta dados (Autor e Data) */
+.meta-post-EGF {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.autor-info-EGF {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-autor-EGF {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Redondo */
+    border: 2px solid #000; /* Borda editorial */
+}
+
+.nome-autor-EGF {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #000;
+}
+.data-post-EGF {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Ícones de Share */
+.share-post-EGF a {
+    color: #000;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    transition: color 0.2s;
+}
+.share-post-EGF a:hover { color: #00A8E1; }
+
+
+/* --- IMAGEM DE CAPA --- */
+.imagem-capa-EGF {
+    width: 100%;
+    max-width: 1000px; /* Mais largo que o texto */
+    margin: 40px auto 60px auto; /* Centralizado */
+}
+.imagem-capa-EGF img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.imagem-capa-EGF figcaption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* --- CORPO DO TEXTO (A LEITURA) --- */
+.corpo-texto-EGF {
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1.2rem; /* Tamanho confortável */
+    line-height: 1.8;
+    color: #222;
+}
+
+.corpo-texto-EGF p { margin-bottom: 25px; }
+
+.corpo-texto-EGF h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+
+/* --- PERSONALIDADE 1: ENSAIO (Letra Capitular) --- */
+/* Use <p class="paragrafo-capitular-EGF"> no primeiro parágrafo */
+.paragrafo-capitular-EGF::first-letter {
+    float: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 5.5rem;
+    line-height: 0.8;
+    font-weight: 800;
+    padding-right: 15px;
+    padding-top: 5px;
+    color: #000; /* Ou #00A8E1 se quiser colorido */
+}
+
+/* --- PERSONALIDADE 2: CITAÇÃO DESTAQUE --- */
+.citacao-destaque-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #000;
+    border-left: 4px solid #00A8E1;
+    padding-left: 30px;
+    margin: 40px 0;
+    line-height: 1.4;
+}
+
+/* --- PERSONALIDADE 3: TÉCNICO (Bloco de Código) --- */
+.bloco-codigo-EGF {
+    background-color: #1e1e1e; /* Fundo escuro IDE */
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 30px 0;
+    overflow-x: auto; /* Scroll se o código for longo */
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    border-left: 5px solid #F97316; /* Laranja Eng. */
+}
+
+/* --- PERSONALIDADE 4: REVIEW (Box Veredito) --- */
+.box-review-EGF {
+    border: 2px solid #000;
+    margin: 50px 0;
+    background-color: #fafafa;
+}
+
+.header-review-EGF {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-review-EGF h3 { margin: 0; font-family: 'Inter', sans-serif; font-size: 1.2rem;}
+
+.nota-final-EGF {
+    background-color: #00A8E1;
+    color: #fff;
+    font-weight: 800;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+}
+
+.corpo-review-EGF {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+.coluna-pros-EGF, .coluna-cons-EGF { padding: 25px; }
+
+.coluna-pros-EGF { border-right: 1px solid #ddd; }
+.coluna-pros-EGF h4 { color: #15803D; margin-bottom: 15px; text-transform: uppercase;}
+.coluna-cons-EGF h4 { color: #DC2626; margin-bottom: 15px; text-transform: uppercase;}
+
+.corpo-review-EGF ul { list-style: none; padding: 0; font-size: 1rem; }
+.corpo-review-EGF li { margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+
+/* Mobile Review */
+@media (max-width: 700px) {
+    .corpo-review-EGF { grid-template-columns: 1fr; }
+    .coluna-pros-EGF { border-right: none; border-bottom: 1px solid #ddd; }
+}
 
 /* ========================================= */
 /* RODAPÉ (FOOTER) - ESTILO DARK             */
