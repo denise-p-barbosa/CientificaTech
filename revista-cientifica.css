@@ -611,3 +611,166 @@ body {
     .titulo-pagina-EGF { font-size: 2.5rem; }
     .texto-intro-EGF { font-size: 1.1rem; }
 }
+
+/* ========================================= */
+/* PÁGINA DE PRIVACIDADE E TERMOS            */
+/* ========================================= */
+
+/* Data de Atualização (Texto pequeno cinza em cima) */
+.data-atualizacao-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 60px; /* Espaço até começar o texto */
+    border-left: 3px solid #000; /* Detalhe visual elegante na esquerda */
+    padding-left: 15px;
+}
+
+/* Lista de Conteúdo (Bullet Points para regras) */
+.lista-conteudo-EGF {
+    font-family: 'Merriweather', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222;
+    margin-top: 20px;
+    padding-left: 20px; /* Recuo */
+}
+
+.lista-conteudo-EGF li {
+    margin-bottom: 12px;
+    list-style-type: disc; /* Bolinha padrão clássica */
+}
+
+/* ========================================= */
+/* PÁGINA DE CONTATO / SUBMISSÃO             */
+/* ========================================= */
+
+/* --- GRID DE DIRETRIZES (Ícones) --- */
+.grid-diretrizes-EGF {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.item-diretriz-EGF {
+    background-color: #f9f9f9; /* Fundo cinza bem claro */
+    padding: 25px;
+    border-left: 3px solid #000; /* Detalhe editorial */
+}
+
+.icone-diretriz-EGF {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.item-diretriz-EGF h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.item-diretriz-EGF p {
+    font-family: 'Merriweather', serif; /* Texto de leitura */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+}
+
+
+/* --- ESTILO DO FORMULÁRIO --- */
+.form-submissao-EGF {
+    margin-top: 30px;
+}
+
+/* Linha Flex para Nome/Email ficarem lado a lado */
+.linha-form-EGF {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-input-EGF {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+/* Labels (Rótulos) */
+.grupo-input-EGF label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs e Textarea */
+.grupo-input-EGF input,
+.grupo-input-EGF select,
+.grupo-input-EGF textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Levemente arredondado */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+/* Foco (Quando clica para digitar) */
+.grupo-input-EGF input:focus,
+.grupo-input-EGF select:focus,
+.grupo-input-EGF textarea:focus {
+    outline: none;
+    border-color: #00A8E1; /* Fica azul */
+    box-shadow: 0 0 0 3px rgba(0, 168, 225, 0.1); /* Brilho suave */
+}
+
+/* Botão de Enviar */
+.botao-enviar-EGF {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #000; /* Botão Preto (Sóbrio) */
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão largo no mobile */
+}
+
+.botao-enviar-EGF:hover {
+    background-color: #00A8E1; /* Azul no hover */
+}
+
+/* Nota de rodapé do form */
+.nota-rodape-form-EGF {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 15px;
+    text-align: center;
+}
+.nota-rodape-form-EGF a { color: #000; text-decoration: underline; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .linha-form-EGF, .grid-diretrizes-EGF {
+        grid-template-columns: 1fr; /* Tudo empilhado no celular */
+    }
+}
