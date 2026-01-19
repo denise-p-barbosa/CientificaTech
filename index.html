@@ -37,47 +37,167 @@
     </script>
     <title>CientificaTech | Cientifique-se</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="revista-cientifica.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container nav-container">
 
-            <!-- <div class="logo">CientificaTech</div> -->
+    <!-- CIENTIFICATECH - DESIGN REVISTA 2026 cabeçalho -->
+    <header class="topo-mestre-EGF">
+        <div class="container-limite-EGF">
+            
+            <div class="marca-visual-EGF">
+                <span class="texto-sup-EGF">Cientifica</span>
+                <span class="texto-inf-EGF">Tech</span>
+            </div>
 
-        <div class="logo">
-           <img src="img/logo.png" alt="Logo"> 
-          <span>CientificaTech</span>
-        </div>
+            <nav class="menu-primario-EGF">
+                <ul class="lista-links-EGF">
+                    
+                    <li class="item-menu-EGF">
+                        <button id="btn-assuntos-EGF" class="link-texto-EGF">
+                            Assuntos <span class="seta-indicadora-EGF">▼</span>
+                        </button>
+                    </li>
 
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#conteudo">Conteúdo</a></li>
-                    <li><a href="#recomendacoes">Recomendações</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="loja.html" class="nav-btn-store">Loja</a></li>
+                    <li class="item-menu-EGF">
+                        <a href="sobre.html" class="link-texto-EGF">Sobre</a>
+                    </li>
                 </ul>
             </nav>
+
         </div>
-    </header>
-    <section id="inicio" class="hero-section">
-        <div class="hero-overlay">
-            <div class="container hero-content">
-                
-                <!-- <img src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings_b_roll" alt="Ícone Engenharia" class="hero-icon"> -->
-                
-                <h1>Cientifique-se.<br>O mundo não é plano.</h1>
-                <p class="hero-subtitle">Ciência, engenharia, tecnologia, jogos e filmes — tudo isso em um só lugar! 🚀🎮
-No CientificaTech, a gente mistura conhecimento com entretenimento, traz as novidades, promoções insanas e conteúdos que valem o clique. Aqui é pra quem curte aprender, jogar e se divertir sem tédio.</p>
-                
-                <a href="#conteudo" class="btn btn-primary">Começar a Ler</a>
+
+        <div id="painel-topicos-EGF" class="painel-expansivel-EGF">
+            <div class="container-limite-EGF">
+                <div class="grade-assuntos-EGF">
+                    
+                    <div class="grupo-link-EGF">
+                        <h3>Ciências Exatas</h3>
+                        <a href="#">Cálculo Diferencial</a>
+                        <a href="#">Física Quântica</a>
+                        <a href="#">Álgebra Linear</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3>Engenharia</h3>
+                        <a href="#">Mecânica Clássica</a>
+                        <a href="#">Eletromagnetismo</a>
+                        <a href="#">Python para Eng.</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3>Tecnologia</h3>
+                        <a href="#">Review de Hardware</a>
+                        <a href="#">Softwares Acadêmicos</a>
+                        <a href="#">Inovação</a>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </section>
+    </header>
+
+
+    <!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
+
+    <section class="secao-manifesto-EGF">
+    <div class="container-limite-EGF">
+        <h2 class="texto-manifesto-EGF">
+            Cientifique-se. 
+            <span class="destaque-manifesto-EGF">O mundo não é plano.</span>
+        </h2>
+    </div>
+</section>
+
+
+
+ <!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
+
+ 
+<section class="secao-noticias-EGF">
+
+    
+    <div class="container-limite-EGF">
+        
+        <div class="grade-assimetrica-EGF">
+            
+            <article class="artigo-principal-EGF">
+                <a href="#" class="link-bloco-EGF">
+                    <span class="etiqueta-categoria-EGF">Física Quântica</span>
+                    <div class="container-img-principal-EGF">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1470&auto=format&fit=crop" alt="Computação Quântica">
+                    </div>
+                    <h2 class="titulo-capa-EGF">O novo estado da matéria que pode revolucionar a computação quântica</h2>
+                    <p class="resumo-capa-EGF">Pesquisadores da UFV identificam comportamento inédito em supercondutores que promete estabilizar qubits em temperatura ambiente.</p>
+                    <div class="meta-dados-EGF">
+                        <span>Por <strong>Denise P. Barbosa</strong></span>
+                        <span class="separador-EGF">|</span>
+                        <span>20 Jan, 2026</span>
+                    </div>
+                </a>
+            </article>
+
+            <aside class="coluna-lateral-EGF">
+                
+                <article class="artigo-lateral-EGF">
+                    <a href="#" class="link-bloco-EGF">
+                        <span class="etiqueta-categoria-EGF destaque-azul-EGF">Engenharia Física</span>
+                        <h3 class="titulo-lateral-EGF"></h3>
+                    </a>
+                </article>
+
+                <article class="artigo-lateral-EGF">
+                    <a href="#" class="link-bloco-EGF">
+                        <span class="etiqueta-categoria-EGF destaque-azul-EGF">Cine Ciência</span>
+                        <h3 class="titulo-lateral-EGF"></h3>
+                    </a>
+                </article>
+
+                <article class="artigo-lateral-EGF">
+                    <a href="#" class="link-bloco-EGF">
+                        <span class="etiqueta-categoria-EGF destaque-azul-EGF">Tutorial Python</span>
+                        <h3 class="titulo-lateral-EGF"></h3>
+                    </a>
+                </article>
+
+                <article class="artigo-lateral-com-foto-EGF">
+                    <a href="#" class="link-bloco-EGF">
+                        <div class="infos-lateral-EGF">
+                            <span class="etiqueta-categoria-EGF">Review</span>
+                            <h3 class="titulo-lateral-EGF">Kindle Scribe para estudantes de exatas: Vale a pena?</h3>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1374&auto=format&fit=crop" class="thumb-pequena-EGF">
+                    </a>
+                </article>
+
+            </aside>
+
+        </div>
+    </div>
+</section>
+
+<!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
+
+
+<div id="barra-aviso-EGF" class="barra-aviso-EGF">
+    <div class="container-limite-EGF container-aviso-flex-EGF">
+        <p class="texto-aviso-EGF">
+            <strong>🚧 Em Reforma:</strong> Estamos atualizando nosso design visual. Algumas páginas podem apresentar instabilidade temporária.
+        </p>
+        <button id="btn-fechar-aviso-EGF" class="btn-fechar-aviso-EGF" aria-label="Fechar aviso">✕</button>
+    </div>
+    </div>
+
+  
+
+
+
+
+
+    
     <div class="container main-wrapper">
         
       <!-- <section class="section-block block-highlight-wrapper">
@@ -117,7 +237,7 @@ No CientificaTech, a gente mistura conhecimento com entretenimento, traz as novi
         </script>
 
 
-        <section class="container section-block">
+        <!-- <section class="container section-block">
         <div class="promo-gamer-wrapper">
             
             <div class="promo-content-left">
@@ -147,9 +267,9 @@ No CientificaTech, a gente mistura conhecimento com entretenimento, traz as novi
             </div>
 
         </div>
-       </section>
+       </section> -->
 
-    <section class="container section-block">
+    <!-- <section class="container section-block">
         <div class="movie-section-wrapper">
             
             <div class="movie-content-left">
@@ -187,7 +307,7 @@ Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acaba
 
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <hr class="divider">
@@ -268,7 +388,7 @@ Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acaba
 
     <hr class="divider">
 
-    <section class="prime-channels-section">
+    <!-- <section class="prime-channels-section">
         <div class="prime-wrapper">
             
             <div class="prime-text-col">
@@ -287,30 +407,10 @@ Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acaba
                     <img src="img/Conceitos Fundamentais de Matemática Básica.png" alt="Conceitos Fundamentais de Matemática Básica">
                     </a>
 
-                <!-- <a href="calculo1.html" class="channel-card">
-                    <img src="img/capa-calculo.jpg" alt="Cálculo 1 e Limites">
-                </a>
-
-                <a href="fisica1.html" class="channel-card">
-                    <img src="img/capa-fisica.jpg" alt="Física 1">
-                </a>
-
-                <a href="computacao.html" class="channel-card">
-                    <img src="img/capa-python.jpg" alt="Programação para Engenharia">
-                </a>
-
-                <a href="gaal.html" class="channel-card">
-                    <img src="img/capa-gaal.jpg" alt="Geometria Analítica">
-                </a>
-
-                <a href="vida-academica.html" class="channel-card">
-                    <img src="img/capa-dicas.jpg" alt="Hacks de Estudo">
-                </a> -->
-
             </div>
 
         </div>
-    </section>
+    </section> -->
 
 
     <hr class="divider">
@@ -452,6 +552,13 @@ Tá cansado de passar horas rolando sua plataforma de streaming e, no fim, acaba
         });
     }
 </script>
+
+
+
+
+<!-- CIENTIFICATECH - DESIGN REVISTA 2026  -->
+
+<script src="script-revista-cientifica.js"></script>
 
 
 </body>

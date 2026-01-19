@@ -1,0 +1,382 @@
+/* ========================================= */
+/* CIENTIFICATECH - DESIGN REVISTA 2026      */
+/* Arquivo: revista-cientifica.css           */
+/* ========================================= */
+
+/* 1. RESET BÁSICO (Para limpar margens do navegador) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. TIPOGRAFIA E CORPO */
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff; /* Branco puro (Papel) */
+    color: #111111; /* Preto editorial */
+    line-height: 1.5;
+}
+
+/* 3. CONTAINER GERAL (Segura o conteúdo no centro) */
+.container-limite-EGF {
+    max-width: 1200px; /* Largura padrão de leitura */
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* ========================================= */
+/* CABEÇALHO (HEADER)                        */
+/* ========================================= */
+.topo-mestre-EGF {
+    background: #fff;
+    border-bottom: 2px solid #000; /* A "Linha Editorial" preta */
+    padding: 25px 0;
+    position: relative;
+    z-index: 1000; /* Garante que fique acima de tudo */
+}
+
+/* Alinhamento Flex (Logo na esquerda, Menu na direita) */
+.topo-mestre-EGF .container-limite-EGF {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LOGOTIPO (Empilhado e Sóbrio) --- */
+.marca-visual-EGF {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9; /* Letras bem juntas verticalmente */
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.texto-sup-EGF {
+    font-size: 1.8rem;
+    font-weight: 800; /* Extra Bold */
+    letter-spacing: -1px;
+}
+
+.texto-inf-EGF {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #000;
+}
+
+/* --- MENU PRINCIPAL (Assuntos / Sobre) --- */
+.lista-links-EGF {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Espaço em branco generoso */
+}
+
+.link-texto-EGF {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Distância da setinha */
+    font-family: 'Inter', sans-serif; /* Garante a fonte no botão */
+}
+
+.link-texto-EGF:hover {
+    opacity: 0.7; /* Efeito sutil no mouse */
+}
+
+.seta-indicadora-EGF {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+/* Classe para girar a seta quando aberto */
+.ativo-rotacao-EGF {
+    transform: rotate(180deg);
+}
+
+/* ========================================= */
+/* MEGA MENU (Painel Expansível)             */
+/* ========================================= */
+.painel-expansivel-EGF {
+    display: none; /* Começa oculto */
+    position: absolute;
+    top: 100%; /* Cola exatamente embaixo da linha preta */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #000; /* Linha fina embaixo do menu aberto */
+    padding: 50px 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+/* Grid de 3 colunas para os links */
+.grade-assuntos-EGF {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Títulos das colunas (Ex: CIÊNCIAS EXATAS) */
+.grupo-link-EGF h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #666; /* Cinza para hierarquia visual */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Links do dropdown */
+.grupo-link-EGF a {
+    display: block;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.2rem; /* Texto grande, estilo manchete */
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+
+.grupo-link-EGF a:hover {
+    color: #00A8E1; /* A única cor do site (seu azul) */
+    text-decoration: underline;
+}
+
+/* Classe que o JavaScript adiciona para mostrar o menu */
+.mostrar-painel-EGF {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ========================================= */
+/* SEÇÃO MANIFESTO (Slogan)       */
+/* ========================================= */
+.secao-manifesto-EGF {
+    background-color: #111; /* Fundo quase preto (muito elegante) */
+    padding: 80px 0; /* Bastante espaço para respirar */
+    border-bottom: 1px solid #000;
+}
+
+.texto-manifesto-EGF {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5rem; /* Letras GIGANTES */
+    font-weight: 800; /* Extra Bold */
+    color: #fff; /* Texto Branco */
+    line-height: 1.1;
+    max-width: 800px; /* Não deixa a frase esticar até o fim da tela */
+}
+
+/* Estilo para a segunda parte da frase */
+.destaque-manifesto-EGF {
+    display: block; /* Quebra para a linha de baixo */
+    color: #00A8E1; /* O seu Azul (ou pode ser cinza #888 se quiser mais sóbrio) */
+    font-family: 'Times New Roman', serif; /* Mistura fonte com serifa para dar ar intelectual */
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Ajuste para celular (para não quebrar a tela) */
+@media (max-width: 768px) {
+    .secao-manifesto-EGF {
+        padding: 40px 0;
+    }
+    .texto-manifesto-EGF {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================= */
+/* SEÇÃO DE NOTÍCIAS (GRID PRINCIPAL)        */
+/* ========================================= */
+.secao-noticias-EGF {
+    padding: 60px 0;
+}
+
+/* O Grid que divide a tela (60% Esquerda / 40% Direita) */
+.grade-assimetrica-EGF {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Esquerda maior que a direita */
+    gap: 60px; /* Espaço em branco generoso no meio */
+}
+
+/* --- ESTILOS GERAIS DE LINKS --- */
+.link-bloco-EGF {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do texto */
+    display: block;
+}
+.link-bloco-EGF:hover .titulo-capa-EGF,
+.link-bloco-EGF:hover .titulo-lateral-EGF {
+    color: #00A8E1; /* Azul no hover */
+}
+
+/* Etiquetas (Categoria em cima do título) */
+.etiqueta-categoria-EGF {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #00A8E1; /* Azul da marca */
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* --- ARTIGO DE CAPA (ESQUERDA) --- */
+.container-img-principal-EGF {
+    width: 100%;
+    height: 400px; /* Altura fixa para impacto */
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.container-img-principal-EGF img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.link-bloco-EGF:hover .container-img-principal-EGF img {
+    transform: scale(1.03); /* Zoom suave na foto */
+}
+
+.titulo-capa-EGF {
+    font-size: 2.5rem; /* Título bem grande */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.resumo-capa-EGF {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+.meta-dados-EGF {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 600;
+}
+.separador-EGF { margin: 0 10px; color: #ddd; }
+
+
+/* --- COLUNA LATERAL (DIREITA) --- */
+.coluna-lateral-EGF {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* O gap é zero porque vamos usar bordas */
+}
+
+/* Cada item da lista lateral */
+.artigo-lateral-EGF, .artigo-lateral-com-foto-EGF {
+    padding: 25px 0;
+    border-top: 1px solid #eee; /* Linha fina separando as notícias */
+}
+/* O primeiro não precisa de borda em cima */
+.artigo-lateral-EGF:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.titulo-lateral-EGF {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Ajuste específico para o item com foto pequena */
+.artigo-lateral-com-foto-EGF .link-bloco-EGF {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.thumb-pequena-EGF {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 900px) {
+    .grade-assimetrica-EGF {
+        grid-template-columns: 1fr; /* Vira uma coluna só */
+        gap: 40px;
+    }
+    .titulo-capa-EGF { font-size: 2rem; }
+    .container-img-principal-EGF { height: 250px; }
+    
+    /* Na coluna lateral do celular, coloca borda em todos */
+    .artigo-lateral-EGF:first-child { border-top: 1px solid #eee; padding-top: 25px; }
+}
+
+/* ========================================= */
+/* BARRA DE AVISO (TOP BAR)em reforma        */
+/* ========================================= */
+.barra-aviso-EGF {
+    background-color: #111; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    padding: 12px 0;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2000; /* Fica acima até do menu */
+}
+
+/* Flex para alinhar texto e botão X */
+.container-aviso-flex-EGF {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-aviso-EGF {
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.texto-aviso-EGF strong {
+    color: #00A8E1; /* O toque do seu azul para destaque */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* O botão de fechar (X) */
+.btn-fechar-aviso-EGF {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.btn-fechar-aviso-EGF:hover {
+    opacity: 1;
+    color: #00A8E1;
+}
+
+/* Animação para sumir suavemente */
+.ocultar-aviso-EGF {
+    display: none;
+}
