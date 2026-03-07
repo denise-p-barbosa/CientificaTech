@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="revista-cientifica.css">
+    <link rel="stylesheet" href="guia-calouro.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Guia do Calouro - Simulador de CR</title>
+</head>
+<body>
+
+    <header class="topo-mestre-EGF">
+        <div class="container-limite-EGF">
+            <div class="marca-visual-EGF">
+                <span class="texto-sup-EGF">Cientifica</span>
+                <span class="texto-inf-EGF">Tech</span>
+            </div>
+            <nav class="menu-primario-EGF">
+                 <ul class="lista-links-EGF">
+                    <li class="item-menu-EGF"><a href="index.html" class="link-texto-EGF">Início</a></li>
+                    <li class="item-menu-EGF"><a href="#" class="link-texto-EGF" style="color:#00A8E1;">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container-centralizado-ufv">
+            <div class="alerta-intro-ufv">
+                <div class="alerta-icone">🎓</div>
+                <div class="alerta-texto">
+                    <strong>Aviso aos ingressantes:</strong> Esse artigo é direcionado especialmente para alunos que vão ou que entraram na Universidade Federal de Viçosa no segundo semestre através de editais para vagas ociosas. 
+                    <br><br>
+                    Vamos começar com o sistema de acesso principal da UFV: o <strong>SAPIENS</strong>. Nele você encontra diversas informações. Os slides abaixo mostram de forma resumida as principais funções. Logo no final da página, existe um formulário de perguntas e respostas.
+                </div>
+            </div>
+        </div>
+
+        <section class="secao-simulador-cr">
+
+            <div class="container-centralizado-ufv">
+
+                <div class="painel-duplo-sapiens">
+
+                    <div class="bloco-simulador">
+                        
+                        <h3>Simulador de CR</h3>
+                        
+                        <div class="visor-nota">
+                            <span id="valor-cr">65</span>
+                        </div>
+
+                        <input type="range" id="slider-cr" min="0" max="100" value="65" step="1">
+
+                        <div class="descricao-status">
+                            <h4 id="titulo-status">Na Média</h4>
+                            <p id="texto-status">Você está aprovado nas disciplinas, mas o CR mediano não garante prioridade na escolha de turmas no próximo período.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bloco-informacoes">
+    
+    <div class="cabecalho-info">
+        <strong>UFV</strong> SAPIENS
+    </div>
+
+    <div class="carrossel-sapiens">
+        
+        <div class="slide-info ativo">
+            <div class="citacao-dica">
+                <p>"Um semestre de notas ruins no ciclo básico pode atrasar sua formatura por falta de pré-requisitos. Fique de olho no CR."</p>
+                <span>Dica de Veterano</span>
+            </div>
+            <div class="estatisticas-regras">
+                <div class="item-regra">
+                    <span class="numero-regra">60</span>
+                    <span class="texto-regra">é a nota mínima para ser aprovado direto nas disciplinas.</span>
+                </div>
+                <div class="item-regra">
+                    <span class="numero-regra">4</span>
+                    <span class="texto-regra">reprovações na mesma matéria geram jubilamento.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-info">
+            <div class="citacao-dica">
+                <p>"As bolsas de Iniciação Científica (PIBIC) e oportunidades de intercâmbio exigem um CR competitivo. Comece forte desde o primeiro período."</p>
+                <span>Aviso da Coordenação</span>
+            </div>
+            <div class="estatisticas-regras">
+                <div class="item-regra">
+                    <span class="numero-regra">PIBIC</span>
+                    <span class="texto-regra">Bolsa de pesquisa acadêmica altamente disputada.</span>
+                </div>
+                <div class="item-regra">
+                    <span class="numero-regra">75+</span>
+                    <span class="texto-regra">é o CR ideal para garantir prioridade em editais.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-info">
+            <div class="citacao-dica">
+                <p>"Para confirmar sua matrícula, vá no menu <strong>Notícias</strong>. Procure o quadro amarelo: <em>'Solicitação de matrícula efetuada'</em>."</p>
+                <span>Aviso de Matrícula</span>
+            </div>
+            <div class="estatisticas-regras">
+                <div class="item-regra">
+                    <span class="numero-regra">CR1</span>
+                    <span class="texto-regra">é a maior prioridade na fila do acerto de matrícula. CR2 é a segunda, e assim por diante.</span>
+                </div>
+                <div class="item-regra">
+                    <span class="numero-regra" style="font-size: 2rem;">📅</span>
+                    <span class="texto-regra">Nesse mesmo quadro amarelo ficam as datas e horários exatos para você fazer seu acerto.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-info">
+            <div class="citacao-dica">
+                <p>"No menu <strong>Disciplinas Matriculadas</strong>, você verá o quadro com as matérias do seu plano de ensino. Ele mostra exatamente onde você terá aula."</p>
+                <span>Entendendo o Quadro de Horários</span>
+            </div>
+            <div class="estatisticas-regras">
+                <div class="item-regra">
+                    <span class="numero-regra" style="font-size: 1.8rem;">QUI 100</span>
+                    <span class="texto-regra">é o código da disciplina. Cada matéria tem a sigla do departamento e um número.</span>
+                </div>
+                <div class="item-regra">
+                    <span class="numero-regra" style="font-size: 1.8rem;">PVB 307</span>
+                    <span class="texto-regra">indica o local. PVB ou PVA são os pavilhões de aula, seguidos pelo número da sala.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-info">
+            <div class="citacao-dica">
+                <p>"O Acerto de Matrícula é a área mais aguardada para escolher horários e turmas. Porém, ele só fica disponível nas datas exatas do Calendário Acadêmico."</p>
+                <span>Menu Acerto de Matrícula</span>
+            </div>
+            <div class="estatisticas-regras">
+                <div class="item-regra">
+                    <span class="numero-regra" style="font-size: 2rem;">🔒</span>
+                    <span class="texto-regra"><strong>Atenção Calouro:</strong> Você não pode alterar, adicionar ou excluir disciplinas agora. Isso só é liberado a partir do 2º período. Sem ansiedade, aproveite a jornada!</span>
+                </div>
+                <div class="item-regra">
+                    <span class="numero-regra" style="font-size: 2rem;">🗓️</span>
+                    <span class="texto-regra">Acompanhar o <strong>Calendário Acadêmico</strong> é de extrema importância. O sistema de acerto só abre e fecha nos dias estipulados por ele.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controles-carrossel">
+        <button class="ponto-nav ativo" onclick="mudarSlide(0)"></button>
+        <button class="ponto-nav" onclick="mudarSlide(1)"></button>
+        <button class="ponto-nav" onclick="mudarSlide(2)"></button>
+        <button class="ponto-nav" onclick="mudarSlide(3)"></button>
+        <button class="ponto-nav" onclick="mudarSlide(4)"></button>
+    </div>
+
+</div>
+            </section>
+
+    </main>
+
+    <section class="secao-coordenador-ufv">
+        <div class="container-centralizado-ufv">
+            <div class="grid-contato-coordenador">
+                
+                <div class="texto-coordenador">
+                    <h2>Como posso entrar em contato com o coordenador do meu curso?</h2>
+                    
+                    <div class="passo-a-passo-coordenador">
+                        <p><strong>1. Descubra o nome:</strong> Primeiro, para você saber o nome do seu coordenador de curso, basta acessar o Sapiens com seu login e senha. O nome dele fica no centro da página, logo abaixo dos menus.</p>
+                        
+                        <p><strong>2. Acesse o Departamento:</strong> Para entrar em contato, vá ao site do departamento do seu curso. Nesse caso, estou dando como exemplo o departamento de física.</p>
+                        
+                        <p><strong>3. Menu Docentes:</strong> Acesse o menu "Docentes". Lá mostrará toda uma relação de professores, número de contato e e-mail. Identifique o nome do seu coordenador e entre em contato.</p>
+                    </div>
+
+                    <div class="botoes-coordenador">
+                        <a href="https://www.dpf.ufv.br/engenharia-fisica/" target="_blank" class="btn-primario-ufv">
+                            Exemplo: Departamento de Física
+                        </a>
+                    </div>
+                </div>
+
+                <div class="imagem-coordenador">
+                    <img src="https://escolaweb.com.br/wp-content/uploads/2024/07/sala-dos-professores-por-que-a-escola-deve-se-preocupar-com-este-ambiente-2.png" alt="Estudante universitário buscando informações">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="secao-beneficios-ufv">
+        <div class="container-centralizado-ufv">
+            
+            <h2 class="titulo-beneficios">Apoio e Benefícios para Alunos de Baixa Renda</h2>
+
+            <div class="grid-tres-colunas">
+                
+                <div class="cartao-beneficio">
+                    <div class="icone-beneficio">🏠</div>
+                    <h3>Moradia Estudantil</h3>
+                    <p>A UFV oferece moradia estudantil nos alojamentos ou auxílio financeiro para ajudar a pagar o aluguel no valor de R$340. Para conseguir esses benefícios, é preciso ser aprovado pela equipe de avaliação socioeconômica. É necessário acompanhar os editais no site oficial.</p>
+                    <a href="https://www.servicodebolsa.ufv.br/" target="_blank" class="btn-bolsa-ufv">Acessar Editais</a>
+                </div>
+
+                <div class="cartao-beneficio">
+                    <div class="icone-beneficio">🍽️</div>
+                    <h3>Alimentação Subsidiada</h3>
+                    <p>A UFV também disponibiliza alimentação com descontos de 50%, 75% e 100% para alunos em situação de vulnerabilidade socioeconômica. O aluno interessado deve acompanhar os editais de seleção no site oficial da universidade.</p>
+                    <a href="https://www.servicodebolsa.ufv.br/" target="_blank" class="btn-bolsa-ufv">Acessar Editais</a>
+                </div>
+
+                <div class="cartao-beneficio">
+                    <div class="icone-beneficio">💼</div>
+                    <h3>Bolsa de Aprendizagem</h3>
+                    <p>Bolsa de Aprendizagem e Aprimoramento Profissional no valor de R$260. Uma excelente oportunidade para se integrar ao ambiente acadêmico e receber um auxílio durante a graduação.</p>
+                    <a href="https://www.servicodebolsa.ufv.br/" target="_blank" class="btn-bolsa-ufv">Acessar Editais</a>
+                </div>
+
+            </div>
+            
+            <div class="aviso-rodape-beneficios">
+                <p>A UFV disponibiliza outros benefícios. É muito importante que o aluno interessado acesse o site oficial para buscar informações mais detalhadas.</p>
+                <a href="https://www.servicodebolsa.ufv.br/" target="_blank" class="link-destaque-ufv">Visitar servicodebolsa.ufv.br &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Selecionando os elementos do HTML
+        const sliderCR = document.getElementById('slider-cr');
+        const valorCR = document.getElementById('valor-cr');
+        const blocoSimulador = document.querySelector('.bloco-simulador');
+        const tituloStatus = document.getElementById('titulo-status');
+        const textoStatus = document.getElementById('texto-status');
+
+        // Adicionando a ação de arrastar
+        sliderCR.addEventListener('input', function() {
+            let cr = parseInt(this.value);
+            
+            // 1. Atualiza o número na tela
+            valorCR.textContent = cr;
+
+            // 2. Limpa as cores atuais
+            blocoSimulador.classList.remove('cr-alto', 'cr-baixo');
+
+            // 3. Aplica a nova cor e os textos corretos dependendo da nota
+            if (cr >= 75) {
+                blocoSimulador.classList.add('cr-alto');
+                tituloStatus.textContent = 'Excelente (CR Verde)';
+                textoStatus.textContent = 'Garante prioridade máxima para bolsas e na escolha de disciplinas na matrícula.';
+                
+            } else if (cr >= 60 && cr < 75) {
+                // Não precisa adicionar classe, a cor padrão (Laranja) já serve
+                tituloStatus.textContent = 'Na Média (CR Regular)';
+                textoStatus.textContent = 'Aprovado, mas não garante prioridade em bolsas concorridas nem nas turmas mais procuradas.';
+                
+            } else {
+                blocoSimulador.classList.add('cr-baixo');
+                tituloStatus.textContent = 'Alerta Vermelho!';
+                textoStatus.textContent = 'Perda do direito a bolsas, final da fila na matrícula e risco de jubilamento (desligamento).';
+            }
+        });
+    });
+
+    // =======================================================
+        // LÓGICA DO CARROSSEL DE INFORMAÇÕES
+        // =======================================================
+        window.mudarSlide = function(index) {
+            const slides = document.querySelectorAll('.slide-info');
+            const pontos = document.querySelectorAll('.ponto-nav');
+
+            // 1. Remove a classe 'ativo' de todos os slides e bolinhas
+            slides.forEach(slide => slide.classList.remove('ativo'));
+            pontos.forEach(ponto => ponto.classList.remove('ativo'));
+
+            // 2. Adiciona a classe 'ativo' apenas no slide e bolinha clicados
+            slides[index].classList.add('ativo');
+            pontos[index].classList.add('ativo');
+        };
+</script>
+
+<footer class="rodape-mestre-EGF">
+    <div class="container-limite-EGF">
+        
+        <div class="grade-rodape-EGF">
+            
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Institucional</h4>
+                <a href="sobre.html" class="link-rodape-EGF">Sobre Nós</a>
+                <a href="privacidade.html" class="link-rodape-EGF">Privacidade</a>
+                <a href="termos.html" class="link-rodape-EGF">Termos de Uso</a>
+            </div>
+
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Redação</h4>
+                <a href="contato.html" class="link-rodape-EGF destaque-contato-EGF">
+                    Quer publicar na nossa revista?
+                    <span class="subtexto-contato-EGF">Entre em contato &rarr;</span>
+                </a>
+            </div>
+
+            <div class="coluna-rodape-EGF">
+                <h4 class="titulo-rodape-EGF">Conecte-se</h4>
+                <div class="lista-sociais-EGF">
+                    <a href="#" class="icone-social-EGF" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="icone-social-EGF" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="linha-copyright-EGF">
+            <p>CientificaTech Brasil © 2026</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

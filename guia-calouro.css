@@ -1,0 +1,471 @@
+
+    /* ======================================================= */
+    /* 1. RESET BÁSICO E FONTES                                */
+    /* ======================================================= */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Passamos o espaçamento apenas para o conteúdo principal, 
+       assim o cabeçalho fica colado no topo como na página Sobre */
+    main {
+        padding: 40px 20px; 
+    }
+
+    /* ======================================================= */
+    /* 2. O LIMITADOR DE LARGURA                               */
+    /* Impede que o design vaze para as bordas em telas grandes*/
+    /* ======================================================= */
+    .container-centralizado-ufv {
+        max-width: 1100px; /* Largura máxima do bloco */
+        margin: 0 auto;    /* Centraliza na tela */
+    }
+
+    /* ======================================================= */
+    /* 3. O GRID LADO A LADO                                   */
+    /* Divide o painel em duas colunas iguais                  */
+    /* ======================================================= */
+    .painel-duplo-sapiens {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas do mesmo tamanho */
+        gap: 30px; /* Espaço entre o bloco esquerdo e direito */
+        align-items: stretch;
+    }
+
+    /* ======================================================= */
+    /* 4. BLOCO ESQUERDO: SIMULADOR DE CR                      */
+    /* Fundo colorido, cantos arredondados e texto branco      */
+    /* ======================================================= */
+    .bloco-simulador {
+        background-color: #F97316; /* Cor inicial (Laranja/Média) */
+        border-radius: 24px;       /* Cantos bem arredondados */
+        padding: 50px 40px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: background-color 0.4s ease; /* Transição suave de cor */
+    }
+
+    .bloco-simulador h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    .visor-nota {
+        font-size: 7rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 30px;
+    }
+
+    /* Estilização da barra de arrastar */
+    input[type=range] {
+        width: 100%;
+        margin-bottom: 40px;
+        accent-color: #ffffff; /* Deixa a bolinha do controle branca */
+        cursor: pointer;
+    }
+
+    .descricao-status h4 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .descricao-status p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        opacity: 0.9;
+    }
+
+    /* ======================================================= */
+    /* ESTILOS DO ALERTA INTRODUTÓRIO                          */
+    /* ======================================================= */
+    .alerta-intro-ufv {
+        background-color: #EFF6FF; /* Fundo azul bem clarinho e amigável */
+        border-left: 5px solid #3B82F6; /* Borda azul forte na esquerda */
+        border-radius: 8px;
+        padding: 25px;
+        margin-top: 20px;
+        margin-bottom: 40px; /* Espaço entre o alerta e o simulador */
+        display: flex;
+        align-items: flex-start; /* Alinha o ícone no topo */
+        gap: 20px; /* Espaço entre o ícone e o texto */
+    }
+
+    .alerta-icone {
+        font-size: 2rem; /* Ícone grande */
+        line-height: 1;
+    }
+
+    .alerta-texto {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.05rem;
+        color: #1E3A8A; /* Texto azul escuro para facilitar a leitura */
+        line-height: 1.6;
+    }
+
+    .alerta-texto strong {
+        font-size: 1.15rem;
+        color: #1E40AF; /* Destaque levemente mais forte */
+    }
+
+    /* Classes dinâmicas que o JavaScript vai usar para trocar a cor */
+    .cr-alto { background-color: #15803D !important; } /* Verde */
+    .cr-baixo { background-color: #DC2626 !important; } /* Vermelho */
+
+
+    /* ======================================================= */
+    /* 5. BLOCO DIREITO: INFORMAÇÕES                           */
+    /* Fundo cinza claro, texto escuro                         */
+    /* ======================================================= */
+    .bloco-informacoes {
+        background-color: #F3F4F6; /* Cinza bem clarinho */
+        border-radius: 24px;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Espalha os itens verticalmente */
+    }
+
+    .cabecalho-info {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .cabecalho-info strong {
+        color: #D97706; /* Destaque para a sigla UFV */
+    }
+
+    .citacao-dica p {
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #111;
+        margin-bottom: 15px;
+    }
+
+    .citacao-dica span {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #666;
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    /* ======================================================= */
+    /* ESTILOS DO CARROSSEL DE INFORMAÇÕES                     */
+    /* ======================================================= */
+    .carrossel-sapiens {
+        position: relative;
+        flex-grow: 1; /* Preenche o espaço disponível */
+    }
+
+    .slide-info {
+        display: none; /* Esconde os slides inativos */
+        animation: suavizarEntrada 0.4s ease-in-out;
+    }
+
+    .slide-info.ativo {
+        display: block; /* Mostra apenas o slide atual */
+    }
+
+    @keyframes suavizarEntrada {
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .controles-carrossel {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .ponto-nav {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #D1D5DB; /* Cinza claro inativo */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .ponto-nav.ativo {
+        background-color: #F97316; /* Laranja ativo */
+    }
+
+    /* ======================================================= */
+    /* 6. CAIXINHAS DE ESTATÍSTICAS (Grid Interno)             */
+    /* ======================================================= */
+    .estatisticas-regras {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas lado a lado */
+        gap: 20px;
+    }
+
+    .item-regra {
+        background-color: #ffffff; /* Fundo branco para destacar no cinza */
+        padding: 25px 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* Sombra bem sutil */
+    }
+
+    .numero-regra {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #111;
+        margin-bottom: 5px;
+    }
+
+    .texto-regra {
+        display: block;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+    }
+
+
+    /* ======================================================= */
+    /* ESTILOS DA SEÇÃO DO COORDENADOR (TEXTO + FOTO)          */
+    /* ======================================================= */
+    .secao-coordenador-ufv {
+        background-color: #F8F9FA; /* Fundo cinza bem clarinho para separar da Main */
+        padding: 80px 20px;
+        border-top: 1px solid #E5E7EB; /* Linha sutil separando as seções */
+    }
+
+    .grid-contato-coordenador {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas lado a lado */
+        gap: 60px;
+        align-items: center; /* Alinha tudo ao centro verticalmente */
+    }
+
+    /* Textos */
+    .texto-coordenador h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #111;
+        margin-bottom: 30px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
+
+    .passo-a-passo-coordenador p {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .passo-a-passo-coordenador strong {
+        color: #111;
+    }
+
+    /* Botão estilo Amazon */
+    .botoes-coordenador {
+        margin-top: 40px;
+    }
+
+    .btn-primario-ufv {
+        display: inline-block;
+        background-color: #F97316; /* Laranja forte */
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 32px;
+        border-radius: 30px; /* Borda arredondada no estilo do botão do print */
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-primario-ufv:hover {
+        background-color: #EA580C; /* Laranja mais escuro no hover */
+        transform: translateY(-2px); /* Efeito de levantar levemente */
+    }
+
+    /* Foto da Direita */
+    .imagem-coordenador img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Sombra elegante */
+    }
+
+    /* Responsividade para Celular */
+    @media (max-width: 900px) {
+        .grid-contato-coordenador {
+            grid-template-columns: 1fr; /* Empilha o texto e a foto */
+            gap: 40px;
+        }
+        .texto-coordenador h2 {
+            font-size: 2rem;
+        }
+        .imagem-coordenador {
+            order: -1; /* Opcional: Faz a imagem aparecer antes do texto no celular */
+        }
+    }
+
+    /* ======================================================= */
+    /* ESTILOS DA SEÇÃO DE BENEFÍCIOS (COMPLETO)               */
+    /* Fundo escuro, cartões, botões e aviso no rodapé         */
+    /* ======================================================= */
+    .secao-beneficios-ufv {
+        background-color: #111827; /* Fundo escuro moderno */
+        padding: 100px 20px;
+        color: #ffffff;
+    }
+
+    .titulo-beneficios {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 70px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    /* Grid de 3 colunas */
+    .grid-tres-colunas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 40px;
+    }
+
+    /* Estilo individual de cada bloco de informação */
+    .cartao-beneficio {
+        background-color: rgba(255, 255, 255, 0.03); 
+        border: 1px solid rgba(255, 255, 255, 0.05); 
+        padding: 40px 30px;
+        border-radius: 20px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        display: flex;             /* Necessário para empurrar o botão */
+        flex-direction: column;    /* Organiza os itens de cima para baixo */
+    }
+
+    .cartao-beneficio:hover {
+        transform: translateY(-5px); 
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .icone-beneficio {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    .cartao-beneficio h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    .cartao-beneficio p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #9CA3AF; 
+        margin-bottom: 30px; /* Dá espaço antes do botão */
+    }
+
+    /* ======================================================= */
+    /* BOTÕES DOS CARTÕES DE BENEFÍCIO                         */
+    /* ======================================================= */
+    .btn-bolsa-ufv {
+        margin-top: auto; /* Empurra o botão para o final do cartão */
+        display: inline-block;
+        text-align: center;
+        padding: 12px 20px;
+        background-color: transparent;
+        color: #F97316; /* Laranja */
+        border: 2px solid #F97316;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .btn-bolsa-ufv:hover {
+        background-color: #F97316;
+        color: #ffffff;
+    }
+
+    /* ======================================================= */
+    /* AVISO DO RODAPÉ DA SEÇÃO DE BOLSAS                      */
+    /* ======================================================= */
+    .aviso-rodape-beneficios {
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        text-align: center;
+    }
+
+    .aviso-rodape-beneficios p {
+        font-size: 1.1rem;
+        color: #D1D5DB; 
+        line-height: 1.6;
+        margin-bottom: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .link-destaque-ufv {
+        color: #F97316;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+    .link-destaque-ufv:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsividade para Celulares e Tablets */
+    @media (max-width: 900px) {
+        .titulo-beneficios {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .grid-tres-colunas {
+            grid-template-columns: 1fr; 
+            gap: 20px;
+        }
+    }
+
+
+
+    
+    /* ======================================================= */
+    /* 7. RESPONSIVIDADE (Celular)                             */
+    /* Quebra as colunas para empilhar uma sobre a outra       */
+    /* ======================================================= */
+    @media (max-width: 900px) {
+        .painel-duplo-sapiens {
+            grid-template-columns: 1fr; /* Vira 1 coluna só */
+        }
+        
+        .visor-nota {
+            font-size: 5rem;
+        }
+
+        .estatisticas-regras {
+            grid-template-columns: 1fr; /* Caixinhas brancas empilham no celular */
+        }
+    }
