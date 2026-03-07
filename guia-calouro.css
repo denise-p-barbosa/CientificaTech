@@ -450,22 +450,278 @@
     }
 
 
+   /* ======================================================= */
+    /* ESTILOS DA SEÇÃO REGISTRO ESCOLAR (VISUAL LIMPO)        */
+    /* ======================================================= */
+    .secao-registro-escolar {
+        background-color: #F3EEF8; /* Fundo lilás/cinza bem suave */
+        padding: 90px 20px;
+        color: #111;
+    }
+
+    .grid-registro-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+        gap: 60px;
+        align-items: center; /* Centraliza verticalmente texto e imagem */
+    }
+
+    .conteudo-registro h2 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
+
+    /* Textos mais limpos e fluidos */
+    .texto-registro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+    .texto-registro strong {
+        color: #111;
+    }
+
+    /* Caixinha de dica elegante e compacta */
+    .dica-leitura-horario {
+        background-color: rgba(124, 58, 237, 0.08); /* Fundo roxo quase transparente */
+        border-left: 4px solid #7C3AED; /* Linha roxa na lateral */
+        padding: 16px 20px;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    /* Botão de Destaque */
+    .btn-registro-acesso {
+        display: inline-block;
+        background-color: #682A2C; /* Cor roxa vibrante */
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 32px;
+        border-radius: 30px; /* Bem arredondado */
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+        margin-top: 10px;
+    }
+
+    .btn-registro-acesso:hover {
+        background-color: #6D28D9;
+        transform: translateY(-2px);
+    }
+
+    /* Imagem */
+    .imagem-registro-escolar img {
+        width: 100%;
+        height: auto;
+        border-radius: 32px; /* Cantos super arredondados */
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
+
+    /* ======================================================= */
+    /* ESTILOS DA SEÇÃO DE DÚVIDAS FREQUENTES (FAQ)            */
+    /* ======================================================= */
+    .secao-duvidas-ufv {
+        background-color: #ffffff; /* Fundo branco limpo */
+        padding: 100px 20px;
+        border-top: 1px solid #E5E7EB;
+    }
+
+    .grid-faq-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas */
+        gap: 60px;
+        align-items: start; /* Alinha o conteúdo no topo */
+    }
+
+    /* Coluna Esquerda */
+    .chamada-faq h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #111;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
+
+    .chamada-faq p {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    .btn-faq-voltar {
+        display: inline-block;
+        background-color: #6B7280; /* Botão cinza discreto */
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 14px 28px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .btn-faq-voltar:hover {
+        background-color: #4B5563;
+    }
+
+    /* Coluna Direita: As Caixinhas Interativas */
+    .lista-perguntas-faq {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Espaço entre as perguntas */
+    }
+
+    .item-pergunta {
+        background-color: #ffffff;
+        border: 1px solid #E5E7EB; /* Borda cinza clarinha */
+        border-radius: 16px;
+        padding: 0; /* O padding fica no summary para ser todo clicável */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        overflow: hidden; /* Mantém o conteúdo dentro da borda arredondada */
+    }
+
+    /* Oculta a setinha padrão do navegador */
+    .item-pergunta summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .item-pergunta summary {
+        list-style: none; /* Oculta a setinha no Firefox */
+        padding: 25px 30px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #111;
+        cursor: pointer; /* Cursor de "mãozinha" */
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.2s;
+    }
+
+    .item-pergunta summary:hover {
+        background-color: #F9FAFB; /* Fica levemente cinza ao passar o mouse */
+    }
+
+    /* Criando o sinal de "+" no lado direito */
+    .item-pergunta summary::after {
+        content: '+';
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #111;
+        margin-left: 20px;
+        line-height: 1;
+    }
+
+    /* Quando a caixa está aberta (open), o sinal vira "-" */
+    .item-pergunta[open] summary::after {
+        content: '−'; /* Sinal de menos */
+    }
+
+    .resposta-faq {
+        padding: 0 30px 25px 30px;
+        font-size: 1.05rem;
+        color: #555;
+        line-height: 1.6;
+    }
 
     
-    /* ======================================================= */
-    /* 7. RESPONSIVIDADE (Celular)                             */
-    /* Quebra as colunas para empilhar uma sobre a outra       */
+   /* ======================================================= */
+    /* RESPONSIVIDADE GERAL (CELULARES E TABLETS)              */
+    /* Junta todas as regras de quebra de tela em um só lugar  */
     /* ======================================================= */
     @media (max-width: 900px) {
+        
+        /* 1. Alerta Introdutório (Azul) */
+        .alerta-intro-ufv {
+            flex-direction: column; /* Coloca o ícone em cima do texto */
+            text-align: center;
+            align-items: center;
+        }
+
+        /* 2. Painel Duplo Sapiens */
         .painel-duplo-sapiens {
             grid-template-columns: 1fr; /* Vira 1 coluna só */
         }
-        
+        .bloco-simulador, .bloco-informacoes {
+            padding: 40px 20px; /* Reduz o espaçamento interno no celular */
+        }
         .visor-nota {
-            font-size: 5rem;
+            font-size: 5.5rem; /* Diminui o número gigante para não vazar */
+        }
+        .estatisticas-regras {
+            grid-template-columns: 1fr; /* Caixinhas brancas empilham */
         }
 
-        .estatisticas-regras {
-            grid-template-columns: 1fr; /* Caixinhas brancas empilham no celular */
+        /* 3. Seção do Coordenador */
+        .grid-contato-coordenador {
+            grid-template-columns: 1fr; /* Empilha o texto e a foto */
+            gap: 40px;
+        }
+        .texto-coordenador h2 {
+            font-size: 2rem;
+        }
+        .imagem-coordenador {
+            order: -1; /* Faz a foto aparecer ANTES do texto no celular */
+        }
+        .secao-coordenador-ufv {
+            padding: 50px 20px;
+        }
+
+        /* 4. Seção de Benefícios e Bolsas */
+        .secao-beneficios-ufv {
+            padding: 60px 20px; /* Reduz o respiro do fundo preto */
+        }
+        .titulo-beneficios {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+        .grid-tres-colunas {
+            grid-template-columns: 1fr; /* Empilha os 3 cartões de benefícios */
+            gap: 25px;
+        }
+
+        /* 5. Seção Registro Escolar (Mobile) */
+        .secao-registro-escolar {
+            padding: 60px 20px;
+        }
+        .grid-registro-layout {
+            grid-template-columns: 1fr; /* Empilha texto e foto */
+            gap: 40px;
+        }
+        .conteudo-registro h2 {
+            font-size: 2.2rem;
+        }
+        .imagem-registro-escolar {
+            order: -1; /* Foto aparece antes do texto no celular */
+        }
+
+        /* 6. Seção FAQ (Mobile) */
+        .secao-duvidas-ufv {
+            padding: 60px 20px;
+        }
+        .grid-faq-layout {
+            grid-template-columns: 1fr; /* Coloca as perguntas embaixo do título */
+            gap: 40px;
+        }
+        .chamada-faq h2 {
+            font-size: 2.2rem;
+        }
+        .item-pergunta summary {
+            font-size: 1.1rem;
+            padding: 20px;
+        }
+        .resposta-faq {
+            padding: 0 20px 20px 20px;
         }
     }
