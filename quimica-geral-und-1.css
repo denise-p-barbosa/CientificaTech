@@ -1,0 +1,67 @@
+
+    /* ======================================================= */
+    /* 1. RESET BÁSICO E FONTES                                */
+    /* ======================================================= */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Passamos o espaçamento apenas para o conteúdo principal, 
+       assim o cabeçalho fica colado no topo como na página Sobre */
+    main {
+        padding: 40px 20px; 
+    }
+
+    /* ======================================================= */
+    /* 2. O LIMITADOR DE LARGURA                               */
+    /* Impede que o design vaze para as bordas em telas grandes*/
+    /* ======================================================= */
+    .container-centralizado-ufv {
+        max-width: 1100px; /* Largura máxima do bloco */
+        margin: 0 auto;    /* Centraliza na tela */
+    }
+
+
+ 
+        .simulador-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 40px auto;
+            max-width: 700px;
+        }
+        .btn-estado {
+            background-color: #2e8b57; /* Verde destaque */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-estado:hover {
+            transform: scale(1.05);
+            background-color: #1e5c3a;
+        }
+        #canvas-materia {
+            margin-top: 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+        }
+ 

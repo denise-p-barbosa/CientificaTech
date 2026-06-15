@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Interativo da Tabela Periódica | CientificaTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tabela.css">
+    <link rel="stylesheet" href="revista-cientifica.css">
+    
+    <style>
+        body.tema-escuro .texto-sup-EGF {
+            color: #1a1a1a !important; /* Cor escura original da sua revista */
+        }
+    </style>
+
+    <script>
+      window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="tema-escuro">
+
+    <div class="fundo-animado"></div>
+
+    <header class="topo-mestre-EGF">
+        <div class="container-limite-EGF">
+            
+            <div class="marca-visual-EGF">
+                <span class="texto-sup-EGF">Cientifica</span>
+                <span class="texto-inf-EGF">Tech</span>
+            </div>
+
+            <nav class="menu-primario-EGF">
+                <ul class="lista-links-EGF">
+                    <li class="item-menu-EGF">
+                        <button id="btn-assuntos-EGF" class="link-texto-EGF">
+                            Assuntos <span class="seta-indicadora-EGF">▼</span>
+                        </button>
+                    </li>
+                    <li class="item-menu-EGF">
+                        <a href="sobre.html" class="link-texto-EGF">Sobre</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div id="painel-topicos-EGF" class="painel-expansivel-EGF">
+            <div class="container-limite-EGF">
+                <div class="grade-assuntos-EGF">
+                    
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF"> ⚛️Ciência e química</span></h3>
+                        <a href="classificacao-materia.html">Classificação da matéria</a>
+                        <a href="tabela-interativa.html">Tabela Periódica Interativa</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-engenharia-EGF">⚙️ Engenharia</span></h3>
+                        <a href="#">Mecânica Clássica</a>
+                        <a href="#">Eletromagnetismo</a>
+                        <a href="#">Python para Eng.</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-tecnologia-EGF">💻 Tecnologia</span></h3>
+                        <a href="#">Review de Hardware</a>
+                        <a href="#">Softwares Acadêmicos</a>
+                        <a href="#">Inovação</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF">🎓 Academia</span></h3>
+                        <a href="#">Guia do Calouro</a>
+                        <a href="#">Bolsas e Auxílios</a>
+                        <a href="#">Vida no Campus</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="lab-container">
+        
+        <header class="lab-header glass-panel">
+            <div class="lab-titulos">
+                <h1>Tabela Periódica <span class="neon-text">Interativa</span></h1>
+                <p>Explore elementos, isótopos e modelos atômicos em tempo real.</p>
+            </div>
+            
+            <div class="lab-controles">
+                <input type="text" id="busca-elemento" placeholder="Buscar por nome, símbolo ou número..." class="input-busca">
+                
+                <div class="filtros-categorias">
+                    <button class="btn-filtro ativo" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro" data-categoria="ametal" style="border-bottom-color: #4ADE80;">Ametais</button>
+                    <button class="btn-filtro" data-categoria="gas-nobre" style="border-bottom-color: #A78BFA;">Gases Nobres</button>
+                    <button class="btn-filtro" data-categoria="metal-alcalino" style="border-bottom-color: #F87171;">Metais Alcalinos</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="tabela-periodica-grid" id="tabela-grid">
+            </section>
+
+        <div id="tooltip-elemento" class="tooltip glass-panel oculto">
+            <div class="tooltip-header">
+                <span id="tt-numero"></span>
+                <span id="tt-massa"></span>
+            </div>
+            <h2 id="tt-simbolo"></h2>
+            <p id="tt-nome"></p>
+            <span id="tt-categoria" class="badge-categoria"></span>
+        </div>
+
+    </main>
+
+    <script src="tabela.js"></script>
+    <script src="script-revista-cientifica.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução dos Modelos Atômicos | CientificaTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="revista-cientifica.css">
+    <link rel="stylesheet" href="materia.css"> <script>
+      window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header class="cabecalho-principal">
+        </header>
+
+    <main class="container-materia">
+        
+        <section class="qui-hero">
+            <div class="decoracao bolinha-1"></div>
+            <div class="decoracao bolinha-2"></div>
+            <div class="qui-container qui-grid-hero">
+                <div class="qui-hero-texto">
+                    <h1>Evolução dos <br><span class="destaque-verde">Modelos Atômicos</span></h1>
+                    <p>Os modelos atômicos foram sendo criados para explicar como o átomo é estruturado. Cada cientista aperfeiçoou o modelo anterior à medida que novas descobertas eram feitas.</p>
+                    <a href="#lab-atomico" class="qui-btn-primario">Acessar Simulações</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="lab-atomico" class="secao-laboratorio-virtual">
+            <div class="qui-container">
+                <div class="grade-laboratorio">
+                    
+                    <div class="painel-controles-lab">
+                        <div class="grupo-botoes-lab">
+                            <h4>Linha do Tempo Atômica</h4>
+                            <button class="btn-lab ativo" onclick="ativarModelo('dalton')">1. Dalton (1808)</button>
+                            <button class="btn-lab" onclick="ativarModelo('thomson')">2. Thomson (1897)</button>
+                            <button class="btn-lab" onclick="ativarModelo('rutherford')">3. Rutherford (1911)</button>
+                            <button class="btn-lab" onclick="ativarModelo('bohr')">4. Bohr (1913)</button>
+                        </div>
+                    </div>
+
+                    <div class="tela-visualizacao-lab">
+                        <div class="container-canvas">
+                            <canvas id="simulador-atomico"></canvas>
+                        </div>
+
+                        <div id="texto-explicativo-lab" class="caixa-info-lab">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-resumo-tabela">
+            <div class="qui-container">
+                <div class="qui-cabecalho-secao">
+                    <h2>Resumo para Decorar</h2>
+                    <p class="macete-destaque"><strong>Macete de prova:</strong> Dalton → bola de bilhar → Thomson → pudim de passas → Rutherford → sistema planetário → Bohr → camadas eletrônicas (K, L, M, N...).</p>
+                </div>
+
+                <table class="tabela-atomica">
+                    <thead>
+                        <tr>
+                            <th>Cientista (Ano)</th>
+                            <th>Como imaginava o átomo</th>
+                            <th>Analogia Clássica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>John Dalton</strong> (1808)</td>
+                            <td>Bola maciça, indivisível, indestrutível e neutra.</td>
+                            <td>Bola de Bilhar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>J. J. Thomson</strong> (1897)</td>
+                            <td>Esfera positiva com elétrons ($e^-$) em seu interior.</td>
+                            <td>Pudim de Passas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ernest Rutherford</strong> (1911)</td>
+                            <td>Núcleo positivo minúsculo e átomo quase vazio.</td>
+                            <td>Sistema Planetário</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Niels Bohr</strong> (1913)</td>
+                            <td>Elétrons em níveis de energia (camadas) definidos.</td>
+                            <td>Órbitas Estacionárias</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="atomos.js"></script>
+</body>
+</html>

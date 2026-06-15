@@ -1,0 +1,179 @@
+/* ======================================================= */
+/* VARIÁVEIS E RESET (TEMA ESCURO CIENTÍFICO)              */
+/* ======================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+:root {
+    --fundo-lab: #0f172a;
+    --painel-vidro: rgba(30, 41, 59, 0.7);
+    --borda-vidro: rgba(255, 255, 255, 0.1);
+    --texto-principal: #f8fafc;
+    --texto-secundario: #94a3b8;
+    
+    /* Cores das Categorias Químicas */
+    --cor-ametal: #4ADE80;
+    --cor-gas-nobre: #A78BFA;
+    --cor-metal-alcalino: #F87171;
+    --cor-alcalino-terroso: #FBBF24;
+    --cor-metal-transicao: #60A5FA;
+    --cor-semimetal: #F97316;
+    --cor-halogenio: #2DD4BF;
+    --cor-pos-transicao: #38BDF8;
+    --cor-lantanideo: #F472B6;
+    --cor-actinideo: #C084FC;
+}
+
+body.tema-escuro {
+    background-color: var(--fundo-lab);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Efeito de Vidro (Glassmorphism) */
+.glass-panel {
+    background: var(--painel-vidro);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--borda-vidro);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================================= */
+/* ESTILIZAÇÃO DOS BOTÕES DE FILTRO (CATEGORIAS)           */
+/* ======================================================= */
+
+.lab-controles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha a barra de busca e os botões à direita */
+}
+
+.filtros-categorias {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.btn-filtro {
+    background: rgba(0, 0, 0, 0.2); /* Fundo escuro translúcido */
+    color: var(--texto-secundario);
+    border: 1px solid var(--borda-vidro);
+    border-bottom-width: 3px; /* Destaca a linha colorida inferior */
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover e Ativo (Neon Suave) */
+.btn-filtro:hover, .btn-filtro.ativo {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--texto-principal);
+    transform: translateY(-2px); /* Levanta o botão suavemente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.lab-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ======================================================= */
+/* CABEÇALHO E FILTROS                                     */
+/* ======================================================= */
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    margin-bottom: 40px;
+}
+
+.neon-text {
+    color: var(--cor-ametal);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.input-busca {
+    width: 300px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--borda-vidro);
+    background: rgba(0,0,0,0.2);
+    color: white;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-busca:focus {
+    border-color: var(--cor-metal-transicao);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+}
+
+/* ======================================================= */
+/* GRID DA TABELA PERIÓDICA (A Mágica do Layout)           */
+/* ======================================================= */
+.tabela-periodica-grid {
+    display: grid;
+    /* Define exatas 18 colunas de tamanhos iguais */
+    grid-template-columns: repeat(18, minmax(60px, 1fr));
+    gap: 8px;
+    padding: 20px;
+}
+
+/* Estilo individual de cada "Quadrado" da tabela */
+.elemento-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 8px 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-height: 85px;
+}
+
+.elemento-card:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 0 20px currentColor; /* O brilho pega a cor da borda via JS */
+}
+
+.el-numero { font-size: 0.7rem; color: var(--texto-secundario); position: absolute; top: 4px; left: 6px; }
+.el-massa { font-size: 0.6rem; color: var(--texto-secundario); position: absolute; top: 4px; right: 6px; }
+.el-simbolo { font-size: 1.5rem; font-weight: 800; margin-top: 10px; line-height: 1; }
+.el-nome { font-size: 0.65rem; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Estado inativo (quando o usuário usa o filtro) */
+.elemento-card.inativo {
+    opacity: 0.15;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+/* ======================================================= */
+/* TOOLTIP FLUTUANTE                                       */
+/* ======================================================= */
+.tooltip {
+    position: fixed;
+    width: 200px;
+    padding: 15px;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 0.2s;
+}
+
+.tooltip.oculto { opacity: 0; }
+.tooltip-header { display: flex; justify-content: space-between; margin-bottom: 5px; color: var(--texto-secundario); font-size: 0.8rem;}
+#tt-simbolo { font-size: 2.5rem; text-align: center; }
+#tt-nome { text-align: center; margin-bottom: 10px; }
+.badge-categoria { display: block; text-align: center; padding: 4px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }

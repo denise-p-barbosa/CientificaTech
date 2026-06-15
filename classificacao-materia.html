@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação da Matéria | CientificaTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="revista-cientifica.css"> <link rel="stylesheet" href="materia.css"> 
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <header class="topo-mestre-EGF">
+        <div class="container-limite-EGF">
+            
+            <div class="marca-visual-EGF">
+                <span class="texto-sup-EGF">Cientifica</span>
+                <span class="texto-inf-EGF">Tech</span>
+            </div>
+
+            <nav class="menu-primario-EGF">
+                <ul class="lista-links-EGF">
+                    <li class="item-menu-EGF">
+                        <button id="btn-assuntos-EGF" class="link-texto-EGF">
+                            Assuntos <span class="seta-indicadora-EGF">▼</span>
+                        </button>
+                    </li>
+                    <li class="item-menu-EGF">
+                        <a href="sobre.html" class="link-texto-EGF">Sobre</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div id="painel-topicos-EGF" class="painel-expansivel-EGF">
+            <div class="container-limite-EGF">
+                <div class="grade-assuntos-EGF">
+                    
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF"> ⚛️Ciência e química</span></h3>
+                        <a href="classificacao-materia.html">Classificação da matéria</a>
+                        <a href="tabela-interativa.html">Tabela Periódica Interativa</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-engenharia-EGF">⚙️ Engenharia</span></h3>
+                        <a href="#">Mecânica Clássica</a>
+                        <a href="#">Eletromagnetismo</a>
+                        <a href="#">Python para Eng.</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-tecnologia-EGF">💻 Tecnologia</span></h3>
+                        <a href="#">Review de Hardware</a>
+                        <a href="#">Softwares Acadêmicos</a>
+                        <a href="#">Inovação</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF">🎓 Academia</span></h3>
+                        <a href="#">Guia do Calouro</a>
+                        <a href="#">Bolsas e Auxílios</a>
+                        <a href="#">Vida no Campus</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-materia">
+        
+        <section class="qui-hero">
+            <div class="decoracao bolinha-1"></div>
+            <div class="decoracao bolinha-2"></div>
+            
+            <div class="qui-container qui-grid-hero">
+                <div class="qui-hero-texto">
+                    <h1>Entendendo a <br><span class="destaque-verde">Classificação da Matéria</span></h1>
+                    <p>O primeiro passo para dominar a Química Geral é saber diferenciar substâncias puras de misturas. Use as ferramentas interativas abaixo para treinar.</p>
+                    <a href="#mapa" class="qui-btn-primario">Acessar o Mapa Interativo</a>
+                </div>
+                
+                <div class="qui-hero-imagem">
+                    <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=800&auto=format&fit=crop" alt="Experimento químico" class="bolha-organica">
+                </div>
+            </div>
+        </section>
+
+        <section id="mapa" class="secao-mapa-mental">
+            <div class="qui-container">
+                <div class="qui-cabecalho-secao">
+                    <h2>Mapa Mental Interativo</h2>
+                    <p>Clique nos nós do mapa abaixo para entender cada conceito.</p>
+                </div>
+
+                <div class="arvore-mapa">
+                    <div class="nivel-mapa">
+                        <button class="no-mapa principal" onclick="mostrarInfo('materia')">MATÉRIA</button>
+                    </div>
+                    
+                    <div class="nivel-mapa bifurcacao">
+                        <button class="no-mapa" onclick="mostrarInfo('substancia')">Substância Pura</button>
+                        <button class="no-mapa" onclick="mostrarInfo('mistura')">Mistura</button>
+                    </div>
+                    
+                    <div class="nivel-mapa ramificacao">
+                        <div class="ramo">
+                            <button class="no-mapa final" onclick="mostrarInfo('simples')">Simples</button>
+                            <button class="no-mapa final" onclick="mostrarInfo('composta')">Composta</button>
+                        </div>
+                        <div class="ramo">
+                            <button class="no-mapa final" onclick="mostrarInfo('homogenea')">Homogênea</button>
+                            <button class="no-mapa final" onclick="mostrarInfo('heterogenea')">Heterogênea</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="painel-info" class="painel-informacao">
+                    <h3>Selecione um item no mapa</h3>
+                    <p>A explicação aparecerá aqui.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-interativa-arrastar">
+            <div class="qui-container">
+                <div class="qui-cabecalho-secao">
+                    <h2>Pratique: Arraste e Solte</h2>
+                    <p>Arraste os exemplos para a caixa correta para testar seu conhecimento.</p>
+                </div>
+
+                <div class="area-pecas" id="banco-pecas">
+                    <div class="peca-arrastavel" draggable="true" id="peca1" data-tipo="simples">Gás Oxigênio</div>
+                    <div class="peca-arrastavel" draggable="true" id="peca2" data-tipo="composta">Água Destilada</div>
+                    <div class="peca-arrastavel" draggable="true" id="peca3" data-tipo="homogenea">Água com Açúcar</div>
+                    <div class="peca-arrastavel" draggable="true" id="peca4" data-tipo="heterogenea">Água e Óleo</div>
+                </div>
+
+                <div class="area-caixas">
+                    <div class="caixa-alvo" id="alvo-simples" data-aceita="simples">
+                        <h4>Substância Simples</h4>
+                    </div>
+                    <div class="caixa-alvo" id="alvo-composta" data-aceita="composta">
+                        <h4>Substância Composta</h4>
+                    </div>
+                    <div class="caixa-alvo" id="alvo-homogenea" data-aceita="homogenea">
+                        <h4>Mistura Homogênea</h4>
+                    </div>
+                    <div class="caixa-alvo" id="alvo-heterogenea" data-aceita="heterogenea">
+                        <h4>Mistura Heterogênea</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-laboratorio-virtual">
+        <div class="qui-container">
+            
+            <div class="qui-cabecalho-secao">
+                <h2>Laboratório Virtual de Matéria</h2>
+                <p>Selecione um conceito abaixo para visualizar o comportamento das partículas e suas propriedades em tempo real.</p>
+            </div>
+
+            <div class="grade-laboratorio">
+                
+                <div class="painel-controles-lab">
+                    
+                    <div class="grupo-botoes-lab">
+                        <h4>Substâncias Simples</h4>
+                        <button class="btn-lab ativo" onclick="ativarSimulacao('oxigenio')">Gás Oxigênio ($O_2$)</button>
+                        <button class="btn-lab" onclick="ativarSimulacao('hidrogenio')">Gás Hidrogênio ($H_2$)</button>
+                    </div>
+
+                    <div class="grupo-botoes-lab">
+                        <h4>Substâncias Compostas</h4>
+                        <button class="btn-lab" onclick="ativarSimulacao('agua')">Água Pura ($H_2O$)</button>
+                        <button class="btn-lab" onclick="ativarSimulacao('sal')">Sal de Cozinha ($NaCl$)</button>
+                    </div>
+
+                    <div class="grupo-botoes-lab">
+                        <h4>Elementos Puros (Não Decomponíveis)</h4>
+                        <button class="btn-lab" onclick="ativarSimulacao('diamante')">Carbono Diamante ($C$)</button>
+                        <button class="btn-lab" onclick="ativarSimulacao('ouro')">Ouro Puro ($Au$)</button>
+                    </div>
+
+                    <div class="grupo-botoes-lab">
+                        <h4>Mudanças de Estado & Misturas</h4>
+                        <button class="btn-lab" onclick="ativarSimulacao('estados-agua')">Estados Físicos da Água</button>
+                        <button class="btn-lab" onclick="ativarSimulacao('mistura-homo')">Mistura Homogênea</button>
+                        <button class="btn-lab" onclick="ativarSimulacao('mistura-hetero')">Mistura Heterogênea</button>
+                    </div>
+
+                </div>
+
+                <div class="tela-visualizacao-lab">
+                    
+                    <div class="container-canvas">
+                        <canvas id="simulador-molecular"></canvas>
+                    </div>
+
+                    <div id="texto-explicativo-lab" class="caixa-info-lab">
+                        <h3>Gás Oxigênio ($O_2$)</h3>
+                        <p class="tag-tipo">Substância Simples</p>
+                        <p class="descricao-substancia">Formado por moléculas diatômicas isoladas flutuando livremente no espaço com alta energia cinética. Cada molécula é composta por dois átomos idênticos do elemento Oxigênio ligados quimicamente.</p>
+                        
+                        <div class="propriedades-substancia">
+                            <span><strong>Ponto de Fusão:</strong> $-218,8^\circ\text{C}$</span>
+                            <span><strong>Ponto de Ebulição:</strong> $-183^\circ\text{C}$</span>
+                            <span><strong>Densidade:</strong> $1,429\text{ g/L}$</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <script src="materia.js"></script>
+    <script src="script-revista-cientifica.js"></script>
+</body>
+</html>

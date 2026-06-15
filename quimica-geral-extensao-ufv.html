@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade 1: Ciência e Química - Projeto de Extensão UFV</title>
+    <link rel="stylesheet" href="revista-cientifica.css">
+    <link rel="stylesheet" href="quimica-geral-und-1.css">
+    
+     
+</head>
+<body>
+        <!-- CIENTIFICATECH - DESIGN REVISTA 2026 cabeçalho -->
+    <header class="topo-mestre-EGF">
+        <div class="container-limite-EGF">
+            
+            <div class="marca-visual-EGF">
+                <span class="texto-sup-EGF">Cientifica</span>
+                <span class="texto-inf-EGF">Tech</span>
+            </div>
+
+            <nav class="menu-primario-EGF">
+                <ul class="lista-links-EGF">
+                    
+                    <li class="item-menu-EGF">
+                        <button id="btn-assuntos-EGF" class="link-texto-EGF">
+                            Assuntos <span class="seta-indicadora-EGF">▼</span>
+                        </button>
+                    </li>
+
+                    <li class="item-menu-EGF">
+                        <a href="sobre.html" class="link-texto-EGF">Sobre</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div id="painel-topicos-EGF" class="painel-expansivel-EGF">
+            <div class="container-limite-EGF">
+                <div class="grade-assuntos-EGF">
+                    
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF"> ⚛️Ciência e química</span></h3>
+                        <a href="#">Classificação da matéria</a>
+                        
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-engenharia-EGF">⚙️ Engenharia</span></h3>
+                        <a href="#">Mecânica Clássica</a>
+                        <a href="#">Eletromagnetismo</a>
+                        <a href="#">Python para Eng.</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-tecnologia-EGF">💻 Tecnologia</span></h3>
+                        <a href="#">Review de Hardware</a>
+                        <a href="#">Softwares Acadêmicos</a>
+                        <a href="#">Inovação</a>
+                    </div>
+
+                    <div class="grupo-link-EGF">
+                        <h3><span class="etiqueta-base-EGF tag-academia-EGF">🎓 Academia</span></h3>
+                        <a href="#">Guia do Calouro</a>
+                        <a href="#">Bolsas e Auxílios</a>
+                        <a href="#">Vida no Campus</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <h1 class="projeto-extensao-ufv-titulo">Classificação da Matéria</h1>
+
+    <main id="ufv-projeto-extensao-container" class="cientificatech-academico">
+        
+        <section class="qui-hero">
+        <div class="decoracao bolinha-1"></div>
+        <div class="decoracao bolinha-2"></div>
+        
+        <div class="qui-container qui-grid-hero">
+            <div class="qui-hero-texto">
+                <span class="qui-tag" style="background-color: #2e8b57; color: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; margin-bottom: 15px; display: inline-block;">Unidade 1</span>
+                <h1>A Base de Tudo: <span class="destaque-verde">Classificação da Matéria</span></h1>
+                <p>Antes de calcular mols ou balancear equações em QUI 100, você precisa entender do que as coisas são feitas. Explore os estados físicos e aprenda a separar substâncias puras de misturas.</p>
+                <a href="#simulador" class="qui-btn-primario">Ver Partículas em Ação</a>
+            </div>
+            
+            <div class="qui-hero-imagem">
+                <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=800&auto=format&fit=crop" alt="Representação visual de química" class="bolha-organica">
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador" class="qui-secao-alternada qui-fundo-destaque">
+        <div class="qui-container">
+            <div class="qui-cabecalho-secao" style="text-align: center;">
+                <h2>Os Estados Físicos sob <span class="destaque-verde">Agitação</span></h2>
+                <p>A diferença entre um sólido e um gás é, essencialmente, a energia cinética. Controle a energia do sistema abaixo e observe o comportamento no nível microscópico.</p>
+            </div>
+
+            <div class="simulador-box">
+                <div class="controles">
+                    <button id="btn-solido" class="btn-estado">Gelo (Sólido)</button>
+                    <button id="btn-liquido" class="btn-estado">Água (Líquido)</button>
+                    <button id="btn-gasoso" class="btn-estado">Vapor (Gás)</button>
+                </div>
+                <canvas id="canvas-materia" width="500" height="350"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="qui-secao-cartoes">
+        <div class="decoracao pontos-fundo"></div>
+
+        <div class="qui-container">
+            <div class="qui-cabecalho-secao">
+                <h2>Como classificar <br><span class="destaque-verde">qualquer amostra</span></h2>
+                <p>No laboratório, você sempre lidará com uma dessas quatro categorias. Aprenda a regra de identificação de cada uma.</p>
+            </div>
+
+            <div class="qui-grid-cartoes">
+                
+                <div class="qui-cartao">
+                    <div class="qui-icone-bolha">
+                        <i class="fa-solid fa-gem"></i> </div>
+                    <h3>1. Elementos</h3>
+                    <p>Substâncias puras que não podem ser decompostas em substâncias mais simples por meios químicos. Formadas por apenas um tipo de átomo (Ex: Ouro, Oxigênio molecular).</p>
+                </div>
+
+                <div class="qui-cartao">
+                    <div class="qui-icone-bolha">
+                        <i class="fa-solid fa-droplet"></i> </div>
+                    <h3>2. Compostos</h3>
+                    <p>Substâncias puras formadas por dois ou mais elementos diferentes ligados quimicamente em proporções fixas (Ex: Água Pura - $H_2O$, Sal de Cozinha - $NaCl$).</p>
+                </div>
+
+                <div class="qui-cartao">
+                    <div class="qui-icone-bolha">
+                        <i class="fa-solid fa-mug-hot"></i> </div>
+                    <h3>3. Mistura Homogênea</h3>
+                    <p>Também chamadas de <strong>Soluções</strong>. Possuem composição uniforme em toda a amostra. Você não consegue ver a separação a olho nu (Ex: Água com açúcar dissolvido).</p>
+                </div>
+
+                <div class="qui-cartao">
+                    <div class="qui-icone-bolha">
+                        <i class="fa-solid fa-glass-water"></i> </div>
+                    <h3>4. Mistura Heterogênea</h3>
+                    <p>Não possuem a mesma composição, propriedades ou aparência em todos os pontos. As fases são visíveis (Ex: Água e areia, Água e óleo).</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+<section class="unidade1-classificacao-materia">
+    <h2>Como Classificar a Matéria?</h2>
+    <p>Antes de medirmos a matéria, precisamos saber com o que estamos lidando. Siga o fluxograma abaixo para classificar diferentes materiais do nosso cotidiano.</p>
+    
+    <div id="ufv-fluxograma-interativo" class="cientificatech-widget-container">
+         </div>
+</section>
+   
+    <script src="quimica-geral-projeto-extensao-ufv.js"></script>
+   <script src="script-revista-cientifica.js"></script>
+
+</body>
+</html>
