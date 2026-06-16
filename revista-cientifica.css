@@ -107,6 +107,34 @@ body {
 /* ETIQUETAS DE CATEGORIA (TAGS)             */
 /* ========================================= */
 
+/* ======================================================= */
+/* ETIQUETA EXCLUSIVA UFV (Vermelho, Preto e Ouro)         */
+/* ======================================================= */
+
+.tag-ufv-EGF {
+    /* O gradiente: começa no vermelho escuro, passa pelo preto no centro e termina no ouro */
+    background: linear-gradient(135deg, #C62828 0%, #1A1A1A 45%, #F9A825 100%);
+    
+    /* Texto em branco para garantir contraste e leitura perfeita sobre o fundo escuro */
+    color: #ffffff; 
+    
+    /* Uma borda dourada semitransparente para dar um acabamento elegante */
+    border: 1px solid rgba(249, 168, 37, 0.4); 
+    
+    /* Sombra no texto para que a palavra não se perca nas transições de cor do fundo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); 
+    
+    font-weight: 700;
+}
+
+/* Efeito ao passar o mouse para dar vida à etiqueta */
+a:hover .tag-ufv-EGF, .tag-ufv-EGF:hover {
+    /* Cores levemente mais vivas no hover */
+    background: linear-gradient(135deg, #E53935 0%, #000000 45%, #FBC02D 100%);
+    /* Sombra externa avermelhada */
+    box-shadow: 0 4px 10px rgba(198, 40, 40, 0.3);
+}
+
 /* Estilo Base da Etiqueta (Formato) */
 .etiqueta-base-EGF {
     display: inline-block; 
@@ -115,7 +143,7 @@ body {
     /* 6px em cima/baixo, 12px nas laterais */
     padding: 6px 14px;     
     
-    color: #ffffff;        
+    color: #f9f3f3;        
     
     /* MUDANÇA 2: Letra maior */
     font-size: 0.95rem;    /* Aumentado de 0.75rem para 0.95rem */
@@ -146,11 +174,11 @@ body {
 
 /* #7C3AED (Roxo) */
 .tag-tecnologia-EGF {
-    background-color: #7C3AED;
+    background-color: #bfa8e7;
 }
 
 .tag-academia-EGF {
-    background-color: #15803D;
+    background-color: #33af61;
 }
 
 /* ========================================= */
